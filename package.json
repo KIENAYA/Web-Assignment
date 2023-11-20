@@ -1,0 +1,19 @@
+{
+  "name": "generatefakedata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "@types/node": "^20.8.9"
+  },
+  "dependencies": {
+    "mongoose": "^8.0.1"
+  }
+}

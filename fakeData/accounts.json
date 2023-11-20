@@ -1,0 +1,2678 @@
+[
+    {
+        "_id": "877745fd-f128-43c7-8ead-39f2025cc67b",
+        "username": "CongBang_7kang34",
+        "password": "IaojFC9Nd25Haxw",
+        "role": "admin"
+    },
+    {
+        "_id": "0e40ee79-ae36-4636-b274-a863a6780f44",
+        "username": "MinhChau14",
+        "password": "TZjuriu7OJWLMPw",
+        "role": "admin"
+    },
+    {
+        "_id": "db4f98f2-ca76-42e1-8581-05d859a14086",
+        "username": "QuynhNgan15",
+        "password": "4OGNhBzn2sQ7Mos",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "24709fad-33c1-4416-8f12-62ae1dbcbaef",
+        "username": "DuyMy.Pham",
+        "password": "ODVZkh7C1uVJ9n1",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "138590ea-dfce-4351-82c6-ad0c8f4941f2",
+        "username": "ThuSuong.Duong74",
+        "password": "s1GsBe7hiohUctd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "66e90a93-23bc-4e4f-893e-279d58d1a1e0",
+        "username": "HanhNhon_Trinh",
+        "password": "rC_DtpkHD6BoBDV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3c610246-9622-43d5-93fa-357ecf703d1c",
+        "username": "XuanHieu.Phung",
+        "password": "wofg7qDvVeuuXFQ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dddddff6-2537-4e43-913d-82834e63889c",
+        "username": "YenBang.Trinh49",
+        "password": "L_ryV3mWw8s91ow",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7dcb12fb-bb58-47e9-8857-440949d78e51",
+        "username": "7kangMinh.Le",
+        "password": "lWs9DLBaHcT6z14",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "345879d6-c132-40b0-a193-bff5959888fb",
+        "username": "BinhThuan.Duong68",
+        "password": "qBbIih_dbOQ_cw6",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d542a56f-f52f-4559-afc5-3d2457e12ac2",
+        "username": "DieuHien41",
+        "password": "ScZW3Ly9Catj4SK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e496414b-6dd7-407d-9c69-ee17e08c753e",
+        "username": "GiaPhuc84",
+        "password": "GWO0_MA_xJkZFCJ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "646e9e67-a8e5-42c6-b75f-4d9eaaecc6b7",
+        "username": "LienNhu.To",
+        "password": "in8gmtn6FttyDsp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "36c935a6-e2c4-4fe5-a2e5-4d6c7a6b2cd4",
+        "username": "BaoHue_Phung",
+        "password": "S2CdGwacAQnlO4W",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0eec951f-f968-4c52-92cb-093a9b895b8e",
+        "username": "MinhTam38",
+        "password": "P74FGjpQZB4uhBF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3b5c2b6b-a333-495e-824c-a9ca55612deb",
+        "username": "VietThi_Tang",
+        "password": "acDpC5sej6X0NEU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bafc99a3-9336-49b4-90dd-4334fbf7930d",
+        "username": "NamSon95",
+        "password": "SJ_7vb0b0tW2y9Q",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "92032b06-54f6-40a3-a410-1ad5e64ef024",
+        "username": "HaiDuong.Ngo",
+        "password": "P7m_mLxCnMCrkYa",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "76ae1049-06a5-4bd4-96aa-9a3cdf128d8a",
+        "username": "HuuLuong11",
+        "password": "w5Xtx_QoRO00KTU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "58e6194f-92c8-47f3-8300-bbc776cd1091",
+        "username": "ThienLuan.7koan88",
+        "password": "seU1pMbH59uBQbu",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "84f396da-19f9-46bc-ba8a-d91187c4879a",
+        "username": "Thong7kat2",
+        "password": "WW7gD6mHO1FuLEe",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7a2e2f33-3060-4f17-b179-deb131a5b741",
+        "username": "7kinh7kon60",
+        "password": "yKJ5zKLqE750IHo",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7f70c121-eedf-4fee-aefa-4847c00a02ae",
+        "username": "BachCuc79",
+        "password": "RxmqGukqssqQ9mn",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fb7a5801-de7b-4f3a-bb7f-f0e51a0587c6",
+        "username": "XuanHan_Pham78",
+        "password": "nZmTCbBbE7TP9zp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "47df73d6-da28-4d50-9be1-b0996d28ff42",
+        "username": "HienHoa56",
+        "password": "BUzd3bRm94Lf4DO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d4c1c426-761c-4cb2-baa1-035a4cc406e6",
+        "username": "DienVy40",
+        "password": "hM0cRtYQuJwoDEM",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "86982abc-20aa-4879-9260-6a013aeb6eb0",
+        "username": "MinhTrung45",
+        "password": "dF51BhTwVzcxpv4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6f3570ce-880d-4984-b533-4026aabfc870",
+        "username": "Thanh7kao_Tang66",
+        "password": "bEF2ETpVHHGBF4G",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "7c0bc279-9a30-46d6-a17d-29b8c0e8cc44",
+        "username": "NhatLe.Nguyen",
+        "password": "DO6xemZesZjVpbJ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "589d73ab-6baf-451c-96c9-5e43e115417f",
+        "username": "MyTram_Bui78",
+        "password": "uRWu2X8mYSLfLWn",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "86d7ccd6-fd02-40ca-b4b8-c4fe15bea5a9",
+        "username": "PhuongHien59",
+        "password": "wYmmUVgigPbBZb4",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "d7eb3d14-eb99-4013-a871-b12373b56fbc",
+        "username": "QuynhLien76",
+        "password": "Xmd2BQgZhor174J",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "971d2722-68d3-48fc-b83a-471d2d6242d5",
+        "username": "ThanhLong_Truong",
+        "password": "khlMDGcDWSqVK2o",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c78fe5bb-cfad-4523-8fa1-2fa55da7f02e",
+        "username": "ThanhTam83",
+        "password": "b3aW_QMfGKVBozz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "274c3fa0-4ce1-4e52-949a-6a3549ea92d3",
+        "username": "7kinhHuong5",
+        "password": "jGvmdlQ1cctaiQL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8e12edb1-72f1-4725-bb38-c7aae4724a21",
+        "username": "ThanhCong10",
+        "password": "Ta9lQtPmkTtRFB3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c1fcfdbf-cf64-4343-a6f4-7f8416f5f799",
+        "username": "TuongNguyen.Trinh88",
+        "password": "IHjUDirmwcTANqY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "00f0190c-40ca-4363-b48b-0bb351f47d5a",
+        "username": "ThaiTo_Vu",
+        "password": "uAQDS4XrZxiBSXZ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "29fc9242-0a6d-42b5-b914-bde05c9c076d",
+        "username": "TuyetThanh.Trinh25",
+        "password": "MrKSnMWZIV3rxyQ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "49e08bba-f4b0-4be7-8393-e3060c749e97",
+        "username": "HanhThao_Bui",
+        "password": "GFhJiSPwGSM3S8I",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "50c35dc4-c850-4b7e-9bca-df418e87807a",
+        "username": "HoangXuan26",
+        "password": "vTAp_nIMH3PZJf_",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bc6c75d1-ed4b-4649-9526-e7765091062c",
+        "username": "DuyenHong84",
+        "password": "tULlQeDLCjShs_f",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "5c8462ea-64b2-45f5-bb9a-f210a2f129d5",
+        "username": "ThuPhong.Duong68",
+        "password": "hTWbjIiQ62RO43M",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9e578edc-1a21-49aa-aead-3dd1f9262b52",
+        "username": "KimHoa_Phung",
+        "password": "vdU5aA7UZp7XvpU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "619de7a0-fb7b-4d24-8dad-4f6c72168095",
+        "username": "CatUy.7koan",
+        "password": "i8_DasKNiCxQuV0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dcfa3083-733a-4c44-a85d-a43a781ae0ef",
+        "username": "TrungNguyen.Ha",
+        "password": "B5Bg1MIVtQUHR4U",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "568f43fb-2bec-4af2-aec9-e4aacf0cdf14",
+        "username": "TheAn2",
+        "password": "IETkVzqCrSIMP8z",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d4543ea9-417b-45de-aa1f-06bb36d5236c",
+        "username": "HuuHung60",
+        "password": "qNq48w1fQRJtFpw",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dbcc6dd5-7601-4747-a9ab-257bfbd361c7",
+        "username": "UyenNghi.Vu43",
+        "password": "GKGfK7O5_Zaho8y",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "cae6d7d2-5b63-4779-aa63-6e354fe98985",
+        "username": "ThienManh.Phung",
+        "password": "dqBGFPQz4wY1Dbw",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0243f4c3-a35d-40f7-a220-2ddeed5027b4",
+        "username": "MinhThong_7ko90",
+        "password": "nYfD7WJXU34Q2RW",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "da15b274-4a7c-4af9-85a7-9440b3c3ace1",
+        "username": "TuanThanh79",
+        "password": "X2z1JBpAUcSGxCP",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a2dab39d-cef7-4d05-83d0-85b5eeeaa324",
+        "username": "SongHa_Vu69",
+        "password": "aoBcc6IPJMkSsS0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c83f9f2a-a71c-446c-b204-e28bf9d05b88",
+        "username": "HongNga_7kinh50",
+        "password": "8Jw4MloQo7NlVZu",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "41c556b3-b162-4dcc-851a-bc94b73fa8dc",
+        "username": "MinhNhan.To",
+        "password": "YYfRlWEnYaA1WDD",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c788c926-9326-41e3-b05d-fc50453c5c9a",
+        "username": "TuanKhanh39",
+        "password": "Szb_sfl0FWeCdcb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "23aafb69-4bc3-4691-ae9c-23173f57f009",
+        "username": "ThuongXuan61",
+        "password": "I8_rYMPJ66QlWPE",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0b1f9a11-b904-4755-b2ae-310b99ef3d6b",
+        "username": "NhaUyen53",
+        "password": "XYcdDoFL9UEm946",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5017c46e-2284-499a-86f5-00e93e91adbb",
+        "username": "DuyAn_7kao",
+        "password": "ILaCUh2nZmcXvI3",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "1166fc1c-468a-4511-9d87-8fb336eb1993",
+        "username": "Hai7kuong.To",
+        "password": "3257UbgoaCO02Dg",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dc4f5892-c252-4001-ba3b-867b1e2f737b",
+        "username": "HoangXuan_Hoang22",
+        "password": "KmTRO9oS8bordpx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2fe630e2-a474-4997-b919-7cc83894140b",
+        "username": "7kangKhuong8",
+        "password": "Msskwn8YCtvdDiF",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "f92abad6-dae0-44ca-8e4b-b0d7ea66ff8c",
+        "username": "TrongHa53",
+        "password": "nSlX0Gj0GyxaQ4L",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9af7320c-bce4-4141-ab36-19a491c7e523",
+        "username": "KhaiTam.Phung97",
+        "password": "11epRCF00hp5x1i",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dbf10a7d-7f36-4dda-9d6f-32d1a9466257",
+        "username": "CaoTien17",
+        "password": "aWhkOvbIRtqQndz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1f3cc499-59ac-4deb-addb-90f9dfe57f9d",
+        "username": "HanhPhuong63",
+        "password": "pwbxA1cgekdZvQj",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "e65e4795-075e-4c21-8ee1-a384cd847d92",
+        "username": "DuyKhanh_Mai68",
+        "password": "sT5tP6ovPx87cbH",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4d81eecc-4063-4fe0-87cb-220e10e26e87",
+        "username": "HoaiHuong20",
+        "password": "YQhYyKLnYqAos5N",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "10b910fd-b2ef-4c63-b51d-b3469f73bd11",
+        "username": "7kucThang59",
+        "password": "xcka3HC9uvPzkwo",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2ac80ed9-49db-495e-881a-5a3d08cd557b",
+        "username": "TheDan_Vuong57",
+        "password": "FxJQKec91zpRSCf",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bf81ee74-7236-4d0f-848b-37337bb621e0",
+        "username": "ThuongKiet88",
+        "password": "ZlNlg1EThtc3BXZ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b545f550-8c91-4cb4-babe-81cb815a6583",
+        "username": "TungAnh69",
+        "password": "kcYZg8u1nRTJbqM",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ec5dce92-e703-463e-93b2-738512783e5d",
+        "username": "HongNgoc.Tang76",
+        "password": "AFtHI6Z1khXm4lN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d8a94110-956a-4f94-9878-ba5a69bbbf2e",
+        "username": "KieuDiem.7ko",
+        "password": "KkQ0OJ2QClbTWI2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c82df4e5-8aa6-4c30-acc6-3a376046039d",
+        "username": "ThanhNhung.7koan",
+        "password": "gRE2z70d9xNhaor",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "1b94fd02-b582-4fb0-94af-fb8cf231d3a5",
+        "username": "ChePhuong_7kang46",
+        "password": "MOArXNXlUi1ZQTn",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4b1143ca-49d8-40b7-8f2f-57fbfaf088e5",
+        "username": "HoaGiang.Ha",
+        "password": "Z1X7B3nk2xpjPvh",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2ffa5396-97fc-467a-ad58-c2071b01ceb6",
+        "username": "DuyCuong26",
+        "password": "AuQKe6Owwexe0RU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "77a3ceba-502d-468a-af77-7f79c9c5234d",
+        "username": "QuocHoang81",
+        "password": "nbg2WuBSaFzCh8X",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a48bc6ee-3673-47bb-b857-f40d70e81057",
+        "username": "TungLinh5",
+        "password": "w30HEnZG0jTq5yt",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "8ea98ffe-b856-45ca-9291-be35b3f23917",
+        "username": "KhaKhanh34",
+        "password": "UBm_zuAJAJxqhRh",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1146cbc8-2f17-4294-9ffd-7947c02e6101",
+        "username": "KhanhGiao.7ko",
+        "password": "iMfhgQ2TUgSWY4i",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c54662d4-df54-4385-87c8-ebd255b1b66a",
+        "username": "BaoBao_Vu",
+        "password": "EOBrOF0rolNu3CL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cba55c3f-967a-4140-ae5a-24b107c88f5a",
+        "username": "ThanhThuan.Trinh",
+        "password": "SN0ALm0_jPexCZb",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "5ad1eff3-5486-44f2-aeea-ab681815c088",
+        "username": "MyVan.Ha",
+        "password": "wYPAnSnLobra09k",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "22de899c-c0e0-4ccb-8f26-12893469f0db",
+        "username": "ThyKhanh.Phan70",
+        "password": "mAx5TQxEaBVyXoG",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2ed10db3-3553-4cf1-a9a7-cd11ee897b69",
+        "username": "QuangVu.Ngo",
+        "password": "0ez05HuBAZ2R1OJ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f0a8279e-5859-4ba6-a3ff-d1afc3e45645",
+        "username": "ThienTri.7kang5",
+        "password": "tEzvVLsiB6cA5fp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "91aa849d-9655-4c07-b6d4-24ad9e2fca64",
+        "username": "LongVinh.Mai29",
+        "password": "z2ZrJElfwvrqcoN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5f6e5fa2-e5c5-4712-b006-361e8c490c7f",
+        "username": "MinhThuy_Hoang",
+        "password": "CwG2kpGEJwO9CuQ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7b8b3c0d-29a3-4066-8ace-d4b63f3d64d8",
+        "username": "NamTu.Ha",
+        "password": "JUcG8Nh56xQ6e9P",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a0f51201-714d-4a2a-8d41-4136461d5a24",
+        "username": "HaiThao.Ha",
+        "password": "dCTUmKv0xYRv1iB",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "f3fcb629-afcf-41c6-b56f-3c87f7f813ea",
+        "username": "HangNga_Bui45",
+        "password": "kUmij3yjEwegLhv",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "096d3b58-1311-4401-b0ff-15c311b3161b",
+        "username": "LamGiang18",
+        "password": "dtXjkPPY894CLn2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9a3810d6-a415-4061-8785-f673d0d25d18",
+        "username": "ManhTuan67",
+        "password": "LaaxwtoCsAT4xQV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "30ffb128-c97a-4f32-b0ec-37fb596a995e",
+        "username": "ChiKhiem.Ly54",
+        "password": "7DvBM7XXhsKnOrw",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8accfecd-958d-419b-ab3e-e04343b8c51a",
+        "username": "MongThi57",
+        "password": "H9wTUXQecx0ej2K",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8b20c741-e1f0-4a3b-820d-4dba5b6d26d6",
+        "username": "KhoaTruong_Ha",
+        "password": "WRV_7MNGZXpe43a",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "79b27253-f4fb-45ba-88b5-c05b63e0f7fd",
+        "username": "MinhHien_7ko11",
+        "password": "VewKUuyvVnF7tt1",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "61695366-3496-4775-a9f0-d9aee8a5250f",
+        "username": "Sy7kan5",
+        "password": "csvqghyw_IG2bQ7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6cc4116d-2d27-4ab2-a187-3462c5e090a4",
+        "username": "LinhChi71",
+        "password": "ihqpUyAYUPdUqYX",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "34c7273c-8399-4b66-a24b-558dec3fd8c0",
+        "username": "DieuNga_Phung78",
+        "password": "EYEEJBvGNVs6cu5",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "66cdb689-1111-4d7d-b48b-2558748638fb",
+        "username": "HongPhat_Trinh78",
+        "password": "mZWGgLGRll8bMLF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "abe8868a-6f72-48d8-8ab6-9512b88e5e89",
+        "username": "AnhXuan.Vuong50",
+        "password": "h12mP983Dus2qVK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "256237c5-7c8b-46e6-af1b-28230007fa4e",
+        "username": "HaiPhuong_Mai90",
+        "password": "Mcked4Kn_hBpNvI",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "7147f29c-a690-416e-9e1a-0047ffb1de95",
+        "username": "KimMai60",
+        "password": "D59yCFePu8x49pO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ef43f2a1-4613-4801-a68f-7630aabbd16b",
+        "username": "ThuNga6",
+        "password": "2eePpLU0DETNPem",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4b2a70f2-6a64-4618-b3f8-da1f5058adac",
+        "username": "NhatThuong39",
+        "password": "xpQ4imQKiNStm8A",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2cd89b83-1463-4676-a66b-92b7a40b0eb6",
+        "username": "KhaAi_Vuong",
+        "password": "u_g76t9r8v_58DY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ae5a479f-5d3d-4239-9c0d-6534cf7a7931",
+        "username": "AnhXuan32",
+        "password": "BJOiFCjHMcZ3taK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e4d4fc77-90c4-4626-91f8-89593f664ea6",
+        "username": "BaoHan58",
+        "password": "3iQ_9p9pB0H5zd8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "eee3d550-8808-482a-b1b6-726455209297",
+        "username": "ThuHong.Vuong",
+        "password": "dx3LXrKBuZ5GIaI",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5013dc84-2b93-4847-a0aa-0056189db998",
+        "username": "PhuongLoan_Nguyen68",
+        "password": "mnIt1Hnj36yxPtm",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "c3919dbe-978a-4b4b-b2b1-a73a5090a21a",
+        "username": "PhucKhang_Mai",
+        "password": "iJN32DAFR4CtXf8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b25eea8c-f4e1-41e3-9c19-656045c67876",
+        "username": "DieuThien.7kinh12",
+        "password": "WeBKjlu1wNf75ay",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "264c278c-da22-4746-95f5-8d4c7f361c0a",
+        "username": "ThanhThien24",
+        "password": "vIo5rMqkHDd1MYA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1e32a8fc-14a8-4fb3-88c7-554fb9a99724",
+        "username": "7kucHanh66",
+        "password": "uEPkzFKmL_E_yhR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0512b0f8-9dae-4f59-84c7-485243a72268",
+        "username": "7kucKhiem.Vuong80",
+        "password": "jWykUvkQtttxCrF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b726f1aa-3710-41fc-aac8-624bd5d77a76",
+        "username": "TuongVi_Duong",
+        "password": "1EXNt4hBpd_rPid",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0f70dfa3-b718-481b-9565-a3a038b47ae3",
+        "username": "ThienSinh46",
+        "password": "HuxVDSlY_JacuDk",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "c1ec5a76-d7c3-4a78-aac9-2d341633751f",
+        "username": "QuocQuan_Lam41",
+        "password": "tNKc6lnu2luiuqz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2e863b58-0b57-44ae-9e8e-ccf24c0665b2",
+        "username": "KhacKy_Phung5",
+        "password": "vfQoRkarGZIWNO2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2089591a-88ac-44c6-ac69-8efc69fc74c2",
+        "username": "QuangNhat18",
+        "password": "gs3IbdXewL5Ib5T",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9b471545-844f-4803-826a-ea35577005fc",
+        "username": "HueMy_Le22",
+        "password": "yOH3PfrhKaYG6Bq",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "03c87729-03f2-40a5-a686-05ed5cb197d8",
+        "username": "TrungChuyen12",
+        "password": "L6J7vRhW_igNOjd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "01881c99-eb21-44f4-931f-0434e74a1a91",
+        "username": "ChiNam.7kinh65",
+        "password": "mmWLV6UGeDrLrtk",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "53b83a36-01e2-4736-a0ca-1a17b035cd03",
+        "username": "QuynhGiao_7kinh78",
+        "password": "oL6oJdvfjfpp44S",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "21decccd-900c-4677-a34d-2c86a205fe96",
+        "username": "BichThoa_Truong87",
+        "password": "kCqPhHkQsuikNgG",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "35d98a79-1f4b-4a27-8316-3bd543bfd609",
+        "username": "CongAn.Nguyen",
+        "password": "XdSE0ctHNmpOqNb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "13b70b3e-f6a9-45ae-a54b-455934e02e9b",
+        "username": "XuanTuong_Phung",
+        "password": "rbvtdxNcuK4bHUb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d327e5e1-5451-4ac4-bc1a-4cfb809127eb",
+        "username": "7kucDuy1",
+        "password": "a5QRqGIOrhyTwlP",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "45e1f64c-db7a-411a-9641-5399da090122",
+        "username": "GiaKiet.Le",
+        "password": "eX46Gi2KX1c2T5p",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "95ceb100-991c-4723-aaa8-63b5fd3a4f48",
+        "username": "ThiCam_Pham33",
+        "password": "yo1IgX4kMz2XHcb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4b536d57-187c-4c9f-9e2e-7d2a8c4974f0",
+        "username": "YenSon65",
+        "password": "wVuQGscUEnmDreX",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0b2ab4f9-c4c7-412d-8571-e71c3ac7dca7",
+        "username": "DuyUyen.7kinh31",
+        "password": "uCYzbluw_EdJjVa",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "37d28b3a-64e2-466c-bc9a-32df408aee57",
+        "username": "YenLoan37",
+        "password": "JUeiFXA_i7_IguR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "57053648-a466-4df1-b453-59c370d48a02",
+        "username": "ThuyTam85",
+        "password": "ti3fRmzOrhPVqEx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fac4338e-7c72-435a-80fb-d0e3d42b50cb",
+        "username": "ThanhNgan_7ko",
+        "password": "m1uWQxXHBQVn92g",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "199c8caf-3adf-479e-936e-94467668c948",
+        "username": "ThangLoi75",
+        "password": "t6XvuFfISue1lzb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5f9e1e6c-0a54-4142-8381-899bd545fd5e",
+        "username": "NgocThach88",
+        "password": "mv43MmzJExECeUP",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "c2a4cef1-c06e-4d6b-9c26-ac651e9598fe",
+        "username": "HuongLan.Tran",
+        "password": "ybRiQCYTxi1ftD_",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "393ba4d2-fc00-4db3-a393-4ec28b88ec63",
+        "username": "ChieuPhong64",
+        "password": "2nWnF_ST8wxVxbb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fce8ba39-bf95-4281-8632-ca30cbcf8cdb",
+        "username": "CamYen8",
+        "password": "jt8NYD1dcsV0GFG",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "200e3ad2-2e40-4ae9-9236-648c0d9ab25e",
+        "username": "YenAnh_Pham",
+        "password": "PSH5N5PizuJop3r",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "03d5a941-0048-4d01-affa-c843715a53d1",
+        "username": "HuyAnh_Le",
+        "password": "C1mozUA1K0r_eFC",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "6a17faa9-8aa0-4f7a-a222-6d4395d2c50c",
+        "username": "ThuyNhi79",
+        "password": "lMZSkaZ6zQtDpwU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dd54b1a5-d4d1-4710-9034-9b2435f210a5",
+        "username": "HuuChau_7kang80",
+        "password": "5f65ReomZvfwogR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4797c2ec-13e6-4421-85a0-8dd3abf17fca",
+        "username": "BaoHuynh82",
+        "password": "dNr0pcXe4cheMlc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b48408d8-003e-43bb-8c02-638c336ec020",
+        "username": "TrongTri.Tang",
+        "password": "VOoiLgA8KNKeOGi",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "183e1539-ab2c-4f70-8ce1-3c1f3d000f6c",
+        "username": "VietCuong.Vuong19",
+        "password": "I6Fwhl1CSxotXx5",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4ed13512-370a-46ae-8b42-77b1fd1dc06b",
+        "username": "MinhTri_7kinh",
+        "password": "_KeeoGtba1k7wIu",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "bc0bd87c-7dc8-4c0e-82ae-3bd697ce2044",
+        "username": "PhucTam88",
+        "password": "lg14v0dRIpkVJ_8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f56ce947-adb0-400b-a7f3-bea8a968b051",
+        "username": "AnhQuan87",
+        "password": "YIRLtw_6nSDCMs0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "57871afd-a01c-4618-8bcb-400748ba33ea",
+        "username": "ThuyTien.To85",
+        "password": "wwth0USWbTflUa1",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b1cee76a-45dd-4e8b-ba94-95cb02f4deea",
+        "username": "CaoNhan.Vuong10",
+        "password": "n39O6_0zRaeDgEF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "af865226-a41a-403e-94ca-ba8d48179bcb",
+        "username": "YenPhuong62",
+        "password": "s5Is2MUShpqOYEk",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5c216976-0c8f-414a-b699-2e35b66cb71e",
+        "username": "NganHa_To91",
+        "password": "UnElucWbNA5c_V6",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0c23bf4f-8324-4f83-a703-c3acd9b772bf",
+        "username": "BaThuc.Duong",
+        "password": "TLHPLQ2KEtRNFA4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f3291c03-8dc0-4fa1-8729-b4b9dbe99142",
+        "username": "BinhMinh_7kinh73",
+        "password": "3QgfuB2gcT3R5VF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a43f296e-9c26-4cd7-9165-be6f95835877",
+        "username": "ThanhToan.Phan",
+        "password": "z0j5y_iYPugQHSY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0c49793c-c86b-4dbb-b4fd-4ac3254348b4",
+        "username": "QuangVinh_7koan62",
+        "password": "lTID892hou4D_xJ",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "4527691f-d2f2-4768-885b-facf032b7bbb",
+        "username": "QuangTrieu_7koan",
+        "password": "gvpeQWGFEJDSvUd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "01d2fd73-9397-4e8b-b56b-76ca1f42da98",
+        "username": "HongMinh_Vuong29",
+        "password": "2Zuref4YBrTWYJA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "15aeaff4-72cc-4871-8883-1ff90d5e1643",
+        "username": "ThuongXuan52",
+        "password": "HoiA5B7q3zbwC9a",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7c863d25-2ad5-4bff-9234-2ee5498c84ea",
+        "username": "BichPhuong_Mai4",
+        "password": "3AIS1OmmaibUDH3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "edfc6cf7-b37c-4cdc-a98a-db708a9531e8",
+        "username": "7kongPhong_7ko56",
+        "password": "chGjxOjRGHFHFNr",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9f526263-7d31-42c3-92d6-02a8ec64ef49",
+        "username": "VinhToan.Phung",
+        "password": "PcPYFHVfxpeDhvW",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "b5aef82d-856b-4a86-b32d-8d1d0a808483",
+        "username": "TungMinh.Trinh88",
+        "password": "5h7KnXo3Y4QRIAy",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0cb30853-7da9-4a12-b066-6a130c0b9521",
+        "username": "NgocHoan37",
+        "password": "AziZ366_6_HtRnv",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ebbf6244-a198-41f8-be3c-f1db7338fc10",
+        "username": "BaoChau.7kao",
+        "password": "mWcQgru6lsyqLje",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a0c4a661-7dd5-4c03-bb46-a7a6d4d7c8af",
+        "username": "KhanhQuynh.Nguyen0",
+        "password": "lpLJrAPRZJv8Wma",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "3d7341fe-8802-4e10-9ae8-bf54102c3e24",
+        "username": "HieuPhong_Ha",
+        "password": "2w6hcQEsw0fizNV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0e6c83a5-283a-4d83-8b38-c41df643f26b",
+        "username": "BichHa_Ly12",
+        "password": "zC8mVObvoeIPNJ1",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "553b45e6-e084-472e-abf4-06b4aa21aee1",
+        "username": "HanhLinh_7kinh",
+        "password": "pQSh5EszFAVv3xd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9a77237d-644d-4f33-85ea-8746d09b00ac",
+        "username": "ThaiChi.Duong",
+        "password": "vB2bQwcv703nVDZ",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "19ba9a93-4446-4b8f-94ed-a4beb2a3c33b",
+        "username": "MinhNghia57",
+        "password": "MYKDvHJmvA5Vkkc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2e91af95-a3f5-4327-9730-aeaf891611a6",
+        "username": "PhuongAnh60",
+        "password": "WrqacAFsYdA4Pp7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "338eb01f-d5d3-4077-8bef-ecca841c268a",
+        "username": "DieuLan.7kinh",
+        "password": "QU33qp9JSmQOS8Q",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3e5969e6-c61c-4dbf-9f6b-fc765aabaa44",
+        "username": "KienBinh_To",
+        "password": "tnfzGmw43YABEgg",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "57b7040e-a782-4edc-ae9b-b7d0a0a36c89",
+        "username": "MaiLan_Hoang35",
+        "password": "rpA0ZCeyggW27yQ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9f575836-9ec3-41ae-b370-52e83a9b7c92",
+        "username": "KhacTrong47",
+        "password": "XDFdUE7EHc7_M6k",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7e507fc1-bf89-40aa-bbc5-230c29bb5e46",
+        "username": "KimHuong.Phan59",
+        "password": "OQu7OHN31lhY6Gu",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5e475e48-6765-4b62-a365-1109aa45b325",
+        "username": "HaiNam_7koan",
+        "password": "QQ5f1oawh_z_FSk",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "69dc2551-1b4b-4404-8fce-c5a16fe3a66f",
+        "username": "TuanChau31",
+        "password": "2V5l5Ut6kITDrdI",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "450ef70c-267e-4162-9dad-85046baeeea5",
+        "username": "HoNam_Trinh7",
+        "password": "OaKPDYcaPL3essc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "654c26f2-684a-4ada-80fa-9423671d3722",
+        "username": "QuocQuan39",
+        "password": "yaZc394AV2xOeqk",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d9c895ef-525f-4063-b48a-b527d53abcd5",
+        "username": "BuuChuong63",
+        "password": "dV2GYmZZfyKJ6Td",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c3390155-d4ac-44d4-9a36-feace07e2f26",
+        "username": "DanhVan20",
+        "password": "XB7TM7saAKywKG7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7f1a1528-95af-4f51-bd40-c388cd0ec842",
+        "username": "NguyenHanh2",
+        "password": "vc7Kv4BSJdn09GI",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "95526992-6100-4382-900c-f1140c91c560",
+        "username": "Xuanxanh.7ko5",
+        "password": "ysaJ_nPkXQAeKx9",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6f1ce590-0e03-4add-99b0-cea4dec5931a",
+        "username": "ChinhThuan.Le",
+        "password": "wW5RNmSrLrfY0fW",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "15fdd842-a9bf-4fbe-91c1-2b75ec8b9df7",
+        "username": "HuuTrung_Truong12",
+        "password": "508j0TWeH89kR6l",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "649c34a7-fbfe-464d-a45c-e48c41df2b64",
+        "username": "ThuHa_To68",
+        "password": "7QtU6uz9qGUo5fS",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "156d9ec2-5113-42e3-b7df-dbb694559fae",
+        "username": "KimThanh_7koan88",
+        "password": "JyQTby32o0dqPcu",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "d6fac43c-352b-452c-b7b6-af1409ada02e",
+        "username": "KimMai35",
+        "password": "q10OEpkeKR0B8fo",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a58a5ead-e5ea-4850-8200-caf0b4176e27",
+        "username": "GiangTien.Ngo",
+        "password": "Rh9crCdYy3OM5IB",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "871c0b34-78e8-4550-afcc-ec7beb29bb36",
+        "username": "ThuanPhuong.Phan",
+        "password": "rTQwVtKkYS7L9he",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2a54ada6-66ca-4afe-9f41-7b18e703eb74",
+        "username": "AnKhang98",
+        "password": "QyXKz0ELCBkW42a",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "819d2839-d058-4cec-8e11-2b8a2da55249",
+        "username": "HaThanh_Bui46",
+        "password": "ZfOoRAxpmQl5Bjy",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e1906318-8d3e-44e8-85ec-d029e8ad4c7d",
+        "username": "TrungChinh_Mai85",
+        "password": "uKnyOPrP67UXjph",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "aaa08a1d-783f-45e8-a7e9-ee91e4da0bde",
+        "username": "KhacTuan12",
+        "password": "1kvvq2qe5YGdMXi",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "26b23bff-1f8a-46b1-ab8b-67e8fd00068f",
+        "username": "NiemNhien.Pham17",
+        "password": "LqAqiPKLaMrCH80",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fdade1dc-9f0a-430a-9488-ddc6f4bb231b",
+        "username": "MyKieu_Tang49",
+        "password": "bgatz3jp8rAjJNc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0bc62d58-95d3-448d-a004-4dd7e989b666",
+        "username": "QuangNhan11",
+        "password": "T3pzko7w5PV0upe",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "744d6a7d-081d-4418-9d36-0e9c37a9c762",
+        "username": "TruongKy_Mai95",
+        "password": "_srLMa_fRWfX0YL",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "f71217c8-c469-4ace-9f17-59063bf34d5c",
+        "username": "TatHieu36",
+        "password": "viyRJhzhwHh7pX7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d305e80e-fa64-4daf-8eef-8300fb03f162",
+        "username": "HongHoa.Hoang84",
+        "password": "wcCW3vQ31u008p3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cc3782a8-4ad4-4327-9d05-65d0e085ec18",
+        "username": "ThienAn_Truong10",
+        "password": "ZW4sOjDNDg8lYVn",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "96bd3d71-1eae-4b49-8e63-8722e5b59f39",
+        "username": "DieuNuong58",
+        "password": "8xQV0lovXT1Kho3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4fac1ab3-2587-44c7-b1d7-dfd87b79337c",
+        "username": "ThuongNghi89",
+        "password": "8dAulyv7ysYthTt",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "34a9baa1-8896-4b78-864f-fc5d99df97b7",
+        "username": "KhanhVy_Ha",
+        "password": "aKTmWU92WlwS4QM",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "aa03381b-2e48-411a-be01-e7ffd6b38103",
+        "username": "MinhKiet.7koan74",
+        "password": "0oNVTdcxtiJWDyc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "91620d0d-6304-467e-8a0f-3220fb4d1c48",
+        "username": "VietDuong_Duong34",
+        "password": "5C5cDTmhgrJwfhB",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f3ff3d7f-b538-4156-a4c2-e65097d6f03c",
+        "username": "NguyetHong_Ha24",
+        "password": "3nN3LDLkt58FmW8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "11dbad1f-7738-4cf8-bf67-898020ff9081",
+        "username": "VanMinh97",
+        "password": "623igsgjCRPUbPv",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dc152d03-8b1c-426e-b071-ace7d7003d0b",
+        "username": "AnhDuy2",
+        "password": "C_aBG2SMnYDnQmh",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "583bb68e-acbd-4a6e-b992-ed629f80842b",
+        "username": "XuanLoan.Nguyen",
+        "password": "pW9p54QZwg0beIY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c99c223f-d27f-4b6b-9190-40dfb512a9f3",
+        "username": "VanDu.Le59",
+        "password": "0KXAvQuHap4OZrr",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0fa90978-fab1-411c-8535-4ad9645eb3e6",
+        "username": "KhoiNguyen.7kang",
+        "password": "IEsFKQpHiULW6tB",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1827b05e-d8da-4ca3-bb64-73a256ef0717",
+        "username": "HongBachThao.Ly",
+        "password": "elDiXO7xkXZAdZz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "421ca078-58d4-4a5b-91a0-7ad026e2f79d",
+        "username": "NguyenThao_Pham32",
+        "password": "Rzy4lFo6AQsRHzk",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ed0275d4-2f63-4a0d-b456-bdd46289a5ee",
+        "username": "MongTuyen_Pham40",
+        "password": "tFqXz_vo8vfcBhX",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5fe2d249-3225-427c-bf22-002b7c57eeef",
+        "username": "TrucLam64",
+        "password": "xRwKlCnbeEn4OVK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3819a299-2181-46ab-9612-5e108c2f2f07",
+        "username": "KimTuyen.Bui",
+        "password": "v9xzAjD4Qja3WRX",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6dbcedb8-6241-44ac-8ce3-e512bdbc374f",
+        "username": "NguyenKhoi_Vu6",
+        "password": "tWfiOulxK6xdboW",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "aacf8efd-ada6-404d-a666-70fe0231653f",
+        "username": "CamTu27",
+        "password": "cargiOSzhZCQ5dX",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6a1b25f7-5c40-43d4-89e8-b17d2f664b1d",
+        "username": "ThuyLien_7ko",
+        "password": "bC0Np4IoPY7oJFP",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6c055150-8199-4a5c-861d-caad9a1e4aeb",
+        "username": "GiaHan.To91",
+        "password": "jQiNzoCZVYIwGB2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e8b28937-fd99-48c7-ba67-1d1a9c80738e",
+        "username": "AnhTho_Tran95",
+        "password": "Gb4qT5_Jlz1IOyE",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d3404819-610d-4748-81c6-09e32ea0f426",
+        "username": "BaThanh.To",
+        "password": "FevEUdbXrVGyykU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5f3545ca-4296-4d20-9e92-1fc83e703cb7",
+        "username": "HoangNguyen_Duong11",
+        "password": "BVsd6yF8pIwnIv9",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e01d1e09-ef52-484f-adc2-b8e412d9776b",
+        "username": "TrongVinh_Trinh",
+        "password": "dNl8M3Wm2_98eL0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "16a127df-4fea-4f15-94ca-7a36928eb9c6",
+        "username": "7kucQuang.Pham24",
+        "password": "nvrnlazxyHW18Te",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f647fdbe-37a1-431b-8b21-c075c011a971",
+        "username": "KhanhNgoc.Phan",
+        "password": "nRIF0hXJ1eDFYLt",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "a883e467-c623-4683-a43e-5564c80ffd01",
+        "username": "ThePhuong_Tran48",
+        "password": "6weRzggS3oBvP4m",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "10e6d52a-86e1-45bc-843d-2127c75db05c",
+        "username": "SonCa39",
+        "password": "0RwbYlr1T3oFhCF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ce9c6de6-3886-4ff4-bd83-1d23a2e947eb",
+        "username": "TuongLan74",
+        "password": "dnY081WtHPldXIN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "58364a91-c5fd-492a-bc1d-e04723227083",
+        "username": "TuanSy.Nguyen",
+        "password": "D7C_95oQKEUJCBg",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a5821fec-c061-40cd-9bae-28f07d1b6563",
+        "username": "HuynhAnh.Mai43",
+        "password": "e2qio5W8zy3VNGf",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fcf7c04c-c171-465e-a22d-8d9e60c8becc",
+        "username": "MongNguyet.Lam",
+        "password": "TAidtzC7OMswPl3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7ba64aea-f775-49e5-b20a-3d12df493f7a",
+        "username": "ThanhAn.Ly",
+        "password": "oaBPRBaB9EprdV2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "00942f0d-336d-4f83-a841-3549f5186482",
+        "username": "BaoTram.Ho",
+        "password": "wB0VvklpbLTwTJz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3c44e184-0e43-4e58-a5ed-9f019c09e154",
+        "username": "VinhDieu.Phan32",
+        "password": "uzmJ0LjnLwAPS2E",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "aea2c4f2-ba14-488d-aae1-eace3bf3291a",
+        "username": "BaoHan.7ko93",
+        "password": "8ZBL6bhK7loIIj6",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "23615d89-cc08-4d02-a317-22544eb106d5",
+        "username": "DiemThao.Phan",
+        "password": "t1pkqxTTWZytc70",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "2172be0f-1c8d-4829-934d-6c764709b908",
+        "username": "ChanHung96",
+        "password": "wl7Y4JbFndatmBK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8f2605ac-fad1-457d-8aa3-ef15ed025f78",
+        "username": "GiaoKieu.Lam34",
+        "password": "uSq1bX0hnSJ0kuM",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ee2f872b-6661-4657-9ea2-1df9cb904085",
+        "username": "MinhThuy.Phan",
+        "password": "Prtli3cBHZYP8zA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8045a789-bcb6-4970-9c4c-b6eac756a780",
+        "username": "QuocTrung33",
+        "password": "t6mzLnb4qw30YGc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dd9bd525-c09e-4c60-be2d-1c3a3d1c62f2",
+        "username": "HoangLam.Phung",
+        "password": "uuGvPlJ4m8gpes2",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "793a26c6-1653-406e-8ec2-a627cb97eabc",
+        "username": "NgocLai48",
+        "password": "HW1DQZKmIYzPNT5",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cc41a5a7-8fe7-444f-9e93-16ef37763d7b",
+        "username": "ThienLuong35",
+        "password": "3XezVr1UaiB1oY5",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6d83bb33-6b65-450a-91f5-215a639eedbc",
+        "username": "NhaMai11",
+        "password": "hJUqh84JLiXQpni",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "75097ac3-4346-48ba-af10-ccfcd3c3a5c0",
+        "username": "AnhThu_Ly62",
+        "password": "uAwDkLtK4AsP5rR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0769b9ec-3154-4b52-af94-2fa12a71e19e",
+        "username": "XuanNam.7kang60",
+        "password": "cu6_syJsphMiCqj",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a9c77f34-d670-4121-aa51-cf2574fc36e0",
+        "username": "VanNgoc36",
+        "password": "rR_E5uiZMj3Nvmk",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "b9ef01fb-ebff-4ba3-8656-2ac6bef79d1a",
+        "username": "KienBinh_To",
+        "password": "DRf0glFuRXToiwr",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d0ae7ccf-39ed-49c9-ab60-f3a17afcc82d",
+        "username": "7kangAn_7ko",
+        "password": "jqe2nYfVrnjPbYz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e2c4940d-4962-4ecd-8806-2c6e437f94d0",
+        "username": "ThienTuyen.Hoang24",
+        "password": "2bEZFFdgsvGbQv7",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "73818130-bd1d-4402-b8b8-3511aec716e6",
+        "username": "BaoBinh.Vu",
+        "password": "AZWZLgnV7FwUGuF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "05eab029-45f4-4b34-b729-5a466b4bcf96",
+        "username": "QuangHa22",
+        "password": "diueskk4tl_3zAC",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "35c45267-7e37-4f66-9fa3-6f81770223df",
+        "username": "HuuChien54",
+        "password": "sqMzy3oKeJpCRUh",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "40d8cdec-34ed-4484-b86e-46b2372a43fb",
+        "username": "BinhDan_Tran",
+        "password": "r_kIKoemXj6uSiT",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4ddeca7f-a68f-44a7-bde0-d547361e30ff",
+        "username": "ThuYen_7kinh",
+        "password": "Ic8jKthTO5Euu0P",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a2ebfb52-9641-4efe-9f79-03b2d00448aa",
+        "username": "NgocHanh78",
+        "password": "YJoc8H_hJJIqu3f",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "af89e276-ddcc-47aa-95bd-d6250e8342b1",
+        "username": "ThuanToan83",
+        "password": "rmkYxTJPJWyp2RW",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d1770c08-e564-40a8-ae75-999c3840267b",
+        "username": "QuynhLam18",
+        "password": "JQOIrpftyHu1rQN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "51c507ea-393a-45f6-92b7-f0363e8170b7",
+        "username": "7kanThanh53",
+        "password": "83GXVgGR6T5T5QU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "24f4dc4a-7cfe-4fc8-bb55-7428a82fd19b",
+        "username": "GiangSon_7kang",
+        "password": "I46VMpT6h_fuxiq",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "96e2ba0a-7778-4325-8951-cf6b38f1edcd",
+        "username": "TrungHieu.Phan72",
+        "password": "0fpifvOv7HuYpzc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bb23fd66-8cbe-42ce-aed4-a861fb240105",
+        "username": "MongVi.Vuong",
+        "password": "hjNuC31Dax4QrVY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "88850cf3-6cab-4b2d-9800-1043fe7d695f",
+        "username": "MinhThuan.7kinh88",
+        "password": "fg9jdlhqO9aU7Ht",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "5bb2c059-1104-4026-8daa-7375798d1108",
+        "username": "NgocLinh50",
+        "password": "nnfAuNXNMUBAQAU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cbd6164c-f942-4b70-ad60-0f7a914c0b76",
+        "username": "DanhThanh.To84",
+        "password": "xtImimRB1hsMLbJ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a21b7ec0-2286-4bf2-b4c5-0970e6a5f334",
+        "username": "VietThang.Ho",
+        "password": "63QFeG1ieQSAROL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7ac38d21-6aac-4357-8d8c-a0e5abb883d1",
+        "username": "TruongPhat99",
+        "password": "_DxvbR_Yq5rvNNx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bfc9b0ab-f109-4b05-a317-d5a9e0940715",
+        "username": "YenTram34",
+        "password": "W5GZkh4zb9HKK1t",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8abd7160-f8bc-41ee-ab73-f57d73df03f0",
+        "username": "CamYen.Truong42",
+        "password": "0ZmPamS4ShNoqUb",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "038dbfcb-cd65-4248-9263-600c9d37899c",
+        "username": "KimKhuyen_Truong58",
+        "password": "SMBjP5YqopE6EPR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "670b5461-eaa4-43d8-89ca-9cd177e68986",
+        "username": "DanhVan_Lam",
+        "password": "XT6xGrqdlnAyhl_",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "86d4822e-0d52-45c5-a380-9b76a4d0d15b",
+        "username": "LeNhi.7kao",
+        "password": "QybnXDfhZkXbOYV",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "17ebdfa4-1c0c-4d8d-83b9-180dc680dc7e",
+        "username": "TuanTai_7ko6",
+        "password": "fTtMF3484NKZF6d",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "aac6fee0-4fc3-4c97-b3f5-800faabd982a",
+        "username": "TrucPhuong67",
+        "password": "RqCTZLUA_LSENWa",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "82d290b6-ee88-4933-84c0-fe0067e0a615",
+        "username": "MinhHanh50",
+        "password": "tCwRyuRSogMtYe7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8609fc7e-897f-409c-bc0d-cb5573d8affe",
+        "username": "BachKim.Tang",
+        "password": "1T2zVttMREkLhQL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0befffb0-cf9f-4ed6-abd6-9cf096230b15",
+        "username": "QuangThong23",
+        "password": "GXemtfy3uxeKKAC",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f93b263a-8f51-411b-a76f-a68aff95083b",
+        "username": "AiThy_Ha",
+        "password": "HFNLUSKoWyODMVe",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f372ff04-4568-4cb6-9866-7c4e1864697d",
+        "username": "HongLiem.7kinh57",
+        "password": "CA0VSRpfRVig7ON",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0335233e-3176-4e45-9800-5571aab79c83",
+        "username": "7kucHoa_Ngo10",
+        "password": "sFEAP3LFxc9NspL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f907ec86-a960-406f-a3d7-aac474327363",
+        "username": "TamTrang.Tang",
+        "password": "MYWVFoI6SbuTTiy",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "af5e9acc-4850-47a1-88bb-933c284e06cf",
+        "username": "TuongVinh17",
+        "password": "jitMYFQa7C7yyCz",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "528944e7-2c4b-4ff3-b8ad-7a26ca517281",
+        "username": "KhacViet.Ngo",
+        "password": "bi1taDCkeUcSES4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "05e8933d-566d-4953-b576-1a889f5b0c84",
+        "username": "HuuBinh_Nguyen",
+        "password": "XNC9yRZ_LRP_tHd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b00bd98e-ae0c-46e5-9da5-925bb20f09d4",
+        "username": "NhaTrang94",
+        "password": "xBQScphmi_I0NPP",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "70daf961-7a00-4f6a-9dbd-2e5765762bd5",
+        "username": "NgocBich40",
+        "password": "KhaoPzeC7ADRKej",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bc2c67d5-84d5-4aa9-9e64-c786023015bb",
+        "username": "HuongNhi_Phan20",
+        "password": "3DrW5foTBEpIedO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bd726821-3617-4d4e-b687-2b64c7fa2fe9",
+        "username": "MinhHang.7kang",
+        "password": "H_OXoT9W9Q4x57s",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "e6c64a46-3f07-459f-b4df-b1eb91a2a5ad",
+        "username": "LamHa.Vu21",
+        "password": "_nS9EYwQ_D9dbg6",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "64ebbe44-c9d9-468b-89d6-c1d53044b2c6",
+        "username": "Xuanxanh67",
+        "password": "msBGJ6FBOtzAVm8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3291d697-8df7-4fe6-8eae-22d2f2146291",
+        "username": "TungMinh_7kao95",
+        "password": "0X5Dm2OCpq28HPM",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c00253d7-7fb9-4e96-82b4-bfe7d795f5ab",
+        "username": "ThuyMien.Hoang71",
+        "password": "74ktcHeiLMb4mPu",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "6e2c7bb5-9cab-4365-b61a-4b9d55656a20",
+        "username": "ThuyLien.Ho39",
+        "password": "oFRhWnHPnE0T7fd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "78460b12-5e59-432a-bbce-2afd9d5d03a1",
+        "username": "TrucLam90",
+        "password": "w5UIM6txEdQuV_P",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "621d4bd2-32ae-4aae-8ddb-9d480e8008a5",
+        "username": "Hai7kang17",
+        "password": "jqZXhO0RbRHQ6vs",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4a064223-a384-4f1a-ba71-5c2ecd3e05ef",
+        "username": "ChiThanh25",
+        "password": "1TIuGYqSZSxOlbV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5b013d76-328b-4d44-9125-807a6979b89e",
+        "username": "QuocTien.Duong",
+        "password": "ZT42n1Y5monfjlK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "217b912c-8223-4bc5-a5dc-1798e41bdf2b",
+        "username": "MinhHuyen.Duong69",
+        "password": "BGqWl3Jel88NRTG",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1c391b22-64b1-4e10-bbeb-775807e4c6f4",
+        "username": "7kaiHanh.7kinh52",
+        "password": "wqVp9yo56AdDkJK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a67c6a3b-46cc-408b-84a7-6bd9a0fde56b",
+        "username": "LienPhuong_Mai",
+        "password": "nswvLRVq3osY18W",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "96f0bcd7-74e9-4df3-b636-795b941898df",
+        "username": "ThienLuan13",
+        "password": "mn25DnIMBWmHI1Y",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9426c399-ae16-4197-83cf-c70acdd9644a",
+        "username": "QueLam.Vu5",
+        "password": "o8il4nvUNRJYBG4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "55efb81f-5ba3-4d4e-843b-aee3b39d713e",
+        "username": "ThuyLinh.Hoang55",
+        "password": "a7UhWM0Hws9NEbh",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "8714f245-2f00-4f07-aa2f-32904aae58a3",
+        "username": "NgocHang.7kang",
+        "password": "wm9hqhTDCK8X9Q7",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "410f6d35-6ff9-4c29-9514-d2ef1b40c54a",
+        "username": "ThienTam38",
+        "password": "RKesSEgnyrTTFoI",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8ddb9021-6553-4bf5-be6d-599d95b86389",
+        "username": "ChiThanh.Tran",
+        "password": "Iss191gtJtZmHcz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dfba1afd-3c24-4bf0-96b3-d9f2cc8bf5b3",
+        "username": "KhanhVan31",
+        "password": "5wDx_wKKK3LO0_F",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "00b6f10a-79de-4579-abe9-754840c72e7f",
+        "username": "ThuyMi_7kang",
+        "password": "igv0ToBVblpVB_8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5a3b243e-7893-4241-9c7c-669007c10cea",
+        "username": "ThuThuy91",
+        "password": "BO4umtGYBGodg0l",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "690b8daa-76f9-4690-a243-b000a7978a8e",
+        "username": "ChuanKhoa_Nguyen",
+        "password": "8rIvTsnNPc1KwUR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9faa7aec-71cb-4382-99fc-900f51673ffa",
+        "username": "DuyKhang_Ly",
+        "password": "ynlNRnyzXNrfttq",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "91ab0730-9c95-4c46-a8a2-dcebdb735875",
+        "username": "ThienTrang_Pham52",
+        "password": "jUKGWO8kAb2PHdk",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "828ba346-bce9-4f5f-9229-d69e4253de78",
+        "username": "BichThoa.Mai",
+        "password": "QBH52pFP8faYLO_",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "60c5a485-7426-4fa6-8926-38eed35541b1",
+        "username": "TrucLy45",
+        "password": "djm6kjRmwqgqQPp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a29bdbb4-ec71-4fae-88a8-763c783ecb46",
+        "username": "ToNga53",
+        "password": "sJtdXdsBoi33s6N",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8c976421-62ff-4d45-843e-2ebd8d5c0268",
+        "username": "TanDung96",
+        "password": "L94wB6sY9f0RfmL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "eb6bd513-27f2-4871-bf04-29bd0949a8a7",
+        "username": "ThuyMy.Tran",
+        "password": "T_quMiPhA3W91lA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2851d93a-88cd-4e45-898d-7a2d8803a70e",
+        "username": "MinhTri.Phan",
+        "password": "dRDUwY8bqaM8Y3W",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "4731b1d9-cbc9-48b2-aad2-02c7c3e4d78b",
+        "username": "NgocQuyen18",
+        "password": "nVfuGdoeA8UFGTP",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cc44f0e8-c88c-4814-9f76-4ec3e2ad20f0",
+        "username": "TheTuong.Nguyen",
+        "password": "5L4xvKLGZQcu4cF",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "08f6a625-fa5f-4f45-90a4-4b22f85b8137",
+        "username": "NhaHuong46",
+        "password": "ACnJd_3dzDN0yGo",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "492e9086-4bcc-4055-9f1b-c9bdbec2cebf",
+        "username": "HaThanh.Vuong13",
+        "password": "2LWWOSDIIhv7zfa",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f0e2c61c-1048-42b3-a474-f85227067461",
+        "username": "NamHung.7kinh70",
+        "password": "COQ9DXmowEgOgtl",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f76d6426-ab39-423a-bd04-8af163d94493",
+        "username": "ThucKhue_Vu",
+        "password": "ajrrkPtiMoXbskH",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "aa5d8e27-d6aa-4f1b-afd8-9b3238c88a72",
+        "username": "KimThinh93",
+        "password": "hr8B4Qt45C4GJIK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f738ba6c-04f3-4b45-afb7-ecc8bceee785",
+        "username": "QuangThang4",
+        "password": "cbyuLx8TDbBMCQU",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "783872af-182c-4f75-b6cc-19f6988a00ed",
+        "username": "ThyKhanh.Ha",
+        "password": "lkJBMgj3MAMsqiA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9d9d531a-0c2b-40f8-ba4c-a381b48d1685",
+        "username": "HoaMi_Duong",
+        "password": "lrbU_ny_jAlMZ5g",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "77ed831a-847b-4101-bb6c-31c10385497b",
+        "username": "ThuYen_Hoang49",
+        "password": "RrBQV3z2yPp24HD",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "1ff279cd-d2f1-49bb-8736-f673a891b503",
+        "username": "MyLan96",
+        "password": "uAmtJdv0azCtzCx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "df68b3f4-dec9-4057-ae5e-47f5d4b3da4b",
+        "username": "QuangThang.Trinh",
+        "password": "VPnqEkoGOxPZGie",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "94e411f0-ef8c-4272-a951-12136ccfdd36",
+        "username": "ThanhTrung_Hoang76",
+        "password": "wsl052yDmaj5ILT",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1010373d-b1bb-485e-a5f1-5a12536ec526",
+        "username": "NgocTho16",
+        "password": "XwVRyjm2BoMgK8G",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8edb054e-7c0d-4ebd-b00a-29aa95e37abe",
+        "username": "ThanhVu_Lam91",
+        "password": "Hj75D_WT_Bpmgpf",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ee8c58ee-722f-4e47-87b7-7db7c4d09c54",
+        "username": "ChiDung_Nguyen88",
+        "password": "t4uJMrYJBoA3vUz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7d4d4a84-ae7f-4b7e-adfc-98ba84d5f782",
+        "username": "QuynhLam29",
+        "password": "aTmkvHccmQdFA_Y",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5f07e55c-8d8e-4bd7-8ed7-e8a71ce60014",
+        "username": "NgocTuyet89",
+        "password": "vZ7l6DHkaJPni9l",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ffa480f8-a970-479f-a5b7-8788f7e488a1",
+        "username": "PhuongNam88",
+        "password": "qYLKMLQgJLHXxCn",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "36702081-0df8-4615-aa60-cdcce2dde910",
+        "username": "DuyThanh.Ngo",
+        "password": "UeShLPAcTyarX1n",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6b253b68-dda1-4379-ba03-e479ab852114",
+        "username": "XuanMai.7koan40",
+        "password": "C35zVTwF1FdyMs9",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c02d194e-7b56-42d1-9162-c19e98b49360",
+        "username": "HiepHao.Duong",
+        "password": "x4FFQecZsouD52F",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8fd05d7a-2345-41d5-94d6-b2d286f93619",
+        "username": "PhuongLoan9",
+        "password": "HdAdtZjfBH9zZWB",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6cb3d629-187b-41f8-95e5-6ddb9211be2d",
+        "username": "QuynhAnh.7kang28",
+        "password": "F_VnE7b1fjp85M5",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "48506c1e-a3e2-49ff-b8e3-4525b61a70ef",
+        "username": "ThanhTin_7kinh46",
+        "password": "YyLz0PLy86MVbvA",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5c5a5c35-85d6-46c5-b24c-87c79ae75b04",
+        "username": "PhuongLien.Le68",
+        "password": "_yEflt2OhstlUZx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "50494c2c-aa81-4a65-8931-d268f696874e",
+        "username": "KhanhQuyen_Lam7",
+        "password": "bEw0dh5HbT4J_CL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5a47f014-a359-4a77-8728-8f493d3e2d79",
+        "username": "TrungLuc.Trinh8",
+        "password": "Lx0imaZLYxmsRN7",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "316d2661-1419-4b6c-a507-9a6824405049",
+        "username": "ThuNga_7kang",
+        "password": "Cabv78P4gqQ4QWc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "40309cdb-0074-481e-bc34-83eb683304d7",
+        "username": "NgocTu32",
+        "password": "V9yMegzbC_d6boY",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "40d211fe-18c8-40be-b4d6-689083286504",
+        "username": "HoangThai.Duong",
+        "password": "H7ScdsSe0y662nt",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dd4c7f45-ad69-4fde-a88a-1778e2b35f0e",
+        "username": "ThangLong73",
+        "password": "CSn8OOMel3JvxmN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "800c0867-e1e0-4719-96a9-636399bb9207",
+        "username": "BichTram21",
+        "password": "6lKQb8i6qQueC63",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0a415474-f954-4563-b602-f6d9037421da",
+        "username": "XuanHoa.7ko41",
+        "password": "mYdhle1l0b3MoAi",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "ae59c897-4941-4cdd-88b6-da2580f8fa14",
+        "username": "HaiSon_Hoang78",
+        "password": "AzSmYBIw5D4jBIQ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "afebafcd-76c7-4b6f-9cdd-c4ea22ce0bfb",
+        "username": "HongKhue14",
+        "password": "UUIMTq22bqsEDhT",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "96c6968a-aace-416c-9a42-13e63b453d8b",
+        "username": "NgocKhanh8",
+        "password": "BTzi7x8MbXS59sO",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "e14f80d1-bf59-4c70-a3f3-8944714e0986",
+        "username": "ThanhTu.Hoang",
+        "password": "naHAT6nTboakNE0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2bb9a07e-8d16-474b-836b-63894badaea3",
+        "username": "KhanhChi72",
+        "password": "3HwDp7R4vQ9hUa4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0c6d94c3-cd41-4cb5-8433-6c63f5f87bb8",
+        "username": "LamDung.Ly59",
+        "password": "dJNkPg9j5yKh2zE",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "629294b8-8901-485d-bfbb-1ccfb195052b",
+        "username": "VanHuong.Tang",
+        "password": "W_APhsoLrd2jPc8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7fc2fc92-794b-48ed-a07a-7b3ea9ffa3bf",
+        "username": "BaoLong_Tran51",
+        "password": "BVSneZyPSFyM_i4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4091dbb3-428e-4cab-85db-fd698edc7142",
+        "username": "LamGiang.7kinh84",
+        "password": "klIn2OPqj04B0cg",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "50f606a9-eae8-4ee9-ac4b-116e859ee9d1",
+        "username": "HanLam.Truong92",
+        "password": "wC6sn_OxCuvd9OO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "21b9fe7c-1733-40b5-8fe9-0bcb41c6b8ce",
+        "username": "BaLong80",
+        "password": "YM7VNLEsmiO9GPC",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "15731783-28d0-4d44-ba7e-e28c11a2eb89",
+        "username": "ThongTue_Ho98",
+        "password": "FA4I6BWJrjVo5j3",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "925cd206-fd52-4095-b0c4-8503fe5b3f5c",
+        "username": "ThienTri76",
+        "password": "mdwchs3jGays4FD",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fa71f449-422a-4a60-b708-af1b8a635471",
+        "username": "BichHau75",
+        "password": "OaIQWlfX33Yw5jO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b38baed8-db62-40a7-a03a-3d0aea855b9c",
+        "username": "TuyetThanh.Pham",
+        "password": "p7L9DOVY6gON2S9",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "67c8d412-d755-4ea1-9b51-f4c15d77de33",
+        "username": "Tam7kan88",
+        "password": "Df0e_HrxOlIXBcp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "635fe8ee-53e1-4742-aa2b-e655ad299b9e",
+        "username": "KhacTrong7",
+        "password": "7l_TX0w7SmZdaVg",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7b07d94b-8e15-4789-a8f0-0b8e52c2db4d",
+        "username": "ThienKhiem58",
+        "password": "KICnWVxhv8AfTCK",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "6edafdd2-49c1-423b-a071-cd4b3e17e06b",
+        "username": "TrienSinh68",
+        "password": "S_IW2vRC2q4TgGp",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "fa6c16ac-72bc-48e8-895a-a290e85ae8a0",
+        "username": "DanhVan.7kang31",
+        "password": "VJVdrtyUPybDIK4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "2adce465-d38b-4955-82e7-a11e9f6e5b1a",
+        "username": "ThuyHien67",
+        "password": "VZhLC9_kDZcP_l1",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "624aaa51-5b5e-40a2-8fc4-f98d184d6d94",
+        "username": "NgocLy97",
+        "password": "FFqHnRQR2N4POV5",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "dfa47163-8b7a-4249-8b14-42172cf78894",
+        "username": "PhiNhan_Ly",
+        "password": "uOlZvLo_Sw659fa",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1180de1b-5de0-4db5-970e-6b3e52b40291",
+        "username": "BichNga_Hoang90",
+        "password": "z11Kzft4XW0Vc54",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5ffffcf0-9504-4ec3-82a4-4e59c513effe",
+        "username": "ThuyVan.Vuong79",
+        "password": "Oe2zBt9ystf2AKx",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "6d7ead70-7d47-4d2e-afc5-64fa26a165e4",
+        "username": "MinhHien51",
+        "password": "lh9R068gffw5jGf",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "10af5ab1-f4ce-41e0-9723-49105f366fc0",
+        "username": "HuuTai.Nguyen80",
+        "password": "A8A7UHyWQWJRg4D",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7f0288a5-fe3d-42b7-8c0c-36accd1544f1",
+        "username": "MinhToan_7kang",
+        "password": "7DJqjgrcw35IZ7w",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c0c13185-b7bb-4d49-9f3b-19d210801a94",
+        "username": "PhiNhan_Ly13",
+        "password": "XFSDnsLojUOCEGk",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "d76dec04-e065-4909-b495-a4a21778dedc",
+        "username": "ThuyUyen98",
+        "password": "mw7tlDCkJG5HBAu",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "156384e1-0d2b-4a66-9355-c4744b6bfc99",
+        "username": "AnhXuan_7koan",
+        "password": "mmeMEFXywRzFdGq",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1206d445-9f84-46e0-a451-4c6d0de43a06",
+        "username": "ThanhAn68",
+        "password": "PpL7SfNIOP43jFL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "32a39c73-1721-45ee-a702-99ea744e01ee",
+        "username": "GiaQuynh69",
+        "password": "_5Ro4_GucnfR3RW",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8ab6d51e-cc94-4d6e-a573-0b80acf43041",
+        "username": "BaoTran.Mai3",
+        "password": "mWjt4IVn2xCMeqI",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a77f9661-0552-4b6c-9e06-9a3e2028eef1",
+        "username": "QuangTai_Nguyen42",
+        "password": "KlQwoSJJYCQSYs5",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c139912d-89f6-42bd-a595-5706f3d34775",
+        "username": "HaiVan_To",
+        "password": "JDgF0LqukHKeRqH",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "7a80c571-4384-4871-b3ba-e60930bf7b73",
+        "username": "ThoiNhiem.7ko10",
+        "password": "ijTOQk26RUlK0kX",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "3b1de0a3-40a7-4614-a29a-4444ddba3fcb",
+        "username": "Bao7kinh16",
+        "password": "UxWh8ObkepLAGeS",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b6934469-ddbc-44c6-a634-ba3fa3d19f8b",
+        "username": "CongTuan_7kinh21",
+        "password": "plvRccU5jo1nSto",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "83ccc23c-99f0-4ac3-a451-61e0f98a1bc2",
+        "username": "ThienTinh21",
+        "password": "ljTr280x0dSBh4h",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4ded3293-94e6-4c74-a256-6596c84c5062",
+        "username": "UyenMy21",
+        "password": "fPypz5_nLycr7_0",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "ec0d3a1d-6a8d-4aac-a3c5-fdb3121f100b",
+        "username": "ChanPhong95",
+        "password": "l1EbHCE_bolIHgr",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "9afa2445-a739-4884-82d2-f4bdfe6ce670",
+        "username": "VietNga_7kao",
+        "password": "ZBVKQnY6Brw6gcd",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "82ef111e-3d98-45a7-9a91-170d5a01404e",
+        "username": "HongPhat20",
+        "password": "uK7yceZshWKVNKe",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c009f9cc-b789-40ae-83c1-78c10d8f59c0",
+        "username": "CaoSi96",
+        "password": "7UYZgbwq_tdB7EV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4d7364ad-a586-40d3-a251-56f34a16fbbc",
+        "username": "ThanhNga_Ly",
+        "password": "5vKElu2VW6OOGGH",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1e092467-bdfa-4530-bc5d-e53e3731c978",
+        "username": "MinhAnh_7kang",
+        "password": "wZ5d7ZO5mY253Ar",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "11f36f12-a03e-446b-9aba-b7c82841ca9a",
+        "username": "KimSon_Lam",
+        "password": "BJDq4BUHad16CfM",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "5f59bf8f-43e1-4136-9a5e-8ea515b7fa28",
+        "username": "KienVan_Truong76",
+        "password": "RiQn9QRcPgR1TDe",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "c610ab80-58b4-4e58-8b18-12d51eb96808",
+        "username": "NhuHao_Ho",
+        "password": "EtVZz5v_QlJ701E",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "39c48bf1-bc3c-47ee-8b5d-0a71f3390bd6",
+        "username": "ThienGiang.Pham",
+        "password": "rk8DEaCxw_4fJ1d",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "72a659be-f8af-494f-8147-c75254383fe5",
+        "username": "7kongNguyen.Phan",
+        "password": "em0hhHqUuj1CFFC",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e3061e0c-7e01-457b-aa9f-1037b5165a89",
+        "username": "MinhNhi18",
+        "password": "_CiFVp4nmY4mLtG",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "963f8db7-97f7-4f08-b72e-81e9427a1aeb",
+        "username": "NgocTuyet_Phung",
+        "password": "J4aUSswdoNEoshq",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cffb2bac-2ac6-4c2e-a05c-b50e642b621c",
+        "username": "ThanhKien26",
+        "password": "UCrJUPq6QWKk6Gq",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e0cbc701-b2cc-4e97-bc27-5a1083a9bbc1",
+        "username": "QueAnh13",
+        "password": "aXTsXO195Oqub10",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "cc21973b-2ade-4a92-9f70-1d41cb12b4d5",
+        "username": "TrungHai41",
+        "password": "svKrugnhDizA3jc",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "62fc4409-094a-4f40-8407-2761a233d3f6",
+        "username": "KimPhu18",
+        "password": "NhDVCUkFmUDFItV",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "d30b4533-7f60-4e2b-bbaf-1e309032599e",
+        "username": "TatHieu_Ha",
+        "password": "VCPLO8RgHllKkEO",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0306463d-e704-4403-8345-59550e63d28b",
+        "username": "MinhKhoi.Phan43",
+        "password": "DNGasny5TnvdjvA",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "ebb1b131-81ea-4223-a1ee-5076afe1472a",
+        "username": "Thien7kuc_Trinh",
+        "password": "KkOeK2O3oZkcvPi",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "b0f8c624-d723-492d-84d8-80ddaa168ba7",
+        "username": "ToanThang59",
+        "password": "dhegvLp6xYdX7L_",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "f7624847-cb74-4200-8aa5-91d1e24c091a",
+        "username": "KhuongDuy15",
+        "password": "bumeNFxAw2B69r4",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "69f02726-5bf1-448d-aa82-d51f2a19366c",
+        "username": "ThanhQuang_Bui31",
+        "password": "AjpSlcfI3dyKx3S",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e8fc0b56-aedf-4439-9cd5-b038407d5896",
+        "username": "BichThu44",
+        "password": "rQ_onCRsjIE5gIR",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "1e55ddc1-e310-4199-aa08-fe204c1d812c",
+        "username": "YenMy_Truong94",
+        "password": "kGCskbpvHcGBsb8",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "8c3ea5de-17a9-41d0-9138-c8141d2f073d",
+        "username": "ThuTrang.Mai",
+        "password": "NQ68PUufdXSiYb0",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "bdcc3ae8-3e30-4ae9-abd2-73e9906fb22e",
+        "username": "VietKhoi_Phung",
+        "password": "YMiHQdwbyAZskMz",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "a60e245d-3695-472c-9dbf-8163728ad97c",
+        "username": "AnhMai17",
+        "password": "oYzmXkQzDNn4a3a",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "38e10338-ede2-4dca-be24-69bbfd6ed0e6",
+        "username": "7kongNghi.Phung50",
+        "password": "2EqbTx1YLdqehJO",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "1a67337c-245d-4950-bfdb-e353ce7fab5b",
+        "username": "ThaiMinh.Lam",
+        "password": "k9tFJwY8JmAT51p",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "48fed0de-8352-4288-afeb-809e7409e3a7",
+        "username": "ThieuAnh_Duong63",
+        "password": "wxlXVT3Q4LbzdIj",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "119fa1aa-0fea-4838-9570-4e310d8e4023",
+        "username": "QuocAnh27",
+        "password": "36hTxzVe2LqYhXS",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4218b979-fc6c-48a2-aee5-7ad547491b66",
+        "username": "SongHa_7kao82",
+        "password": "nQ2cSu7MoyyUQa6",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "da7fad0a-f74a-486b-99e4-7c98cd640a8a",
+        "username": "KimTuyet64",
+        "password": "VZmqDO_w4lHsJTL",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "01ef4c5e-b6f7-42ed-9ba4-cb2f35688584",
+        "username": "TungAnh.7koan55",
+        "password": "xD6KSlm341osbpJ",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "91c77148-8c1b-4766-98b9-367392228f77",
+        "username": "BinhYen_Ly92",
+        "password": "i8Ry83hPWZiZXMK",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "4c1df1a3-b25e-4fc5-b2cb-4c501419784c",
+        "username": "TheVinh86",
+        "password": "pYRzcHc0jTobuuw",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "0093a2a0-a7d5-4fda-abc3-4e029be097b6",
+        "username": "ThanhVu.Hoang",
+        "password": "qgzZlosgJkCQTro",
+        "role": "Assembly Point Admin"
+    },
+    {
+        "_id": "886acf40-ff5c-44c9-a3e7-0110af6e34b7",
+        "username": "LeThuy80",
+        "password": "35jYNm7OAjtydGN",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "ee96d913-b1fe-45e5-9333-20486effb06e",
+        "username": "QuangLam89",
+        "password": "lXOK2V5J7JXeo6D",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "3c2f41fb-59df-420b-a9ac-f01774ea7204",
+        "username": "HuuNghia83",
+        "password": "LrUFgLEeyGdpcTm",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "182fb2c3-eb77-4c83-b151-3f486cf3200e",
+        "username": "HuuThang_Ho",
+        "password": "s4oxwitWBDbbq05",
+        "role": "Transaction Point Admin"
+    },
+    {
+        "_id": "e4d2a62c-81ae-4e54-8f05-a9973f20542f",
+        "username": "BichPhuong71",
+        "password": "ewrB17zSzYhKXf2",
+        "role": "Transaction Point Admin"
+    }
+]
