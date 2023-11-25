@@ -12,29 +12,38 @@ export class CargoHandlePointModel {
         associatedAssemblyPoint: String,
     });
     private static _model = model('points', this.pointsSchema);
-    public static async  getPointIds() {
+    public static async getPointIds() {
         return CargoHandlePointModel._model.find({},{_id: 1});
-}
+    }
+    public static async getAffiliatedTransactionPointID(id: String) {
+        return CargoHandlePointModel._model.find({associatedAssemblyPoint: id},{_id: 1});
+    }
+    public static async getPointEmployees() {
+        return CargoHandlePointModel._model.find({},{_id: 0, pointEmployees: 1})
+    }
+    public static async getPointEmployeeById(id: String) {
+        return CargoHandlePointModel._model.find({pointEmployees: id})
+    }
 }
 export enum TypeOfCargoHandlePoint {
     Transaction,
     Assembly,
 }
 
-export type CargoHandlePointIdType = string;
+export type CargoHandlePointIdType = String;
 
 export interface CargoHandlePoint {
     _id: CargoHandlePointIdType;
-    name: string;
+    name: String;
     type: TypeOfCargoHandlePoint;
-    pointAdmin: AccountIdType;
-    pointEmployees: AccountIdType[];
+    pointAdmin: String;
+    pointEmployees: String[];
     associatedAssemblyPoint?: CargoHandlePointIdType;
 }
 
 export function CreateRandomPointAndAllAccounts(
     adminRole: Role,
-    dutyArea: string,
+    dutyArea: String,
     employeeNumber: number,
     associatedAssemblyPoint?: CargoHandlePointIdType
 ): [CargoHandlePoint, Account, Account[]] {

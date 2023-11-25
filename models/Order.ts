@@ -22,6 +22,9 @@ export class OrderModel {
         cost: String
         })
     private static _model = model('orders', this.ordersSchema);
+    public static async getAll() {
+        return OrderModel._model.find();
+    }
     public static async  getSentPoints() {
         return OrderModel._model.find({},{sentPoint: 1});
     }
@@ -43,6 +46,7 @@ export interface Order {
     receivePoint: CargoHandlePointIdType;
     receiveCustomer: CustomerIdType;
     receivedDate: Date;
+    //currentLocation: String;
     cost: number;
 }
 
@@ -84,6 +88,7 @@ function createRandomOrder(
         receivePoint,
         receiveCustomer,
         receivedDate,
+        
         cost: 0,
     };
 }

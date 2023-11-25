@@ -17,6 +17,11 @@ const Cargo_1 = require("./Cargo");
 const constant_1 = require("../constant");
 const mongoose_1 = require("mongoose");
 class OrderModel {
+    static getAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return _a._model.find();
+        });
+    }
     static getSentPoints() {
         return __awaiter(this, void 0, void 0, function* () {
             return _a._model.find({}, { sentPoint: 1 });

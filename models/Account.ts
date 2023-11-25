@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { Role } from "./Role";
 import { CreateRandomPerson } from "./person/Person";
+import { Schema, model } from "mongoose";
 
 export interface Account {
     _id: string;
@@ -8,7 +9,22 @@ export interface Account {
     password: string;
     role: Role;
 }
-
+export class AccountModel {
+    private static accountSchema : Schema <Account> = new Schema <Account>({
+    _id: String,
+    username: String,
+    password: String,
+    role: String
+    })
+    private static _model = model('accounts', this.accountSchema);
+    public static async removeAccount(id: String) {
+        const res = await AccountModel._model.deleteOne({_id : id});
+        return ((res.deletedCount === 1) ? true : false);
+    }
+    public static async getAccountById(id: String) {
+        return AccountModel._model.findOne({_id : id}).select("username");
+    }
+}
 export type AccountIdType = Account["_id"];
 
 export function createRandomAccount(role: Role): Account {

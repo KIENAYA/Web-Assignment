@@ -39,6 +39,10 @@ exports.prettyPrint = prettyPrint;
 function addPointsAccounts(pointsList, cargoPoint, admin, employees, accounts) {
     pointsList.push(cargoPoint);
     accounts.push(admin);
-    accounts = [...accounts, ...employees];
+    for (const employee of employees) {
+        accounts.push(employee);
+    }
+    // accounts = [...accounts, ...employees];
+    // console.log(JSON.stringify(employees))
 }
 exports.addPointsAccounts = addPointsAccounts;

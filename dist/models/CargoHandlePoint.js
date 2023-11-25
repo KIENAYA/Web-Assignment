@@ -21,6 +21,21 @@ class CargoHandlePointModel {
             return _a._model.find({}, { _id: 1 });
         });
     }
+    static getAffiliatedTransactionPointID(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return _a._model.find({ associatedAssemblyPoint: id }, { _id: 1 });
+        });
+    }
+    static getPointEmployees() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return _a._model.find({}, { _id: 0, pointEmployees: 1 });
+        });
+    }
+    static getPointEmployeeById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return _a._model.find({ pointEmployees: id });
+        });
+    }
 }
 exports.CargoHandlePointModel = CargoHandlePointModel;
 _a = CargoHandlePointModel;
