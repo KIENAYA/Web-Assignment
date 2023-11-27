@@ -10,7 +10,7 @@ import { Cargo, CargoIdType, CreateRandomCargo } from "./Cargo";
 import { MAX_CARGO_QUANTITY, MIN_CARGO_QUANTITY } from "../constant";
 import { Schema, model } from "mongoose";
 export class OrderModel {
-    private static ordersSchema : Schema <Order> = new Schema<Order>({
+    private static ordersSchema: Schema<Order> = new Schema<Order>({
         _id: String,
         cargoList: String,
         sentPoint: String,
@@ -19,20 +19,20 @@ export class OrderModel {
         receivePoint: String,
         receiveCustomer: String,
         receivedDate: Date,
-        cost: String
-        })
-    private static _model = model('orders', this.ordersSchema);
+        cost: String,
+    });
+    private static _model = model("orders", this.ordersSchema);
     public static async getAll() {
         return OrderModel._model.find();
     }
-    public static async  getSentPoints() {
-        return OrderModel._model.find({},{sentPoint: 1});
+    public static async getSentPoints() {
+        return OrderModel._model.find({}, { sentPoint: 1 });
     }
     public static async getAllOrderSentFromPoint(id: String) {
-        return OrderModel._model.find({sentPoint: id});
+        return OrderModel._model.find({ sentPoint: id });
     }
     public static async getAllOrderReceiveFromPoint(id: String) {
-        return OrderModel._model.find({receivePoint: id});
+        return OrderModel._model.find({ receivePoint: id });
     }
 }
 export type OrderIdType = string;
@@ -46,9 +46,28 @@ export interface Order {
     receivePoint: CargoHandlePointIdType;
     receiveCustomer: CustomerIdType;
     receivedDate: Date;
-    //currentLocation: String;
+    currentLocation: PossibleCurrentLocation;
     cost: number;
 }
+
+export enum PossibleCurrentLocation {
+    AtSentPoint,
+    AtSentAssemblyPoint,
+    AtReceivePoint,
+    AtReceiveAssemblyPoint,
+    AtReceivedUser,
+}
+
+const PossibleCurrentLocationWithWeight: Array<{
+    value: PossibleCurrentLocation;
+    weight: number;
+}> = [
+    { value: PossibleCurrentLocation.AtSentPoint, weight: 2 },
+    { value: PossibleCurrentLocation.AtSentAssemblyPoint, weight: 4 },
+    { value: PossibleCurrentLocation.AtReceivePoint, weight: 8 },
+    { value: PossibleCurrentLocation.AtReceiveAssemblyPoint, weight: 10 },
+    { value: PossibleCurrentLocation.AtReceivedUser, weight: 100 },
+];
 
 function createRandomOrder(
     cargoHandlePoints: CargoHandlePointIdType[],
@@ -88,7 +107,9 @@ function createRandomOrder(
         receivePoint,
         receiveCustomer,
         receivedDate,
-        
+        currentLocation: faker.helpers.weightedArrayElement(
+            PossibleCurrentLocationWithWeight
+        ),
         cost: 0,
     };
 }
