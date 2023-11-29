@@ -1,4 +1,6 @@
 import { faker } from "@faker-js/faker";
+import { Schema, model } from "mongoose";
+import { OrderModel } from "./Order";
 
 export type CargoIdType = string;
 
@@ -13,6 +15,21 @@ export enum CargoType {
 /**
  * weight (Kg)
  */
+interface myObject {
+    _id: String;
+  }
+export class CargoModel{
+    private static cargoSchema: Schema<Cargo> = new Schema<Cargo>({
+        _id: String,
+        name: String,
+        quantity: Number,
+        weight: Number,
+    });
+    private static _model = model("cargo", this.cargoSchema);
+    public static async getCargoById(id: String) {
+        return CargoModel._model.find({_id: id});
+    }
+}
 export interface Cargo {
     _id: CargoIdType;
     name: string;

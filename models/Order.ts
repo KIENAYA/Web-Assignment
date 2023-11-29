@@ -1,14 +1,17 @@
 import { faker } from "@faker-js/faker";
-import { CargoHandlePointIdType } from "./CargoHandlePoint";
+import { CargoHandlePointIdType, CargoHandlePointModel } from "./CargoHandlePoint";
 import {
     Customer,
     CustomerIdType,
     assignReceiveOrderToCustomer,
     assingSentOrderToCustomer,
 } from "./Customer";
-import { Cargo, CargoIdType, CreateRandomCargo } from "./Cargo";
+import { Cargo, CargoIdType, CargoModel, CreateRandomCargo } from "./Cargo";
 import { MAX_CARGO_QUANTITY, MIN_CARGO_QUANTITY } from "../constant";
 import { Schema, model } from "mongoose";
+interface myObject {
+    _id: String;
+  }
 export class OrderModel {
     private static ordersSchema: Schema<Order> = new Schema<Order>({
         _id: String,
@@ -28,18 +31,45 @@ export class OrderModel {
     public static async getSentPoints() {
         return OrderModel._model.find({}, { sentPoint: 1 });
     }
-    public static async getAllOrderSentFromPoint(id: String) {
+    public static async getAllOrderSentFromTransactionPoint(id: String) {
         return OrderModel._model.find({ sentPoint: id });
     }
-    public static async getAllOrderReceiveFromPoint(id: String) {
+    public static async getAllOrderReceiveFromTransactionPoint(id: String) {
         return OrderModel._model.find({ receivePoint: id });
+    }
+    public static async getAllOrderReceiveFromAssemblePoint(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map(obj => obj._id);
+        const orders = new Array();
+        for(id of idArray) {
+            var order = await this.getAllOrderReceiveFromTransactionPoint(id);
+            if(order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+    public static async getAllOrderSentFromAssemblePoint(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map(obj => obj._id);
+        const orders = new Array();
+        for(id of idArray) {
+            var order = await this.getAllOrderSentFromTransactionPoint(id);
+            if(order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+    public static async getCargoList(id: String) {
+        return OrderModel._model.findOne({_id: id}).select("cargoList");
     }
 }
 export type OrderIdType = string;
 
 export interface Order {
     _id: OrderIdType;
-    cargoList: CargoIdType[];
+    cargoList: String[];
     sentPoint: CargoHandlePointIdType;
     sentCustomer: CustomerIdType;
     sentDate: Date;

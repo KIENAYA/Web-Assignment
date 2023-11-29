@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { CargoHandlePoint, CargoHandlePointModel } from '../models/CargoHandlePoint';
 import { AccountModel } from '../models/Account';
-import { ok } from 'assert';
+import { OrderModel } from '../models/Order';
 const pointsRouter = express.Router();
 pointsRouter.get('/', async(req: Request, res: Response) => {
     try {
@@ -20,6 +20,47 @@ pointsRouter.get('/:id', async(req: Request, res: Response) => {
         res.json(employee);
     } catch(err) {
         res.status(404).json({err: 'Cannot find Employee'});
+    }
+})
+pointsRouter.get('/TPReceive/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderReceiveFromTransactionPoint(id);
+        res.json(orders);
+        
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find TransactionPoint' })
+
+    }
+})
+pointsRouter.get('/TPSent/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderSentFromTransactionPoint(id);
+        res.json(orders);
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find TransactionPoint' })
+
+    }
+})  
+pointsRouter.get('/APSent/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderReceiveFromAssemblePoint(id);
+        res.json(orders);
+    
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find AssemblePoint'});
+    }
+})
+pointsRouter.get('/APReceive/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderSentFromAssemblePoint(id);
+        res.json(orders);
+    
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find AssemblePoint'});
     }
 })
 pointsRouter.delete('/:id', async(req: Request, res: Response) =>{

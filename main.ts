@@ -24,18 +24,23 @@ async function main() {
   await mongoose.connect('mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData');
   const gd = "gd-XWAgL4aMaWCgub5N__2Js";
   const gd1 = "gd-jWRNVAyVH4zjH4QGdLZfP";
-  const tk = "tk-cs817Ao7SM_Mt8tl44zdE";
+  const tk = "tk-K9rwd8ogWh_GVHC8jcCoq";
   const id = "138590ea-dfce-4351-82c6-ad0c8f4941f2";
   //console.log(await OrderModel.getAllOrderSentFromPoint(gd));
   //console.log(await OrderModel.getAllOrderReceiveFromPoint(gd1));
   //console.log(await CargoHandlePointModel.getAffiliatedTransactionPointID(tk));
-  const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(tk);
+  /*const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(tk);
   const idArray: String[] = inputArray.map(obj => obj._id);
-  //console.log(idArray);
+  const orders = new Array();
   for(const id of idArray) {
-    console.log(await OrderModel.getAllOrderReceiveFromPoint(id));
+    const order = await OrderModel.getAllOrderReceiveFromTransactionPoint(id);
+    if(order.length > 0) {
+      orders.push(order);
+    }
   }
-  
-  await AccountModel.removeAccount(id);
+  console.log(orders);*/
+  console.log(await OrderModel.getCargoList("avRgF73O3P6IYbto2TOVJ"));
+
+
 
 }
