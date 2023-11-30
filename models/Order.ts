@@ -41,8 +41,7 @@ export class OrderModel {
         return OrderModel._model.find({ receivePoint: id });
     }
     public static async getAllOrderReceiveFromAssemblePoint(id: String) {
-        const inputArray: myObject[] =
-            await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
         const idArray: String[] = inputArray.map((obj) => obj._id);
         const orders = new Array();
         for (id of idArray) {
@@ -68,7 +67,7 @@ export class OrderModel {
     }
 
     public static async getCargoList(id: String) {
-        return OrderModel._model.findOne({});
+        return OrderModel._model.findOne({_id: id},{_id: 0, cargoList: 1});
     }
 }
 

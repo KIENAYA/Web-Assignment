@@ -15,9 +15,6 @@ export enum CargoType {
 /**
  * weight (Kg)
  */
-interface myObject {
-    _id: String;
-  }
 export class CargoModel{
     private static cargoSchema: Schema<Cargo> = new Schema<Cargo>({
         _id: String,
@@ -28,6 +25,17 @@ export class CargoModel{
     private static _model = model("cargo", this.cargoSchema);
     public static async getCargoById(id: String) {
         return CargoModel._model.find({_id: id});
+    }
+    public static async getCargoFromOrder(id: String) {
+        const cargoIdArray = (await OrderModel.getCargoList("avRgF73O3P6IYbto2TOVJ")).cargoList;
+        const cargos = new Array();
+        for(const id in cargoIdArray) {
+            const cargo = await CargoModel.getCargoById(id);
+            if(cargo.length > 0) {
+                cargos.push(cargo);
+            }
+        }
+        return cargos;
     }
 }
 export interface Cargo {
