@@ -52,7 +52,7 @@ async function main() {
         for(const id in cargoArray) {
             const cargo = await CargoModel.getCargoById(id);
             console.log(cargo);
-            if(cargo.length > 0) {
+            if(cargo !== undefined) {
                 cargos.push(cargo);
             }
         }
