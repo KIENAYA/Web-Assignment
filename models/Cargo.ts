@@ -23,14 +23,20 @@ export class CargoModel{
         weight: Number,
     });
     private static _model = model("cargo", this.cargoSchema);
+    public static async getAll() {
+        return CargoModel._model.find();
+    }
     public static async getCargoById(id: String) {
-        return CargoModel._model.findOne({_id: id});
+        return await CargoModel._model.findOne({_id: id});
     }
     public static async getCargoFromOrder(id: String) {
-        const cargoIdArray = (await OrderModel.getCargoList("avRgF73O3P6IYbto2TOVJ")).cargoList;
+        const cargoIdArray = (await OrderModel.getCargoList(id)).cargoList;
         const cargos = new Array();
-        for(const id in cargoIdArray) {
-            const cargo = await CargoModel.getCargoById(id);
+        for(let i=0; i< cargoIdArray.length; i++) {
+            const cargo = await CargoModel.getCargoById(cargoIdArray[i]);
+            if(cargo !== null) {
+                cargos.push(cargo);
+            }
         }
         return cargos;
     }

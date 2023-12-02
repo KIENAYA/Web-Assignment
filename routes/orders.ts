@@ -12,13 +12,13 @@ ordersRouter.get('/admin', async(req: Request, res: Response) => {
         res.status(500).json({error: 'Internal Server Error'});
     }
 })
-/*ordersRouter.get('/cargo/:id', async(req: Request, res: Response) => {
+ordersRouter.get('/cargo/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
-        const cargos = await CargoModel.getCargo(id);
+        const cargos = await CargoModel.getCargoFromOrder(id);
         res.json(cargos);
     } catch(error) {
         res.status(404).json({error: 'Cannot find Cargo'});
     }
-})*/
+})
 export default ordersRouter;
