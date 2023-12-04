@@ -11,18 +11,22 @@ import { AccountModel } from "./models/Account";
 import mongoose from "mongoose";
 import { CargoModel } from "./models/Cargo";
 import authRouter from "./routes/login";
+import { Express, NextFunction, Router } from "express";
+import { expressjwt, Request as JWTRequest } from "express-jwt";
+import { secretKey } from "./routes/login";
+import jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcrypt';
 //import { Account } from "./routes/login";
 const app = express();
 app.use(express.json())
 app.use('/orders', ordersRouter);
 app.use('/points', pointsRouter);
-app.use('/', authRouter)
+app.use(authRouter);
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 main().catch((err) => console.log(err));
-
 async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
@@ -46,5 +50,4 @@ async function main() {
   console.log(orders);*/
   //console.log(await CargoModel.getCargoById("bYfqV9ABs0izaHbvxF1aq"));
   //console.log(await CargoModel.getCargoFromOrder("jlZ699DK_DSJejDmxybw8"));
-
 }

@@ -2,6 +2,7 @@ import { faker } from "@faker-js/faker";
 import { Role } from "./Role";
 import { CreateRandomPerson } from "./person/Person";
 import { Schema, model } from "mongoose";
+import bcrypt from 'bcrypt';
 
 export interface Account {
     _id: string;
@@ -17,11 +18,20 @@ export class AccountModel {
     role: String
     })
     private static _model = model('accounts', this.accountSchema);
-    public static async removeAccount(id: String) {
+
+    public static async IsUsernamExist(_username: string) {
+        return AccountModel._model.exists({username: _username});
+    }
+
+    public static async CheckCredential(_username: string) {
+        return AccountModel._model.findOne({username: _username}).select("username password role");
+        
+    }
+    public static async removeAccount(id: string) {
         const res = await AccountModel._model.deleteOne({_id : id});
         return ((res.deletedCount === 1) ? true : false);
     }
-    public static async getAccountById(id: String) {
+    public static async getAccountById(id: string) {
         return AccountModel._model.findOne({_id : id}).select("username");
     }
 }
