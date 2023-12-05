@@ -15,6 +15,9 @@ export class CargoHandlePointModel {
     public static async getPointIds() {
         return CargoHandlePointModel._model.find({},{_id: 1});
     }
+    public static async getPointById(id: String) {
+        return CargoHandlePointModel._model.findOne({_id: id});
+    }
     public static async getAffiliatedTransactionPointID(id: String) {
         return CargoHandlePointModel._model.find({associatedAssemblyPoint: id},{_id: 1});
     }
@@ -23,6 +26,10 @@ export class CargoHandlePointModel {
     }
     public static async getPointEmployeeById(id: String) {
         return CargoHandlePointModel._model.find({pointEmployees: id})
+    }
+
+    public static async getPointName(id: String) {
+        return (await CargoHandlePointModel.getPointById(id)).name;
     }
 }
 export enum TypeOfCargoHandlePoint {

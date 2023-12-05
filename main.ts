@@ -16,12 +16,14 @@ import { expressjwt, Request as JWTRequest } from "express-jwt";
 import { secretKey } from "./routes/login";
 import jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
+import customerRouter from "./routes/customer";
 //import { Account } from "./routes/login";
 const app = express();
 app.use(express.json())
 app.use('/orders', ordersRouter);
 app.use('/points', pointsRouter);
 app.use(authRouter);
+app.use('/customer', customerRouter)
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

@@ -25,15 +25,19 @@ export class OrderModel {
         receivePoint: String,
         receiveCustomer: String,
         receivedDate: Date,
+        currentLocation: Number,
         cost: String,
     });
     private static _model = model("orders", this.ordersSchema);
     public static async getAll() {
         return OrderModel._model.find();
     }
-    public static async getSentPoints() {
-        return OrderModel._model.find({}, { sentPoint: 1 });
+    
+    public static async getOrderById(id: String) {
+        return OrderModel._model.findOne({_id: id});
     }
+
+
     public static async getAllOrderSentFromTransactionPoint(id: String) {
         return OrderModel._model.find({ sentPoint: id });
     }
@@ -53,8 +57,7 @@ export class OrderModel {
         return orders;
     }
     public static async getAllOrderSentFromAssemblePoint(id: String) {
-        const inputArray: myObject[] =
-            await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
         const idArray: String[] = inputArray.map((obj) => obj._id);
         const orders = new Array();
         for (id of idArray) {
@@ -68,6 +71,27 @@ export class OrderModel {
 
     public static async getCargoList(id: String) {
         return OrderModel._model.findOne({_id: id},{_id: 0, cargoList: 1});
+    }
+
+    public static async getOrderStage(id: String) {
+        const cur = (await OrderModel.getOrderById(id)).currentLocation;
+        if(cur === 0) {
+            const res = (await OrderModel.getOrderById(id)).sentPoint;
+            return CargoHandlePointModel.getPointName(res);
+        }
+        else if (cur === 1) {
+            const sentPoint = (await OrderModel.getOrderById(id)).sentPoint;
+            const res = (await CargoHandlePointModel.getPointById(sentPoint)).associatedAssemblyPoint;
+            return CargoHandlePointModel.getPointName(res);
+        } else if (cur === 2) {
+            const receivePoint = (await OrderModel.getOrderById(id)).receivePoint;
+            const res =  (await CargoHandlePointModel.getPointById(receivePoint)).associatedAssemblyPoint;
+            return CargoHandlePointModel.getPointName(res);
+        } else if (cur === 3) {
+            const res = (await OrderModel.getOrderById(id)).receivePoint;
+            return CargoHandlePointModel.getPointName(res);
+        }
+        else return ("Done");
     }
 }
 
