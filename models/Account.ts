@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 import { Role } from "./Role";
 import { CreateRandomPerson } from "./person/Person";
 import { Schema, model } from "mongoose";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 
 export interface Account {
     _id: string;
@@ -11,28 +11,34 @@ export interface Account {
     role: Role;
 }
 export class AccountModel {
-    private static accountSchema : Schema <Account> = new Schema <Account>({
-    _id: String,
-    username: String,
-    password: String,
-    role: String
-    })
-    private static _model = model('accounts', this.accountSchema);
+    private static accountSchema: Schema<Account> = new Schema<Account>({
+        _id: String,
+        username: String,
+        password: String,
+        role: String,
+    });
+    private static _model = model("accounts", this.accountSchema);
 
     public static async IsUsernamExist(_username: string) {
-        return AccountModel._model.exists({username: _username});
+        return AccountModel._model.exists({ username: _username });
     }
 
     public static async CheckCredential(_username: string) {
-        return AccountModel._model.findOne({username: _username}).select("username password role");
-        
+        return AccountModel._model
+            .findOne({ username: _username })
+            .select("username password role");
     }
+
+    public static async create(account: Account) {
+        return AccountModel._model.create(account);
+    }
+
     public static async removeAccount(id: string) {
-        const res = await AccountModel._model.deleteOne({_id : id});
-        return ((res.deletedCount === 1) ? true : false);
+        const res = await AccountModel._model.deleteOne({ _id: id });
+        return res.deletedCount === 1 ? true : false;
     }
     public static async getAccountById(id: string) {
-        return AccountModel._model.findOne({_id : id}).select("username");
+        return AccountModel._model.findOne({ _id: id }).select("username");
     }
 }
 export type AccountIdType = Account["_id"];

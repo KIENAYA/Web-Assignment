@@ -2,32 +2,40 @@ import { Express, NextFunction, Router } from "express";
 import express from "express";
 import { expressjwt, Request as JWTRequest } from "express-jwt";
 import { secretKey } from "./login";
-import jwt, { Secret, JwtPayload } from 'jsonwebtoken';
-import { Request, Response } from 'express';
+import jwt, { Secret, JwtPayload } from "jsonwebtoken";
+import { Request, Response } from "express";
+import { Role } from "../models/Role";
 
-// or ES6
-// import { expressjwt, ExpressJwtRequest } from "express-jwt";
-const protectedRoute = express.Router();
-export interface CustomRequest extends Request {
-  token: string | JwtPayload;
- }
-export const auth = async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
- 
-    if (!token) {
-      throw new Error();
+interface CustomRequest extends Request {
+    id: string;
+    role: Role;
+}
+
+async function auth(req: Request, res: Response, next: NextFunction) {
+    try {
+        const token = req.header("Authorization")?.replace("Bearer ", "");
+
+        if (!token) {
+            throw new Error();
+        }
+
+        jwt.verify(token, secretKey, function (err, decoded) {
+            if (err) {
+                throw new Error();
+            }
+            const user = decoded as CustomRequest;
+            res.locals.id = user.id;
+            console.log(user.id);
+            res.locals.role = user.role;
+            console.log(user.role);
+        });
+
+        next();
+    } catch (err) {
+        res.status(401).send("Please authenticate");
     }
- 
-    const decoded = jwt.verify(token, secretKey);
-    (req as CustomRequest).token = decoded;
- 
-    next();
-  } catch (err) {
-    res.status(401).send('Please authenticate');
-  }
- };
- protectedRoute.get('/protected', auth, (req: Request, res: Response) => {
-  res.json({ message: 'This is a protected route' });
-});
-export default protectedRoute;
+}
+
+export function SetupProtectedRoute(app: Express) {
+    app.use("/protected", auth);
+}

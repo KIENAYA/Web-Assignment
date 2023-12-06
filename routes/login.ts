@@ -1,47 +1,93 @@
-import express, { Request, Response } from 'express';
-import mongoose, { Schema, connect, model } from "mongoose";
-import bodyParser from 'body-parser';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { AccountModel, Account } from '../models/Account';
-import { auth } from './middleware';
-interface User {
-    username: string;
-    password: string;
-}
-const authRouter = express.Router()
-export const secretKey = 'your-secret-key';
+import { faker } from "@faker-js/faker";
+import bcrypt from "bcrypt";
+import bodyParser from "body-parser";
+import express, { NextFunction, Request, Response } from "express";
+import jwt from "jsonwebtoken";
+import { AccountModel } from "../models/Account";
+import { Role } from "../models/Role";
+
+const authRouter = express.Router();
+export const secretKey = "your-secret-key";
 authRouter.use(bodyParser.json());
 
-/*authRouter.post('/signup', async(req: Request, res: Response) => {
-    try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        const user = { username: req.body.username, password: hashedPassword}
-        const check = await AccountModel.IsUsernamExist(req.body.username)
-        if(!check) {
-          AccountModel.create(user);
-          res.send('Signup Success')
-        } else {
-          res.send('Username exist')
+async function createUserHandler(req: Request, res: Response) {
+    const newUserUsername = req.body.username;
+    const check = await AccountModel.IsUsernamExist(newUserUsername);
+
+    if (check) {
+        res.status(409).send("Username exist");
+        return;
+    }
+
+    if (req.body.password.length < 8) {
+        res.status(400).send("Password must be at least 8 characters");
+        return;
+    }
+
+    const newUser = {
+        _id: faker.string.uuid(),
+        username: req.body.username,
+        password: await bcrypt.hash(req.body.password, 10),
+        role: req.body.role,
+    };
+    console.log(newUser);
+    await AccountModel.create(newUser);
+}
+
+authRouter.post("/signup", createUserHandler);
+
+authRouter.post(
+    "/protected/signup",
+    async (req: Request, res: Response, next: NextFunction) => {
+        const newUserRole = req.body.role;
+        console.log(newUserRole);
+        if (
+            newUserRole === Role.AssemblyAdmin ||
+            (newUserRole === Role.TransactionAdmin &&
+                res.locals.role !== Role.AssemblyAdmin)
+        ) {
+            res.status(401).send("Unauthorized");
+            return;
         }
-      } catch {
-        console.log('invalid signup');
-        res.status(500).send();
-      }
-})*/
-authRouter.post('/login', async (req: Request, res: Response) => {
+
+        if (
+            newUserRole === Role.AssemblyPointEmployee &&
+            res.locals.role !== Role.AssemblyAdmin
+        ) {
+            res.status(401).send("Unauthorized");
+            return;
+        }
+
+        if (
+            newUserRole === Role.TransactionPointEmployee &&
+            res.locals.role !== Role.TransactionAdmin
+        ) {
+            res.status(401).send("Unauthorized");
+            return;
+        }
+
+        next();
+    },
+    createUserHandler
+);
+
+authRouter.post("/login", async (req: Request, res: Response) => {
     const user = await AccountModel.CheckCredential(req.body.username);
     if (user === null) {
-      return res.status(401);
+        return res.status(401);
     }
     try {
-      if(await bcrypt.compare(req.body.password, user.password)) {
-        const token = jwt.sign({userId:user.id, Role:user.role}, secretKey, { expiresIn: 3600 });
-        res.json({ message: 'Login successful', token });
-      }
+        if (await bcrypt.compare(req.body.password, user.password)) {
+            const token = jwt.sign(
+                { id: user.id, role: user.role },
+                secretKey,
+                { expiresIn: 3600 }
+            );
+            res.json({ message: "Login successful", token });
+        }
     } catch {
-      res.status(500).send()
+        res.status(500).send();
     }
-  });
-  
+});
+
 export default authRouter;

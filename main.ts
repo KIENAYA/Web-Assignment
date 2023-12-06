@@ -1,32 +1,22 @@
-import { Schema } from "mongoose";
-import {
-    CargoHandlePoint,
-    CargoHandlePointModel,
-} from "./models/CargoHandlePoint";
-import { Order, OrderModel } from "./models/Order";
+import express from "express";
+import mongoose from "mongoose";
+import customerRouter from "./routes/customer";
+import authRouter from "./routes/login";
+import { SetupProtectedRoute } from "./routes/middleware";
 import ordersRouter from "./routes/orders";
 import pointsRouter from "./routes/points";
-import express from "express";
-import { AccountModel } from "./models/Account";
-import mongoose from "mongoose";
-import { CargoModel } from "./models/Cargo";
-import authRouter from "./routes/login";
-import { Express, NextFunction, Router } from "express";
-import { expressjwt, Request as JWTRequest } from "express-jwt";
-import { secretKey } from "./routes/login";
-import jwt from 'jsonwebtoken';
-import * as bcrypt from 'bcrypt';
-import customerRouter from "./routes/customer";
 //import { Account } from "./routes/login";
 const app = express();
-app.use(express.json())
-app.use('/orders', ordersRouter);
-app.use('/points', pointsRouter);
+app.use(express.json());
+app.use("/orders", ordersRouter);
+app.use("/points", pointsRouter);
+SetupProtectedRoute(app);
 app.use(authRouter);
-app.use('/customer', customerRouter)
+app.use("/customer", customerRouter);
+
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
 main().catch((err) => console.log(err));
 async function main() {
@@ -50,6 +40,6 @@ async function main() {
     }
   }
   console.log(orders);*/
-  //console.log(await CargoModel.getCargoById("bYfqV9ABs0izaHbvxF1aq"));
-  //console.log(await CargoModel.getCargoFromOrder("jlZ699DK_DSJejDmxybw8"));
+    //console.log(await CargoModel.getCargoById("bYfqV9ABs0izaHbvxF1aq"));
+    //console.log(await CargoModel.getCargoFromOrder("jlZ699DK_DSJejDmxybw8"));
 }
