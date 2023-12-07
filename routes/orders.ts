@@ -6,7 +6,6 @@ const ordersRouter = express.Router();
 ordersRouter.get('/admin', async(req: Request, res: Response) => {
     try{
         const orders = await OrderModel.getAll();
-        
         res.json(orders); 
     } catch(error) {
         res.status(500).json({error: 'Internal Server Error'});

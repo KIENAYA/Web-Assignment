@@ -12,7 +12,7 @@ pointsRouter.get('/', async(req: Request, res: Response) => {
         res.status(500).json({error: 'Internal Server Error'});
     } 
 })
-pointsRouter.get('/:id', async(req: Request, res: Response) => {
+pointsRouter.get('/employees/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const employee = await AccountModel.getAccountById(id);
@@ -73,5 +73,14 @@ pointsRouter.delete('/:id', async(req: Request, res: Response) =>{
         res.status(500);
       }
 })
-
+pointsRouter.patch('/confirm/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const order = await OrderModel.ConfirmOrder(id);
+        console.log(order);
+        res.json("Confirmed Orders")
+    } catch(err) {
+        res.status(417);
+    }
+})
 export default pointsRouter;

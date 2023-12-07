@@ -31,7 +31,9 @@ async function createUserHandler(req: Request, res: Response) {
         role: req.body.role,
     };
     console.log(newUser);
+    
     await AccountModel.create(newUser);
+    res.status(200).send("Complete SignUp!");
 }
 
 authRouter.post("/signup", createUserHandler);

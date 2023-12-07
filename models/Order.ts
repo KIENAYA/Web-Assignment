@@ -37,12 +37,20 @@ export class OrderModel {
         return OrderModel._model.findOne({_id: id});
     }
 
-
+   
     public static async getAllOrderSentFromTransactionPoint(id: String) {
         return OrderModel._model.find({ sentPoint: id });
     }
+    public static async getAllOrderReceiveFromTransactionPointConfirmed(id: String) {
+        return OrderModel._model.find({ receivePoint: id, currentLocation: {$gte: 3}});
+    }
+
+    public static async getAllOrderReceiveFromTransactionPointUnconfirm(id: String) {
+        return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 2}});
+    }
+
     public static async getAllOrderReceiveFromTransactionPoint(id: String) {
-        return OrderModel._model.find({ receivePoint: id });
+        return OrderModel._model.find({receivePoint:id});
     }
     public static async getAllOrderReceiveFromAssemblePoint(id: String) {
         const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
@@ -93,6 +101,12 @@ export class OrderModel {
         }
         else return ("Done");
     }
+
+    public static async ConfirmOrder(id: String) {
+        return OrderModel._model.findOneAndUpdate({_id: id},{ $inc: { currentLocation: 1 } },
+            { new: true });
+    }
+    
 }
 
 export type OrderIdType = string;
