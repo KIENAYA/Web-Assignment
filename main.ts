@@ -6,6 +6,7 @@ import { SetupProtectedRoute } from "./routes/middleware";
 import ordersRouter from "./routes/orders";
 import pointsRouter from "./routes/points";
 import { OrderModel } from "./models/Order";
+import { CargoHandlePointModel } from "./models/CargoHandlePoint";
 //import { Account } from "./routes/login";
 const app = express();
 app.use(express.json());
@@ -43,5 +44,5 @@ async function main() {
   console.log(orders);*/
     //console.log(await CargoModel.getCargoById("bYfqV9ABs0izaHbvxF1aq"));
     //console.log(await CargoModel.getCargoFromOrder("jlZ699DK_DSJejDmxybw8"));
-    console.log(await OrderModel.ConfirmOrder("skH7f1wYl_NfCD7v_SMip"));
+    console.log(await CargoHandlePointModel.getPointAdmin());
 }

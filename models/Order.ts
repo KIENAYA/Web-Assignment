@@ -38,26 +38,45 @@ export class OrderModel {
     }
 
    
-    public static async getAllOrderSentFromTransactionPoint(id: String) {
-        return OrderModel._model.find({ sentPoint: id });
-    }
-    public static async getAllOrderReceiveFromTransactionPointConfirmed(id: String) {
-        return OrderModel._model.find({ receivePoint: id, currentLocation: {$gte: 3}});
+    public static async getAllOrderSentFromTransactionPointUnSent(id: String) {
+        return OrderModel._model.find({ sentPoint: id, currentLocation: {$eq: 0}});
     }
 
-    public static async getAllOrderReceiveFromTransactionPointUnconfirm(id: String) {
+    public static async getAllOrderSentFromTransactionPointSent(id: String) {
+        return OrderModel._model.find({sentPoint: id, currentLocation: {$gte: 1}})
+
+    }
+    public static async getAllOrderReceiveFromTransactionPointConfirmed(id: String) {
+        return OrderModel._model.find({ receivePoint: id, currentLocation: {$gt: 3}});
+    }
+
+    public static async getAllOrderReceiveFromTransactionPointUnconfirmed(id: String) {
+        return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 3}});
+    }
+
+    public static async getAllOrderAssemblePointReceiver(id: String) {
         return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 2}});
     }
 
-    public static async getAllOrderReceiveFromTransactionPoint(id: String) {
-        return OrderModel._model.find({receivePoint:id});
-    }
-    public static async getAllOrderReceiveFromAssemblePoint(id: String) {
+    public static async getAllOrderReceiveFromAssemblePointUnconfimed(id: String) {
         const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
         const idArray: String[] = inputArray.map((obj) => obj._id);
         const orders = new Array();
         for (id of idArray) {
-            var order = await this.getAllOrderReceiveFromTransactionPoint(id);
+            var order = await this.getAllOrderAssemblePointReceiver(id);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+
+    public static async getAllOrderReceiveFromAssemblePointConfimed(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.getAllOrderReceiveFromAssemblePointUnconfimed(id);
             if (order.length > 0) {
                 orders.push(order);
             }
@@ -69,7 +88,7 @@ export class OrderModel {
         const idArray: String[] = inputArray.map((obj) => obj._id);
         const orders = new Array();
         for (id of idArray) {
-            var order = await this.getAllOrderSentFromTransactionPoint(id);
+            var order = await this.getAllOrderSentFromTransactionPointSent(id);
             if (order.length > 0) {
                 orders.push(order);
             }

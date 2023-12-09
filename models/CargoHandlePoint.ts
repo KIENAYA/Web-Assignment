@@ -31,6 +31,10 @@ export class CargoHandlePointModel {
     public static async getPointName(id: String) {
         return (await CargoHandlePointModel.getPointById(id)).name;
     }
+
+    public static async getPointAdmin() {
+        return CargoHandlePointModel._model.find({}).select("name pointAdmin");
+    }
 }
 export enum TypeOfCargoHandlePoint {
     Transaction,

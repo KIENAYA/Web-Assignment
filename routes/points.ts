@@ -22,10 +22,10 @@ pointsRouter.get('/employees/:id', async(req: Request, res: Response) => {
         res.status(404).json({err: 'Cannot find Employee'});
     }
 })
-pointsRouter.get('/TPReceive/:id', async(req: Request, res: Response) => {
+pointsRouter.get('/TPReceiveConfirmed/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
-        const orders = await OrderModel.getAllOrderReceiveFromTransactionPoint(id);
+        const orders = await OrderModel.getAllOrderReceiveFromTransactionPointConfirmed(id);
         res.json(orders);
         
     } catch(error) {
@@ -33,17 +33,41 @@ pointsRouter.get('/TPReceive/:id', async(req: Request, res: Response) => {
 
     }
 })
+
+pointsRouter.get('/TPReceiveUnConfirmed/:id', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderReceiveFromTransactionPointUnconfirmed(id);
+        res.json(orders);
+        
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find TransactionPoint' })
+
+    }
+})
+
 pointsRouter.get('/TPSent/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
-        const orders = await OrderModel.getAllOrderSentFromTransactionPoint(id);
+        const orders = await OrderModel.getAllOrderSentFromTransactionPointSent(id);
         res.json(orders);
     } catch(error) {
         res.status(404).json({error: 'Cannot find TransactionPoint' })
 
     }
-})  
-pointsRouter.get('/APSent/:id', async(req: Request, res: Response) => {
+}) 
+
+pointsRouter.get('TPUnSent/:id',  async(req: Request, res: Response)=> {
+    const id = req.params.id;
+    try {
+        const orders = await OrderModel.getAllOrderSentFromTransactionPointUnSent(id);
+        res.json(orders);
+    } catch(error) {
+        res.status(404).json({error: 'Cannot find TransactionPoint' })
+
+    }
+})
+/*pointsRouter.get('/APSent/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromAssemblePoint(id);
@@ -52,7 +76,7 @@ pointsRouter.get('/APSent/:id', async(req: Request, res: Response) => {
     } catch(error) {
         res.status(404).json({error: 'Cannot find AssemblePoint'});
     }
-})
+})*/
 pointsRouter.get('/APReceive/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
@@ -73,7 +97,7 @@ pointsRouter.delete('/:id', async(req: Request, res: Response) =>{
         res.status(500);
       }
 })
-pointsRouter.patch('/confirm/:id', async(req: Request, res: Response) => {
+pointsRouter.patch('/DeliveryOrder/:id', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const order = await OrderModel.ConfirmOrder(id);
@@ -81,6 +105,14 @@ pointsRouter.patch('/confirm/:id', async(req: Request, res: Response) => {
         res.json("Confirmed Orders")
     } catch(err) {
         res.status(417);
+    }
+})
+
+pointsRouter.get('/PointAdmin', async(req: Request, res: Response) => {
+    try {
+        res.json(await CargoHandlePointModel.getPointAdmin());
+    } catch(err) {
+        res.status(500);
     }
 })
 export default pointsRouter;
