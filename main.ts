@@ -44,5 +44,5 @@ async function main() {
   console.log(orders);*/
     //console.log(await CargoModel.getCargoById("bYfqV9ABs0izaHbvxF1aq"));
     //console.log(await CargoModel.getCargoFromOrder("jlZ699DK_DSJejDmxybw8"));
-    console.log(await CargoHandlePointModel.getPointAdmin());
+ 
 }

@@ -35,6 +35,14 @@ export class CargoHandlePointModel {
     public static async getPointAdmin() {
         return CargoHandlePointModel._model.find({}).select("name pointAdmin");
     }
+
+    public static async addEmployees(id: String, employeeId: String) {
+        return CargoHandlePointModel._model.findByIdAndUpdate(id, {$push: {pointEmployees: employeeId}});
+    }
+
+    public static async getPointIdFromAdmin(id: String) {
+        return (await CargoHandlePointModel._model.findOne({pointAdmin: id}, {_id:1})).id;
+    }
 }
 export enum TypeOfCargoHandlePoint {
     Transaction,

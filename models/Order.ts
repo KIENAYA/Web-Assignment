@@ -37,33 +37,58 @@ export class OrderModel {
         return OrderModel._model.findOne({_id: id});
     }
 
-   
+    //lấy đơn hàng chưa gửi tại điểm giao dịch
     public static async getAllOrderSentFromTransactionPointUnSent(id: String) {
         return OrderModel._model.find({ sentPoint: id, currentLocation: {$eq: 0}});
     }
-
+    
+    //lấy đơn hàng đã gửi tại điểm giao dịch
     public static async getAllOrderSentFromTransactionPointSent(id: String) {
         return OrderModel._model.find({sentPoint: id, currentLocation: {$gte: 1}})
 
     }
+
+    //lấy đơn hàng nhận được tại điểm giao dịch đã confirm
     public static async getAllOrderReceiveFromTransactionPointConfirmed(id: String) {
-        return OrderModel._model.find({ receivePoint: id, currentLocation: {$gt: 3}});
+        return OrderModel._model.find({ receivePoint: id, currentLocation: {$eq: 3}});
     }
-
+    
+    //lấy đơn hàng nhận được tại điểm giao dịch chưa confirm
     public static async getAllOrderReceiveFromTransactionPointUnconfirmed(id: String) {
-        return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 3}});
-    }
-
-    public static async getAllOrderAssemblePointReceiver(id: String) {
         return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 2}});
     }
-
-    public static async getAllOrderReceiveFromAssemblePointUnconfimed(id: String) {
+    
+    //lấy ra các đơn hàng gửi từ điểm gd nguồn đến điểm tk nguồn chưa confirm
+    public static async getAllOrderFromTPToAPUnconfirmed(id: String) {
+        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 0}});
+    }
+    
+    //lấy đơn hàng nhận được tại điểm tập kết nguồn chưa confirm
+    public static async getAllOrderReceiveFromTransactionPointToAssemblePointUnconfimed(id: String) {
         const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
         const idArray: String[] = inputArray.map((obj) => obj._id);
         const orders = new Array();
         for (id of idArray) {
-            var order = await this.getAllOrderAssemblePointReceiver(id);
+            var order = await this.getAllOrderFromTPToAPUnconfirmed(id);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+    
+    //lấy ra các đơn hàng gửi từ điểm gd nguồn đến điểm tk nguồn đã confirm
+    public static async getAllOrderFromTPToAPConfirmed(id: String) {
+        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 1}})
+    }
+
+    //lấy ra các đơn hàng nhận tại điểm tk nguồn đã confirm
+    public static async getAllOrderReceiveFromTransactionPointAssemblePointConfimed(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.getAllOrderFromTPToAPConfirmed(id);
             if (order.length > 0) {
                 orders.push(order);
             }
@@ -71,35 +96,53 @@ export class OrderModel {
         return orders;
     }
 
-    public static async getAllOrderReceiveFromAssemblePointConfimed(id: String) {
-        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
-        const idArray: String[] = inputArray.map((obj) => obj._id);
-        const orders = new Array();
-        for (id of idArray) {
-            var order = await this.getAllOrderReceiveFromAssemblePointUnconfimed(id);
-            if (order.length > 0) {
-                orders.push(order);
-            }
-        }
-        return orders;
+
+    //lấy ra các đơn hàng gửi từ tk nguồn đến tk đích chưa confirm
+    public static async getAllOrderFromAPtoAPUnconfirmed(id: String) {
+        return OrderModel._model.find({receivePoint: id, currentLocation: {$eq: 1}})
     }
-    public static async getAllOrderSentFromAssemblePoint(id: String) {
-        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
-        const idArray: String[] = inputArray.map((obj) => obj._id);
-        const orders = new Array();
-        for (id of idArray) {
-            var order = await this.getAllOrderSentFromTransactionPointSent(id);
-            if (order.length > 0) {
-                orders.push(order);
-            }
-        }
-        return orders;
+    
+    //lấy ra các đơn hàng gửi từ tk nguồn đến tk đích đã confirm
+    public static async getAllOrderFromAPtoAPConfirmed(id: String) {
+        return OrderModel._model.find({receivePoint:id, currentLocation: {$eq: 2}})
     }
 
+
+    //lấy ra các đơn hàng nhận được tại tk đích chưa confirm
+    public static async getAllOrderReceiveFromAssemblePointUnconfirmed(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.getAllOrderFromAPtoAPUnconfirmed(id);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+    
+    //lấy ra các đơn hàng nhận được tại tk đích đã confirm
+    public static async getAllOrderReceiveFromAssemblePointConfirmed(id: String) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.getAllOrderFromAPtoAPConfirmed(id);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+    
+    //lấy ra danh sách hàng hóa có trong đơn hàng
     public static async getCargoList(id: String) {
         return OrderModel._model.findOne({_id: id},{_id: 0, cargoList: 1});
     }
+    
 
+    //lấy ra trạng thái của đơn hàng(currentLocation)
     public static async getOrderStage(id: String) {
         const cur = (await OrderModel.getOrderById(id)).currentLocation;
         if(cur === 0) {
@@ -120,11 +163,26 @@ export class OrderModel {
         }
         else return ("Done");
     }
-
+    
+    //Xác nhận đơn hàng
     public static async ConfirmOrder(id: String) {
         return OrderModel._model.findOneAndUpdate({_id: id},{ $inc: { currentLocation: 1 } },
             { new: true });
     }
+
+
+    //lấy ra các đơn hàng bị fail(hiển thị tại điểm gd)
+    public static async getFailedOrder(id: String) {
+         
+        return OrderModel._model.find({receivePoint: id, currentLocation:{$ne: PossibleCurrentLocation.AtReceivedUser}, receivedDate: {$lt: new Date()}});
+    }
+
+    //lấy ra các đơn hàng thành công(hiện thị tại điểm gd)
+    public static async getCompleteOrder(id: String) {
+        return OrderModel._model.find({receivePoint: id, currentLocation: PossibleCurrentLocation.AtReceivedUser, receivedDate: {$gte: new Date()}});
+    }
+
+
     
 }
 
@@ -146,8 +204,8 @@ export interface Order {
 export enum PossibleCurrentLocation {
     AtSentPoint,
     AtSentAssemblyPoint,
-    AtReceivePoint,
     AtReceiveAssemblyPoint,
+    AtReceivePoint,
     AtReceivedUser,
 }
 

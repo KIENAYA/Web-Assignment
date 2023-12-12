@@ -5,6 +5,7 @@ import express, { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { AccountModel } from "../models/Account";
 import { Role } from "../models/Role";
+import { CargoHandlePointModel } from "../models/CargoHandlePoint";
 
 const authRouter = express.Router();
 export const secretKey = "your-secret-key";
@@ -13,7 +14,7 @@ authRouter.use(bodyParser.json());
 async function createUserHandler(req: Request, res: Response) {
     const newUserUsername = req.body.username;
     const check = await AccountModel.IsUsernamExist(newUserUsername);
-
+    
     if (check) {
         res.status(409).send("Username exist");
         return;
@@ -31,8 +32,10 @@ async function createUserHandler(req: Request, res: Response) {
         role: req.body.role,
     };
     console.log(newUser);
+    const pointId = await CargoHandlePointModel.getPointIdFromAdmin(res.locals.id);
     
     await AccountModel.create(newUser);
+    await CargoHandlePointModel.addEmployees(pointId, newUser._id)
     res.status(200).send("Complete SignUp!");
 }
 
@@ -70,22 +73,25 @@ authRouter.post(
 
         next();
     },
+
     createUserHandler
 );
 
 authRouter.post("/login", async (req: Request, res: Response) => {
-    const user = await AccountModel.CheckCredential(req.body.username);
+    let user = await AccountModel.CheckCredential(req.body.username);
     if (user === null) {
         return res.status(401);
     }
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
+
             const token = jwt.sign(
                 { id: user.id, role: user.role },
                 secretKey,
                 { expiresIn: 3600 }
             );
-            res.json({ message: "Login successful", token });
+            
+            res.json({username: user.username, role: user.role, token });
         }
     } catch {
         res.status(500).send();
