@@ -3,19 +3,9 @@ import { CargoHandlePoint, CargoHandlePointModel } from '../models/CargoHandlePo
 import { AccountModel } from '../models/Account';
 import { OrderModel } from '../models/Order';
 const pointsRouter = express.Router();
-//Lấy ra tất cả nhân viên
-pointsRouter.get('/', async(req: Request, res: Response) => {
-    try {
-        const employees = await CargoHandlePointModel.getPointEmployees();
-        res.json(employees);
-    }
-    catch(error) {
-        res.status(500).json({error: 'Internal Server Error'});
-    } 
-})
 
 //Lấy ra danh sách nhân viên tại điểm có id là ...
-pointsRouter.get('/employees/:id', async(req: Request, res: Response) => {
+pointsRouter.get('/:id/employees', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const employee = await AccountModel.getAccountById(id);
@@ -26,13 +16,45 @@ pointsRouter.get('/employees/:id', async(req: Request, res: Response) => {
     }
 })
 
+//Lấy ra các đơn hàng chuyển thành công tại điểm giao dịch có id là ...
+pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
+    const id = req.params.id
+    try {
+        const order = await OrderModel.getCompleteOrder(id);
+        res.json(order);
+    } catch(err) {
+        res.status(500);
+    }
+})
+
+//Trả lại đơn hàng lỗi về điểm giao dịch
+pointsRouter.get('/:id/return', async(req: Request, res: Response) => {
+    const id = req.params.id
+    try {
+        const order = await OrderModel.ReturnOrder(id);
+        res.json(order);
+    } catch(err) {
+        res.status(500);
+    }
+})
+
+////Lấy ra các đơn hàng chuyển thất bại tại điểm giao dịch có id là ...
+pointsRouter.get('/:id/fail', async(req: Request, res: Response) => {
+    const id = req.params.id
+    try {
+        const order = await OrderModel.getFailedOrder(id);
+        res.json(order);
+    } catch(err) {
+        res.status(500);
+    }
+})
+
 //lấy ra đơn hàng nhận tại điểm giao dịch đã confirm với id của điểm giao dịch đó
-pointsRouter.get('/TPReceiveConfirmed/:id', async(req: Request, res: Response) => {
+pointsRouter.get('/:id/receive_cf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromTransactionPointConfirmed(id);
         res.json(orders);
-        
     } catch(error) {
         res.status(404).json({error: 'Cannot find TransactionPoint' })
 
@@ -40,7 +62,7 @@ pointsRouter.get('/TPReceiveConfirmed/:id', async(req: Request, res: Response) =
 })
 
 //lấy ra đơn hàng tại điểm giao dịch chưa confirm với id của điểm giao dịch đó
-pointsRouter.get('/TPReceiveUnConfirmed/:id', async(req: Request, res: Response) => {
+pointsRouter.get('/:id/receive_ucf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromTransactionPointUnconfirmed(id);
@@ -52,32 +74,20 @@ pointsRouter.get('/TPReceiveUnConfirmed/:id', async(req: Request, res: Response)
     }
 })
 
-//lấy ra đơn hàng đã gửi tại điểm giao dịch với id của điểm giao dịch đó
-pointsRouter.get('/TPSent/:id', async(req: Request, res: Response) => {
+//lấy ra đơn hàng cần gửi tại điểm giao dịch với id của điểm giao dịch đó
+pointsRouter.get('/:id/send',  async(req: Request, res: Response)=> {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderSentFromTransactionPointSent(id);
         res.json(orders);
     } catch(error) {
-        res.status(404).json({error: 'Cannot find TransactionPoint' })
-
-    }
-}) 
-
-//lấy ra đơn hàng chưa gửi tại điểm giao dịch với id của điểm giao dịch đó
-pointsRouter.get('TPUnSent/:id',  async(req: Request, res: Response)=> {
-    const id = req.params.id;
-    try {
-        const orders = await OrderModel.getAllOrderSentFromTransactionPointUnSent(id);
-        res.json(orders);
-    } catch(error) {
-        res.status(404).json({error: 'Cannot find TransactionPoint' })
+        res.status(404).json({error: 'Cannot find Order' })
 
     }
 })
 
-//lấy ra đơn hàng nhận tại điểm tập kết nguồn chưa confirm với id của điểm tập kết đó
-pointsRouter.get('/APReceiveFromTPUnconfirm/:id', async(req: Request, res: Response) => {
+//lấy ra đơn hàng điểm tập kết nhận từ điểm giao dịch chưa confirm
+pointsRouter.get('/:id/receive/type1_ucf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromTransactionPointToAssemblePointUnconfimed(id);
@@ -88,8 +98,8 @@ pointsRouter.get('/APReceiveFromTPUnconfirm/:id', async(req: Request, res: Respo
     }
 })
 
-//lấy ra đơn hàng nhận tại điểm tập kết nguồn đã confirm với id của điểm tập kết đó
-pointsRouter.get('/APReceiveFromTPconfirm/:id', async(req: Request, res: Response) => {
+//lấy ra đơn hàng điểm tập kết nhận từ điểm giao dịch đã confirm
+pointsRouter.get('/:id/receive/type1_cf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromTransactionPointAssemblePointConfimed(id);
@@ -100,8 +110,8 @@ pointsRouter.get('/APReceiveFromTPconfirm/:id', async(req: Request, res: Respons
     }
 })
 
-//lấy ra đơn hàng đã nhận tại điểm tập kết đích chưa confirm với id của điểm tập kết đó
-pointsRouter.get('/APReceiveFromAPUnconfirm/:id', async(req: Request, res: Response) => {
+//lấy ra đơn hàng điểm tập kết nhận từ điểm tập kết chưa confirm
+pointsRouter.get('/:id/receive/type2_ucf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const orders = await OrderModel.getAllOrderReceiveFromAssemblePointUnconfirmed(id);
@@ -111,8 +121,8 @@ pointsRouter.get('/APReceiveFromAPUnconfirm/:id', async(req: Request, res: Respo
         res.status(404).json({error: 'Cannot find AssemblePoint'});
 }})
 
-//lấy ra đơn hàng tại điểm tập kết đích chưa confirm với id của điểm tập kết đó
-pointsRouter.get('/APReceiveFromAPConfirm/:id', async(req: Request, res: Response) => {
+//lấy ra đơn hàng tại điểm tập kết nhận từ điểm tập kết đã confirm
+pointsRouter.get('/:id/receive/type2_cf', async(req: Request, res: Response) => {
         const id = req.params.id;
         try {
             const orders = await OrderModel.getAllOrderReceiveFromAssemblePointConfirmed(id);
@@ -134,8 +144,20 @@ pointsRouter.delete('/:id', async(req: Request, res: Response) =>{
       }
 })
 
+//Chuyển đơn hàng 
+pointsRouter.patch('/:id/transfer', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const order = await OrderModel.TransferOrder(id);
+        console.log(order);
+        res.json("Confirmed Orders")
+    } catch(err) {
+        res.status(417);
+    }
+})
+
 //Xác nhận đơn hàng
-pointsRouter.patch('/ConfirmOrders/:id', async(req: Request, res: Response) => {
+pointsRouter.patch('/:id/confirm', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const order = await OrderModel.ConfirmOrder(id);
@@ -147,7 +169,7 @@ pointsRouter.patch('/ConfirmOrders/:id', async(req: Request, res: Response) => {
 })
 
 //Trưởng điểm
-pointsRouter.get('/PointAdmin', async(req: Request, res: Response) => {
+pointsRouter.get('/admin', async(req: Request, res: Response) => {
     try {
         res.json(await CargoHandlePointModel.getPointAdmin());
     } catch(err) {

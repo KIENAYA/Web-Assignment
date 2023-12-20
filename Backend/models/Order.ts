@@ -38,8 +38,8 @@ export class OrderModel {
         return OrderModel._model.findOne({_id: id});
     }
 
-    //lấy đơn hàng chưa gửi tại điểm giao dịch
-    public static async getAllOrderSentFromTransactionPointUnSent(id: String) {
+    //lấy đơn hàng cần gửi tại điểm giao dịch
+    public static async getAllOrderSentFromTransactionPointSent(id: String) {
         return OrderModel._model.find({ sentPoint: id, currentLocation: {$eq: 0}});
     }
     
@@ -55,7 +55,7 @@ export class OrderModel {
     
     //lấy ra các đơn hàng gửi từ điểm gd nguồn đến điểm tk nguồn chưa confirm
     public static async getAllOrderFromTPToAPUnconfirmed(id: String) {
-        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 0}});
+        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 1}, confirm: false});
     }
     
     //lấy đơn hàng nhận được tại điểm tập kết nguồn chưa confirm
@@ -74,7 +74,7 @@ export class OrderModel {
     
     //lấy ra các đơn hàng gửi từ điểm gd nguồn đến điểm tk nguồn đã confirm
     public static async getAllOrderFromTPToAPConfirmed(id: String) {
-        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 1}})
+        return OrderModel._model.find({sentPoint: id, currentLocation: {$eq: 1}, confirm: true})
     }
 
     //lấy ra các đơn hàng nhận tại điểm tk nguồn đã confirm
@@ -94,12 +94,12 @@ export class OrderModel {
 
     //lấy ra các đơn hàng gửi từ tk nguồn đến tk đích chưa confirm
     public static async getAllOrderFromAPtoAPUnconfirmed(id: String) {
-        return OrderModel._model.find({receivePoint: id, currentLocation: {$eq: 1}})
+        return OrderModel._model.find({receivePoint: id, currentLocation: {$eq: 2}, confirm: false})
     }
     
     //lấy ra các đơn hàng gửi từ tk nguồn đến tk đích đã confirm
     public static async getAllOrderFromAPtoAPConfirmed(id: String) {
-        return OrderModel._model.find({receivePoint:id, currentLocation: {$eq: 2}})
+        return OrderModel._model.find({receivePoint:id, currentLocation: {$eq: 2}, confirm: true})
     }
 
 
@@ -133,7 +133,7 @@ export class OrderModel {
     
     //lấy ra danh sách hàng hóa có trong đơn hàng
     public static async getCargoList(id: String) {
-        return OrderModel._model.findOne({_id: id},{_id: 0, cargoList: 1});
+        return (await OrderModel._model.findOne({_id: id})).cargoList;
     }
     
 
@@ -158,27 +158,31 @@ export class OrderModel {
         }
         else return ("Done");
     }
-    
+    //Chuyển đơn hàng
+    public static async TransferOrder(id: String) {
+        return OrderModel._model.findOneAndUpdate({_id: id},{ $inc: { currentLocation: 1 }, $set: {confirm: false} },
+            { new: true });
+    }
     //Xác nhận đơn hàng
     public static async ConfirmOrder(id: String) {
-        return OrderModel._model.findOneAndUpdate({_id: id},{ $inc: { currentLocation: 1 } },
+        return OrderModel._model.findOneAndUpdate({_id: id},{ $set: { confirm: true } },
             { new: true });
     }
 
-
     //lấy ra các đơn hàng bị fail(hiển thị tại điểm gd)
     public static async getFailedOrder(id: String) {
-         
         return OrderModel._model.find({receivePoint: id, currentLocation:{$ne: PossibleCurrentLocation.AtReceivedUser}, receivedDate: {$lt: new Date()}});
     }
 
     //lấy ra các đơn hàng thành công(hiện thị tại điểm gd)
     public static async getCompleteOrder(id: String) {
-        return OrderModel._model.find({receivePoint: id, currentLocation: PossibleCurrentLocation.AtReceivedUser, receivedDate: {$gte: new Date()}});
+        return OrderModel._model.findOneAndUpdate({receivePoint: id, currentLocation: PossibleCurrentLocation.AtReceivedUser, receivedDate: {$gte: new Date()}});
     }
-
-
     
+    //Trả lại đơn hàng bị lỗi 
+    public static async ReturnOrder(id: String) {
+        return OrderModel._model.findOneAndUpdate({_id: id}, {$set: {currentLocation: 0}}, {new: true});
+    }
 }
 
 export type OrderIdType = string;
@@ -258,7 +262,7 @@ function createRandomOrder(
             PossibleCurrentLocationWithWeight
         ),
         confirm: true,
-        cost: 0,
+        cost: cargoList.length*200000,
     };
 }
 
