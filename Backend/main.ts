@@ -12,7 +12,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(cors);
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:1000'];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins
@@ -34,5 +34,5 @@ async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
     );
-   
+   console.log(await OrderModel.getOrderStage("k8F4ncSOSizJlglbmgSiT"));
 }

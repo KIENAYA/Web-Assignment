@@ -3,7 +3,7 @@ import { Order, OrderModel } from '../models/Order';
 import { CargoHandlePoint } from '../models/CargoHandlePoint';
 import { CargoModel } from '../models/Cargo';
 const customerRouter =  express.Router();
-customerRouter.get('/:id', async (req: Request, res: Response) => {
+customerRouter.get('/customer/:id', async (req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const stage = await OrderModel.getOrderStage(id);

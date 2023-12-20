@@ -9,7 +9,6 @@ pointsRouter.get('/:id/employees', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
         const employee = await AccountModel.getAccountById(id);
-    
         res.json(employee);
     } catch(err) {
         res.status(404).json({err: 'Cannot find Employee'});
@@ -38,7 +37,7 @@ pointsRouter.get('/:id/return', async(req: Request, res: Response) => {
     }
 })
 
-////Lấy ra các đơn hàng chuyển thất bại tại điểm giao dịch có id là ...
+//Lấy ra các đơn hàng chuyển thất bại tại điểm giao dịch có id là ...
 pointsRouter.get('/:id/fail', async(req: Request, res: Response) => {
     const id = req.params.id
     try {
@@ -61,7 +60,7 @@ pointsRouter.get('/:id/receive_cf', async(req: Request, res: Response) => {
     }
 })
 
-//lấy ra đơn hàng tại điểm giao dịch chưa confirm với id của điểm giao dịch đó
+//lấy ra đơn hàng tại điểm giao dịch chưa confirm với id của điểm giao dịch đó 
 pointsRouter.get('/:id/receive_ucf', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
