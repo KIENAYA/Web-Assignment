@@ -30,7 +30,7 @@ export class CargoModel{
         return await CargoModel._model.findOne({_id: id});
     }
     public static async getCargoFromOrder(id: String) {
-        const cargoIdArray = (await OrderModel.getCargoList(id)).cargoList;
+        const cargoIdArray = (await OrderModel.getCargoList(id));
         const cargos = new Array();
         for(let i=0; i< cargoIdArray.length; i++) {
             const cargo = await CargoModel.getCargoById(cargoIdArray[i]);
