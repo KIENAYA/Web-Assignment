@@ -26,6 +26,7 @@ export class OrderModel {
         receiveCustomer: String,
         receivedDate: Date,
         currentLocation: Number,
+        confirm: Boolean,
         cost: String,
     });
     private static _model = model("orders", this.ordersSchema);
@@ -198,6 +199,7 @@ export interface Order {
     receiveCustomer: CustomerIdType;
     receivedDate: Date;
     currentLocation: PossibleCurrentLocation;
+    confirm: boolean;
     cost: number;
 }
 
@@ -261,6 +263,7 @@ function createRandomOrder(
         currentLocation: faker.helpers.weightedArrayElement(
             PossibleCurrentLocationWithWeight
         ),
+        confirm: true,
         cost: 0,
     };
 }
