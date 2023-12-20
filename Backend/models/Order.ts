@@ -43,20 +43,14 @@ export class OrderModel {
         return OrderModel._model.find({ sentPoint: id, currentLocation: {$eq: 0}});
     }
     
-    //lấy đơn hàng đã gửi tại điểm giao dịch
-    public static async getAllOrderSentFromTransactionPointSent(id: String) {
-        return OrderModel._model.find({sentPoint: id, currentLocation: {$gte: 1}})
-
-    }
-
     //lấy đơn hàng nhận được tại điểm giao dịch đã confirm
     public static async getAllOrderReceiveFromTransactionPointConfirmed(id: String) {
-        return OrderModel._model.find({ receivePoint: id, currentLocation: {$eq: 3}});
+        return OrderModel._model.find({ receivePoint: id, currentLocation: {$eq: 3}, confirm: true});
     }
     
     //lấy đơn hàng nhận được tại điểm giao dịch chưa confirm
     public static async getAllOrderReceiveFromTransactionPointUnconfirmed(id: String) {
-        return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 2}});
+        return OrderModel._model.find({receivePoint:id, currentLocation:{$eq: 3}, confirm: false});
     }
     
     //lấy ra các đơn hàng gửi từ điểm gd nguồn đến điểm tk nguồn chưa confirm
