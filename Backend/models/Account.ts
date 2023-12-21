@@ -1,10 +1,11 @@
 import { faker } from "@faker-js/faker";
 import { Role } from "./Role";
-import { CreateRandomPerson } from "./person/Person";
+import { CreateRandomPerson, Person } from "./person/Person";
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
 
 export interface Account {
+    profile: Person;
     _id: string;
     username: string;
     password: string;
@@ -12,6 +13,7 @@ export interface Account {
 }
 export class AccountModel {
     private static accountSchema: Schema<Account> = new Schema<Account>({
+        profile: Object,
         _id: String,
         username: String,
         password: String,
@@ -40,16 +42,21 @@ export class AccountModel {
     public static async getAccountById(id: string) {
         return AccountModel._model.findOne({ _id: id }).select("username");
     }
+
+    public static async getProfileById(id: String) {
+        return (await AccountModel._model.findOne({_id: id})).profile;
+    }
 }
 export type AccountIdType = Account["_id"];
 
 export function createRandomAccount(role: Role): Account {
-    const person = CreateRandomPerson();
+    const profile = CreateRandomPerson();
     return {
+        profile,
         _id: faker.string.uuid(),
         username: faker.internet.userName({
-            firstName: person.firstname,
-            lastName: person.lastname,
+            firstName: profile.firstname,
+            lastName: profile.lastname,
         }),
         password: faker.internet.password(),
         role,
@@ -66,7 +73,9 @@ export function createRandomCustomerAccount(
     firstName: string,
     lastName: string
 ): Account {
+    const profile = CreateRandomPerson();
     return {
+        profile,
         _id: faker.string.uuid(),
         username: faker.internet.userName({ firstName, lastName }),
         password: faker.internet.password(),

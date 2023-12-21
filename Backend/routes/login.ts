@@ -26,6 +26,7 @@ async function createUserHandler(req: Request, res: Response) {
     }
 
     const newUser = {
+        profile: req.body.profile,
         _id: faker.string.uuid(),
         username: req.body.username,
         password: await bcrypt.hash(req.body.password, 10),

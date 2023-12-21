@@ -8,7 +8,7 @@ const pointsRouter = express.Router();
 pointsRouter.get('/:id/employees', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
-        const employee = await AccountModel.getAccountById(id);
+        const employee = await CargoHandlePointModel.getPointEmployees(id);
         res.json(employee);
     } catch(err) {
         res.status(404).json({err: 'Cannot find Employee'});
@@ -18,6 +18,7 @@ pointsRouter.get('/:id/employees', async(req: Request, res: Response) => {
 //Lấy ra các đơn hàng chuyển thành công tại điểm giao dịch có id là ...
 pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
     const id = req.params.id
+    console.log(id);
     try {
         const order = await OrderModel.getCompleteOrder(id);
         res.json(order);
@@ -149,7 +150,7 @@ pointsRouter.patch('/:id/transfer', async(req: Request, res: Response) => {
     try {
         const order = await OrderModel.TransferOrder(id);
         console.log(order);
-        res.json("Confirmed Orders")
+        res.json("Chuyển hàng thành công")
     } catch(err) {
         res.status(417);
     }
@@ -167,7 +168,7 @@ pointsRouter.patch('/:id/confirm', async(req: Request, res: Response) => {
     }
 })
 
-//Trưởng điểm
+//Trưởng điểm của tài khoản admin
 pointsRouter.get('/admin', async(req: Request, res: Response) => {
     try {
         res.json(await CargoHandlePointModel.getPointAdmin());

@@ -8,7 +8,7 @@ export class CargoHandlePointModel {
         name: String,
         type: String,
         pointAdmin: String,
-        pointEmployees: String,
+        pointEmployees: [String],
         associatedAssemblyPoint: String,
     });
     private static _model = model('points', this.pointsSchema);
@@ -21,8 +21,8 @@ export class CargoHandlePointModel {
     public static async getAffiliatedTransactionPointID(id: String) {
         return CargoHandlePointModel._model.find({associatedAssemblyPoint: id},{_id: 1});
     }
-    public static async getPointEmployees() {
-        return CargoHandlePointModel._model.find({},{_id: 0, pointEmployees: 1})
+    public static async getPointEmployees(id: String) {
+        return (await CargoHandlePointModel._model.findOne({_id: id})).pointEmployees;
     }
     public static async getPointEmployeeById(id: String) {
         return CargoHandlePointModel._model.find({pointEmployees: id})
