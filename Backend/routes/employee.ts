@@ -1,7 +1,20 @@
 import express, { Request, Response } from 'express';
 import { AccountModel } from '../models/Account';
+import { CargoHandlePointModel } from '../models/CargoHandlePoint';
 
 const employeeRouter = express.Router();
+
+//Lấy ra danh sách nhân viên tại điểm có id:..
+employeeRouter.get('/:id/employees', async(req: Request, res: Response) => {
+    const id = req.params.id;
+    try {
+        const employee = await CargoHandlePointModel.getPointEmployees(id);
+        res.json(employee);
+    } catch(err) {
+        res.status(404).json({err: 'Cannot find Employee'});
+    }
+})
+
 //lấy ra profile của tài khoản có id
 employeeRouter.get('/:id/profile', async(req: Request, res: Response) => {
     const id = req.params.id;
@@ -11,6 +24,18 @@ employeeRouter.get('/:id/profile', async(req: Request, res: Response) => {
     } catch(error) {
         res.status(404)
     }
+})
+
+//Xóa tài khoản
+employeeRouter.delete('/:id', async(req: Request, res: Response) =>{
+    try {
+        const id = req.params.id;
+        const Ok = await AccountModel.removeAccount(id);
+    
+            res.json({deleted: Ok});
+      } catch (err) {
+        res.status(500);
+      }
 })
 
 export default employeeRouter;

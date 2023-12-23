@@ -4,17 +4,6 @@ import { AccountModel } from '../models/Account';
 import { OrderModel } from '../models/Order';
 const pointsRouter = express.Router();
 
-//Lấy ra danh sách nhân viên tại điểm có id là ...
-pointsRouter.get('/:id/employees', async(req: Request, res: Response) => {
-    const id = req.params.id;
-    try {
-        const employee = await CargoHandlePointModel.getPointEmployees(id);
-        res.json(employee);
-    } catch(err) {
-        res.status(404).json({err: 'Cannot find Employee'});
-    }
-})
-
 //Lấy ra các đơn hàng chuyển thành công tại điểm giao dịch có id là ...
 pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
     const id = req.params.id
@@ -132,18 +121,6 @@ pointsRouter.get('/:id/receive/type2_cf', async(req: Request, res: Response) => 
             res.status(404).json({error: 'Cannot find AssemblePoint'});
 }})
 
-//Xóa tài khoản
-pointsRouter.delete('/:id', async(req: Request, res: Response) =>{
-    try {
-        const id = req.params.id;
-        const Ok = await AccountModel.removeAccount(id);
-    
-            res.json({deleted: Ok});
-      } catch (err) {
-        res.status(500);
-      }
-})
-
 //Chuyển đơn hàng 
 pointsRouter.patch('/:id/transfer', async(req: Request, res: Response) => {
     const id = req.params.id;
@@ -169,7 +146,7 @@ pointsRouter.patch('/:id/confirm', async(req: Request, res: Response) => {
 })
 
 //Trưởng điểm của tài khoản admin
-pointsRouter.get('/admin', async(req: Request, res: Response) => {
+pointsRouter.get('/pointAdmin', async(req: Request, res: Response) => {
     try {
         res.json(await CargoHandlePointModel.getPointAdmin());
     } catch(err) {
