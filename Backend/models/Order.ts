@@ -38,6 +38,8 @@ export class OrderModel {
         return OrderModel._model.findOne({_id: id});
     }
 
+   
+
     //lấy đơn hàng cần gửi tại điểm giao dịch
     public static async getAllOrderSentFromTransactionPointSent(id: String) {
         return OrderModel._model.find({ sentPoint: id, currentLocation: {$eq: 0}});

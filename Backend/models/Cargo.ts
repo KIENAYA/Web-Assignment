@@ -5,11 +5,9 @@ import { OrderModel } from "./Order";
 export type CargoIdType = string;
 
 export enum CargoType {
-    Electronic = "Điện thoại, Tivi, Tủ lạnh, Laptop, Máy sấy, Bàn là, Quạt điện, Bàn phím, Tai nghe, Chuột máy tính, Bóng đèn",
-    Jewelry = "Vòng tay, Nhẫn, Vòng cổ, Khuyên tai,",
-    Houseware = "Bàn dài, Bàn học, Kệ sách, Ghế tựa, Sofa, Chuổi, Hót rác, Ổ điện, Tủ quần áo, Kệ giày dép",
-    Cloth = "Giày, Dép , Quần đùi, Quần jean, Quần Kaki, Áo sơ-mi, Áo thun, Áo khoác, Áo len, Tất, Ô, Balo, Túi xách",
-
+   túi = "túi sách", váy = "váy", áo1 = "áo len", áo2 = "áo sơ-mi", áo3 = "áo thun", quần1 ="quần đùi",
+   quần2 = "quần thể thao", phone1 = "điện thoại samsung", phone2 = "điện thoài iphone", laptop1= "laptop acer", laptop2 ="laptop dell", bàn = "bàn học", bàn2 =" bàn gỗ", kệ = "kệ gỗ", ghế1 = "ghế gaming",ghế2 = "ghế gập", ghế3 = "ghế gỗ", tủ = "tủ quần áo", vòng = "vòng tay", nhẫn ="nhẫn",
+   keyboard = " bàn phím", mouse =" chuột không dây", đèn1 = "đèn học",đèn2 = "đèn led", quạt = "quạt điện", turlanh = "tủ lạnh", đh = "điều hòa",tv ="ti vi", ấm = "ấm điện", dép ="dép", mg ="máy giặt"
 }
 
 /**
@@ -59,6 +57,9 @@ export function CreateRandomCargo(
             min: minQuantity,
             max: maxQuantity,
         }),
-        weight: faker.helpers.rangeToNumber(100),
+        weight: faker.helpers.rangeToNumber({
+            min: 1,
+            max: 10,
+        }),
     };
 }
