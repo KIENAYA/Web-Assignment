@@ -185,7 +185,58 @@ export class OrderModel {
     public static async ReturnOrder(id: String) {
         return OrderModel._model.findOneAndUpdate({_id: id}, {$set: {currentLocation: 0}}, {new: true});
     }
+
+    //thống kê hàng gửi tại điểm giao dịch theo tháng
+    public static async statisticOrderSentAtTP(id: String, month: number) {
+        const startOfMonth = new Date(`2023-${month}-01`);
+        const endOfMonth = new Date(`2023-${month + 1}-01`);
+        console.log(startOfMonth);
+        console.log(endOfMonth);
+        return OrderModel._model.find({sentPoint: id, sentDate: {
+            $gte: startOfMonth,
+            $lt: endOfMonth
+        }});
+    }
+    
+    //thống kê đơn hàng nhận tại điểm giao dịch theo tháng
+    public static async statisticOrderReceivAtTP(id: String, month: number) {
+        const startOfMonth = new Date(`2023-${month}-01`);
+        const endOfMonth = new Date(`2023-${month + 1}-01`);
+        return OrderModel._model.find({receivePoint: id, sentDate: {
+            $gte: startOfMonth,
+            $lt: endOfMonth
+        }});
+    }
+
+    //thống kê hàng đến tại điểm tập kết theo tháng
+    public static async statisticOrderAtAP1(id: String, month: number) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.statisticOrderSentAtTP(id, month);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
+
+    //thống kê hàng đi tại điểm tập kết theo tháng
+    public static async statisticOrderAtAP2(id: String, month: number) {
+        const inputArray: myObject[] = await CargoHandlePointModel.getAffiliatedTransactionPointID(id);
+        const idArray: String[] = inputArray.map((obj) => obj._id);
+        const orders = new Array();
+        for (id of idArray) {
+            var order = await this.statisticOrderReceivAtTP(id, month);
+            if (order.length > 0) {
+                orders.push(order);
+            }
+        }
+        return orders;
+    }
 }
+
 
 export type OrderIdType = string;
 
