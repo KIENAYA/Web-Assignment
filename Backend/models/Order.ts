@@ -178,7 +178,7 @@ export class OrderModel {
 
     //lấy ra các đơn hàng thành công(hiện thị tại điểm gd)
     public static async getCompleteOrder(id: String) {
-        return OrderModel._model.findOneAndUpdate({receivePoint: id, currentLocation: PossibleCurrentLocation.AtReceivedUser, receivedDate: {$gte: new Date()}});
+        return OrderModel._model.find({receivePoint: id, currentLocation: PossibleCurrentLocation.AtReceivedUser, receivedDate: {$gte: new Date()}});
     }
     
     //Trả lại đơn hàng bị lỗi 

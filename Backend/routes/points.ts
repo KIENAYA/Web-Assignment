@@ -7,7 +7,6 @@ const pointsRouter = express.Router();
 //Lấy ra các đơn hàng chuyển thành công tại điểm giao dịch có id là ...
 pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
     const id = req.params.id
-    console.log(id);
     try {
         const order = await OrderModel.getCompleteOrder(id);
         res.json(order);

@@ -14,7 +14,7 @@ import employeeRouter from "./routes/employee";
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:1000'];
+const allowedOrigins = ['http://localhost:5173'];
 const options: CorsOptions = {
    origin: allowedOrigins
 };
@@ -35,5 +35,5 @@ async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
     );
-    
+    console.log(await OrderModel.getCompleteOrder("gd-ml-P3iq8B7lYQ4DrkVrZc"))
 }
