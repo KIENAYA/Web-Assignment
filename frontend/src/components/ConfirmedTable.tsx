@@ -1,51 +1,45 @@
-import React from 'react';
-import { useState } from 'react';
-import { BsPencilFill, BsTrashFill } from 'react-icons/bs';
-import { faker } from '@faker-js/faker';
-import ModalTwo from './ModalTwo';
-import { ICargo, PageEnum} from '../Items.type';
-import ModalOne from './ModalOne';
-type TableProps = {
-  list: ICargo[];
+import { IOrder } from "../Order.type";
+import { useState } from "react";
+type TableProps={
+list: IOrder[]
 };
 const TableOne = (prop: TableProps) => {
-  const [deleteItem, onDeleteHand] = useState('');
-  const [shownPage,setShownPage]=useState(PageEnum.list);
-  const [modalTwoOpen, setModalTwoOpen] = useState(false);
-  const [modalOneOpen, setModalOneOpen] = useState(false);
-  const [editItem,setItemToEdit]=useState({} as ICargo);
+ 
+ 
+ 
+ 
+  const [editorder,setOrderToEdit]=useState({} as IOrder);
   const { list } = prop;
-  const [itemList, setItemList] = useState(list as ICargo[]);
-  const handleDeleteRow = (data: ICargo) => {
-    const indexToDel = itemList.indexOf(data);
-    const tempList = [...itemList];
+  const [orderList, setOrderList] = useState(list as IOrder[]);
+  const handleDeleteRow = (data: IOrder) => {
+    const indexToDel = orderList.indexOf(data);
+    const tempList = [...orderList];
     tempList.splice(indexToDel, 1);
-    setItemList(tempList);
+    setOrderList(tempList);
   };
-  const handleEditRow=(data:ICargo)=>{
-  setShownPage(PageEnum.edit)
-  setItemToEdit(data)
+  const handleEditRow=(data:IOrder)=>{
+  setOrderToEdit(data)
   }
-  const updateEditRow=(data: ICargo)=>{
+  const updateEditRow=(data: IOrder)=>{
   
   }
-  const UpdateItem=(data:ICargo)=>{
-    const filteredData=itemList.filter(x=>x.id===data.id)[0];
-    const indexOfEdit=itemList.indexOf(filteredData);
-    const tempData=[...itemList]
+  const Updateorder=(data:IOrder)=>{
+    const filteredData=orderList.filter(x=>x.id===data.id)[0];
+    const indexOfEdit=orderList.indexOf(filteredData);
+    const tempData=[...orderList]
     tempData[indexOfEdit]=data;
-    setItemList(tempData)
+    setOrderList(tempData)
   }
-  const AddItem = (data: ICargo) => {
-    setItemList([...itemList, data]);
+  const Addorder = (data: IOrder) => {
+    setOrderList([...orderList, data]);
     console.log('new 1');
-    itemList.forEach((element) => {
+    orderList.forEach((element) => {
       console.log(element);
     });
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  w-full">
+    <div className="flex flex-col orders-center justify-center  w-full">
       <table className="block overflow-hidden table-fixed border-separate shadow-[0_10_10_rgba(204,204,204,0.3)] rounded-sm w-full overflow-x-auto m-auto">
         <thead className="bg-primary text-white  ">
           <tr>
@@ -64,7 +58,7 @@ const TableOne = (prop: TableProps) => {
           </tr>
         </thead>
         <tbody>
-          {itemList.map((cargo) => {
+          {orderList.map((cargo) => {
             return (
               <tr
                 key={cargo.id}
@@ -99,13 +93,13 @@ const TableOne = (prop: TableProps) => {
             setModalTwoOpen(false);
             setShownPage(PageEnum.list)
           }}
-          onSubmit={AddItem}
+          onSubmit={Addorder}
         />
       )}
       {
         shownPage===PageEnum.edit&&(
           <ModalOne
-          data={editItem}
+          data={editorder}
           onSubmit={handleEditRow}
           closeModalOne={()=>{
             setModalOneOpen(false);

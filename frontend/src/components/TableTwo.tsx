@@ -8,10 +8,40 @@ const TableTwo = () => {
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="py-6 px-4 md:px-6 xl:px-7.5">
         <h4 className="text-xl font-semibold text-black dark:text-white">
-          Top Products
+          Confirmed Orders
         </h4>
       </div>
-
+      <table className="py-6 px-4 md:px-6 xl:px-7.5">
+        <thead className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5 flex-rowuu">
+          <th
+           className="col-span-3 flex items-center"
+          >Cargo List</th>
+          <th
+           className="col-span-3 flex items-center"
+          >Sender </th>
+          <th
+           className="col-span-3 flex items-center"
+          > Send Date </th>
+          <th
+ className="col-span-3 flex items-center"
+          > Receiver </th>
+          <th
+ className="col-span-3 flex items-center"
+          > Receive Date </th>
+          <th
+ className="col-span-3 flex items-center"
+          >Send Point </th>
+          <th
+ className="col-span-3 flex items-center"
+          >Receive Point</th>
+          <th
+ className="col-span-3 flex items-center"
+          > Current Location</th>
+          <th
+ className="col-span-3 flex items-center"
+          > Cost</th>
+        </thead>
+      </table>
       <div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
         <div className="col-span-3 flex items-center">
           <p className="font-medium">Product Name</p>

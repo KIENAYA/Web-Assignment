@@ -3,10 +3,10 @@ import TableOne from '../components/TableOne';
 import TableThree from '../components/TableThree';
 import TableTwo from '../components/TableTwo';
 
-const Tables = () => {
+const Employees = () => {
   return (
     <>
-      <Breadcrumb pageName="Tables" />
+      <Breadcrumb pageName="Employees" />
 
       <div className="flex flex-col gap-10">
         <TableTwo />
@@ -16,4 +16,4 @@ const Tables = () => {
   );
 };
 
-export default Tables;
+export default Employees;

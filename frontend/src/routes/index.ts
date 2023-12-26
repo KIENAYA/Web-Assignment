@@ -1,20 +1,25 @@
 import { lazy } from 'react';
-
-const Calendar = lazy(() => import('../pages/Calendar'));
+const ECommerce=lazy(()=>import('../pages/Dashboard/ECommerce'))
 const Chart = lazy(() => import('../pages/Chart'));
-const FormElements = lazy(() => import('../pages/Form/FormElements'));
-const FormLayout = lazy(() => import('../pages/Form/FormLayout'));
+const AddEmployees = lazy(() => import('../pages/Append/AddEmployees'));
+const AddOrder = lazy(() => import('../pages/Append/AddOrder'));
 const Profile = lazy(() => import('../pages/Profile'));
 const Settings = lazy(() => import('../pages/Settings'));
 const Tables = lazy(() => import('../pages/Tables'));
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
+const SignIn= lazy(()=>import('../pages/Authentication/SignIn'))
 
 const coreRoutes = [
+{
+  path:'/authentication',
+  title: 'Log In',
+  component:SignIn
+},
   {
-    path: '/calendar',
-    title: 'Calender',
-    component: Calendar,
+    path: '/',
+    title: 'Dashboard',
+    component: ECommerce,
   },
   {
     path: '/profile',
@@ -22,18 +27,23 @@ const coreRoutes = [
     component: Profile,
   },
   {
-    path: '/forms/form-elements',
-    title: 'Forms Elements',
-    component: FormElements,
+    path: '/add/order',
+    title: 'Add Order',
+    component: AddOrder,
   },
   {
-    path: '/forms/form-layout',
-    title: 'Form Layouts',
-    component: FormLayout,
+    path: '/add/employee',
+    title: 'Add Employee',
+    component: AddEmployees,
   },
   {
-    path: '/tables',
-    title: 'Tables',
+    path: '/orders',
+    title: 'Orders',
+    component: Tables,
+  },
+  {
+    path: '/employees',
+    title: 'Employess',
     component: Tables,
   },
   {

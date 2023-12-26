@@ -1,8 +1,32 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
+import { useState } from 'react';
+import { Token } from '../../Auth.type';
+import axios from 'axios';
+type Props={
+  setToken:(data:Token)=>void
+}
 
-const SignIn = () => {
+  
+let navigate=useNavigate()
+const SignIn = (props:Props) => {
+  const {setToken}=props
+  const [username,setUsername]=useState("");
+  const [password,setPassword]=useState("")
+  const HandleSubmit=async (e:any)=>{
+e.preventDefault();
+  axios.post("http://127.0.0.1/4000/login",{
+    username,
+    password
+  }).then((response)=>{
+    console.log(response.data);
+    
+    navigate("/login")
+  }).catch((error)=>{
+    console.log(error.message)
+  })
+  }
   return (
     <>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -151,15 +175,15 @@ const SignIn = () => {
                 Sign In to TailAdmin
               </h2>
 
-              <form>
+              <form onSubmit={HandleSubmit}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                    Email
+                  Username
                   </label>
                   <div className="relative">
                     <input
-                      type="email"
-                      placeholder="Enter your email"
+                      type="text"
+                      placeholder="Enter your username"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
@@ -185,7 +209,7 @@ const SignIn = () => {
 
                 <div className="mb-6">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                    Re-type Password
+                    Password
                   </label>
                   <div className="relative">
                     <input
