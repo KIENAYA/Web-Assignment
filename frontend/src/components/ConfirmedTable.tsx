@@ -1,14 +1,12 @@
-import { IOrder } from "../Order.type";
-import { useState } from "react";
-type TableProps={
-list: IOrder[]
+import { IOrder } from '../Order.type';
+import { BsTrashFill } from 'react-icons/bs';
+import { BsPencilFill } from 'react-icons/bs';
+import { useState } from 'react';
+type TableProps = {
+  list: IOrder[];
 };
 const TableOne = (prop: TableProps) => {
- 
- 
- 
- 
-  const [editorder,setOrderToEdit]=useState({} as IOrder);
+  const [editorder, setOrderToEdit] = useState({} as IOrder);
   const { list } = prop;
   const [orderList, setOrderList] = useState(list as IOrder[]);
   const handleDeleteRow = (data: IOrder) => {
@@ -17,19 +15,17 @@ const TableOne = (prop: TableProps) => {
     tempList.splice(indexToDel, 1);
     setOrderList(tempList);
   };
-  const handleEditRow=(data:IOrder)=>{
-  setOrderToEdit(data)
-  }
-  const updateEditRow=(data: IOrder)=>{
-  
-  }
-  const Updateorder=(data:IOrder)=>{
-    const filteredData=orderList.filter(x=>x.id===data.id)[0];
-    const indexOfEdit=orderList.indexOf(filteredData);
-    const tempData=[...orderList]
-    tempData[indexOfEdit]=data;
-    setOrderList(tempData)
-  }
+  const handleEditRow = (data: IOrder) => {
+    setOrderToEdit(data);
+  };
+  const updateEditRow = (data: IOrder) => {};
+  const Updateorder = (data: IOrder) => {
+    const filteredData = orderList.filter((x) => x.id === data.id)[0];
+    const indexOfEdit = orderList.indexOf(filteredData);
+    const tempData = [...orderList];
+    tempData[indexOfEdit] = data;
+    setOrderList(tempData);
+  };
   const Addorder = (data: IOrder) => {
     setOrderList([...orderList, data]);
     console.log('new 1');
@@ -58,19 +54,24 @@ const TableOne = (prop: TableProps) => {
           </tr>
         </thead>
         <tbody>
-          {orderList.map((cargo) => {
+          {orderList.map((order) => {
             return (
               <tr
-                key={cargo.id}
+                key={order.id}
                 className="justify-center text-center hover:bg-gray-2"
               >
-                <td className="px-8 py-4 border">{cargo.description}</td>
-                <td className="px-8 py-4 border">{cargo.quantity}</td>
-                <td className="px-8 py-4 border">{cargo.weight}</td>
+                <td className="px-8 py-4 border">{order.receiver}</td>
+                <td className="px-8 py-4 border">{order.receiveDate}</td>
+                <td className="px-8 py-4 border">{order.receivePoint}</td>
+                <td className="px-8 py-4 border">{order.sender}</td>
+                <td className="px-8 py-4 border">{order.sendDate}</td>
+                <td className="px-8 py-4 border">{order.sendPoint}</td>
+                <td className="px-8 py-4 border">{order.currentLocation}</td>
+                <td className="px-8 py-4 border">{order.price}</td>
                 <td className="px-8 py-4 border">
                   <div className="flex flex-row gap-3 justify-center">
-                   <BsPencilFill onClick={()=>handleEditRow(cargo)} />
-                    <BsTrashFill onClick={() => handleDeleteRow(cargo)} />
+                    <BsPencilFill onClick={() => handleEditRow(order)} />
+                    <BsTrashFill onClick={() => handleDeleteRow(order)} />
                   </div>
                 </td>
               </tr>
@@ -78,36 +79,6 @@ const TableOne = (prop: TableProps) => {
           })}
         </tbody>
       </table>
-      <button
-        className="mt-4 border-none px-2 rounded-xl cursor-pointer shadow-[0_5px_5px_rgba(204,204,204,0.3)]"
-        onClick={() => {
-          setModalTwoOpen(true);
-          setShownPage(PageEnum.add);
-        }}
-      >
-        Add
-      </button>
-      {shownPage===PageEnum.add && (
-        <ModalTwo
-          closeModalTwo={() => {
-            setModalTwoOpen(false);
-            setShownPage(PageEnum.list)
-          }}
-          onSubmit={Addorder}
-        />
-      )}
-      {
-        shownPage===PageEnum.edit&&(
-          <ModalOne
-          data={editorder}
-          onSubmit={handleEditRow}
-          closeModalOne={()=>{
-            setModalOneOpen(false);
-            setShownPage(PageEnum.list)
-          }}
-          />
-        )
-      }
     </div>
   );
 };

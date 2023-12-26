@@ -10,7 +10,6 @@ const ModalOne = (props: ModalOneProps) => {
   const { data, onSubmit, closeModalOne } = props;
 
   const [description, setDescription] = useState(data.description);
-  const [id, setID] = useState(data.id);
   const [quantity, setQuantity] = useState(data.quantity);
   const [weight, setWeight] = useState(data.weight);
   const onChangeDescHand = (e: any) => {

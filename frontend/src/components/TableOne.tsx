@@ -85,7 +85,7 @@ const TableOne = (prop: TableProps) => {
         </tbody>
       </table>
       <button
-        className="mt-4 border-none px-2 rounded-xl cursor-pointer shadow-[0_5px_5px_rgba(204,204,204,0.3)]"
+        className="mt-4 border-solid border-2 px-2 rounded-xl cursor-pointer shadow-[0_5px_5px_rgba(204,204,204,0.3)]"
         onClick={() => {
           setModalTwoOpen(true);
           setShownPage(PageEnum.add);
@@ -106,7 +106,7 @@ const TableOne = (prop: TableProps) => {
         shownPage===PageEnum.edit&&(
           <ModalOne
           data={editItem}
-          onSubmit={handleEditRow}
+          onSubmit={UpdateItem}
           closeModalOne={()=>{
             setModalOneOpen(false);
             setShownPage(PageEnum.list)
