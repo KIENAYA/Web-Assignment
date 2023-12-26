@@ -4,29 +4,29 @@ import Logo from '../../images/logo/logo.svg';
 import { useState } from 'react';
 import { Token } from '../../Auth.type';
 import axios from 'axios';
-type Props={
-  setToken:(data:Token)=>void
-}
+type Props = {
+  setToken: (data: Token) => void;
+};
 
-  
-let navigate=useNavigate()
-const SignIn = (props:Props) => {
-  const {setToken}=props
-  const [username,setUsername]=useState("");
-  const [password,setPassword]=useState("")
-  const HandleSubmit=async (e:any)=>{
-e.preventDefault();
-  axios.post("http://127.0.0.1/4000/login",{
-    username,
-    password
-  }).then((response)=>{
-    console.log(response.data);
-    
-    navigate("/login")
-  }).catch((error)=>{
-    console.log(error.message)
-  })
-  }
+//let navigate=useNavigate()
+const SignIn = () => {
+  const [token, setToken] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const HandleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    axios
+      .post('http://127.0.0.1/4000/login', {
+        username,
+        password,
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -178,7 +178,7 @@ e.preventDefault();
               <form onSubmit={HandleSubmit}>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                  Username
+                    Username
                   </label>
                   <div className="relative">
                     <input
