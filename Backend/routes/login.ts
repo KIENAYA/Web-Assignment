@@ -10,7 +10,7 @@ import { CargoHandlePointModel } from "../models/CargoHandlePoint";
 const authRouter = express.Router();
 export const secretKey = "your-secret-key";
 authRouter.use(bodyParser.json());
-
+let storedToken: string | null = null;
 async function createUserHandler(req: Request, res: Response) {
     const newUserUsername = req.body.username;
     const check = await AccountModel.IsUsernamExist(newUserUsername);
@@ -91,12 +91,21 @@ authRouter.post("/login", async (req: Request, res: Response) => {
                 secretKey,
                 { expiresIn: 3600 }
             );
+            storedToken = token;
             
-            res.json({username: user.username, role: user.role, token });
+            res.json({id: user.id, username: user.username, role: user.role, token });
         }
     } catch {
         res.status(500).send();
     }
 });
 
+authRouter.post("/logout", async (req: Request, res: Response) => {
+    try {
+        storedToken = null;
+        res.json({ success: true, message: 'Đăng xuất thành công' })
+    } catch(err) {
+        res.json(500)
+    }
+})
 export default authRouter;

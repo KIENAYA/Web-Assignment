@@ -7,20 +7,19 @@ import ordersRouter from "./routes/orders";
 import pointsRouter from "./routes/points";
 import { OrderModel } from "./models/Order";
 import { CargoHandlePointModel } from "./models/CargoHandlePoint";
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import { AccountModel } from "./models/Account";
 import employeeRouter from "./routes/employee";
 
 //import { Account } from "./routes/login";
 
 const app = express();
-//app.use(cors);
-/*const allowedOrigins = ['http://localhost:1000'];
 
-const options: cors.CorsOptions = {
-  origin: allowedOrigins
-};*/
-//app.use(cors(options));
+const allowedOrigins = ['http://localhost:1000'];
+const options: CorsOptions = {
+   origin: allowedOrigins
+};
+app.use(cors(options));
 app.use(express.json());
 app.use(ordersRouter);
 app.use(pointsRouter);
