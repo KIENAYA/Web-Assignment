@@ -10,7 +10,6 @@ import { CargoHandlePointModel } from "./models/CargoHandlePoint";
 import cors, { CorsOptions } from 'cors';
 import { AccountModel } from "./models/Account";
 import employeeRouter from "./routes/employee";
-
 //import { Account } from "./routes/login";
 
 const app = express();
