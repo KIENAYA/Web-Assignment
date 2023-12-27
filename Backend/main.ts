@@ -35,5 +35,5 @@ async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
     );
-    console.log(await OrderModel.getCompleteOrder("gd-ml-P3iq8B7lYQ4DrkVrZc"))
+   
 }

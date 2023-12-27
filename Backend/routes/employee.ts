@@ -38,4 +38,15 @@ employeeRouter.delete('/:id', async(req: Request, res: Response) =>{
       }
 })
 
+
+//lấy ra id của điểm từ id của nhân viên
+employeeRouter.get('/:id/point', async (req:Request, res:Response) => {
+    const id = req.params.id;
+    try {
+        const point = CargoHandlePointModel.getPointIdFromAdmin(id);
+        res.json(point);
+    } catch(err) {
+        res.status(404);
+    }
+})
 export default employeeRouter;
