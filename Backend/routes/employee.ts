@@ -47,6 +47,7 @@ employeeRouter.get('/:id/point', async (req:Request, res:Response) => {
         res.json(point);
     } catch(err) {
         res.status(404);
+        console.log(err)
     }
 })
 export default employeeRouter;

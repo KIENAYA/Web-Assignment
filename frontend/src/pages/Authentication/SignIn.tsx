@@ -16,15 +16,13 @@ const SignIn: React.FC = () => {
   const HandleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    axios
-      .post('http://127.0.0.1:4000/login', {
-        username,
-        password,
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
+    login(username, password).then(
+      () => {
+        navigate('/');
+        window.location.reload;
+      },
+
+      (error) => {
         console.log(error.message);
       },
     );

@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import Employees from '../pages/Employees';
 const ECommerce = lazy(() => import('../pages/Dashboard/ECommerce'));
 const Chart = lazy(() => import('../pages/Chart'));
 const AddEmployees = lazy(() => import('../pages/Append/AddEmployees'));
@@ -39,7 +40,7 @@ const coreRoutes = [
   {
     path: '/employees',
     title: 'Employess',
-    component: Tables,
+    component: Employees,
   },
   {
     path: '/settings',
