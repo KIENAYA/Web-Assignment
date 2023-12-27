@@ -20,6 +20,7 @@ function App() {
   return loading ? (
     <Loader />
   ) : (
+
     <>
       <Toaster
         position="top-right"

@@ -1,15 +1,21 @@
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
-import { useState } from 'react';
-import { Token } from '../../Auth.type';
+import React from 'react';
 import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
+import { jwtDecode } from 'jwt-decode';
+import { login } from '../../services/authServices';
+let navigateFlag = false;
 
 const SignIn: React.FC = () => {
+  let navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const HandleSubmit = (e: React.FormEvent) => {
+  const HandleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     axios
       .post('http://127.0.0.1:4000/login', {
         username,
@@ -20,7 +26,8 @@ const SignIn: React.FC = () => {
       })
       .catch((error) => {
         console.log(error.message);
-      });
+      },
+    );
   };
   return (
     <>
