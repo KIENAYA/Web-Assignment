@@ -6,7 +6,7 @@ const AddEmployees = lazy(() => import('../pages/Append/AddEmployees'));
 const AddOrder = lazy(() => import('../pages/Append/AddOrder'));
 const Profile = lazy(() => import('../pages/Profile'));
 const Settings = lazy(() => import('../pages/Settings'));
-const Tables = lazy(() => import('../pages/Tables'));
+const Orders = lazy(() => import('../pages/Orders'))
 const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const SignIn = lazy(() => import('../pages/Authentication/SignIn'));
@@ -35,7 +35,7 @@ const coreRoutes = [
   {
     path: '/orders',
     title: 'Orders',
-    component: Tables,
+    component: Orders,
   },
   {
     path: '/employees',

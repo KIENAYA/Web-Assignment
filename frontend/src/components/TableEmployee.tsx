@@ -96,8 +96,10 @@ async function fetchEmployeeData(token: string, id: string): Promise<string[]> {
     },
   });
   const data = await response.json();
+  console.log(data)
   return data;
 }
+
 async function fetchPointData(token: string, id: string): Promise<string> {
   const response = await fetch(`${API_URL}/${id}/point`, {
     method: 'GET',
@@ -107,8 +109,10 @@ async function fetchPointData(token: string, id: string): Promise<string> {
     },
   });
   const data = await response.json();
+  console.log(data)
   return data;
 }
+
 async function fetchEmployeeProfile(token: string, id: string): Promise<string> {
   const response = await fetch(`${API_URL}/${id}/profile`, {
     method: 'GET',
@@ -120,22 +124,21 @@ async function fetchEmployeeProfile(token: string, id: string): Promise<string> 
   const data = await response.json();
   return data;
 }
+
 const TableEmployee = (props: Props) => {
   const token = localStorage.getItem('user');
-  const [empProfile,setEmpProfile]=useState({} as Account)
+  const [empProfile,setEmpProfile]=useState<Account[]>([])
   let tokenObject = JSON.parse(token ? token : '');
   useEffect(() => {
     fetchPointData(tokenObject.token, tokenObject.id).then(pointId=> {
       fetchEmployeeData(tokenObject.token, pointId).then(employees=> {
         employees.forEach(element => {
           fetchEmployeeProfile(tokenObject.token,element).then(data=>{
-            
-          console.log(data)
+        
           })
         });
       })
   })
-    console.log(tokenObject.token);
     // const profile=fetchEmployeeProfile(tokenObject.token, tokenObject.id).then(
       // (data) => {
         // 

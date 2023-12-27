@@ -188,10 +188,8 @@ export class OrderModel {
 
     //thống kê hàng gửi tại điểm giao dịch theo tháng
     public static async statisticOrderSentAtTP(id: String, month: number) {
-        const startOfMonth = new Date(`2023-${month}-01`);
-        const endOfMonth = new Date(`2023-${month + 1}-01`);
-        console.log(startOfMonth);
-        console.log(endOfMonth);
+        const startOfMonth = new Date(2023,month-1,2,0,0,0,0);
+        const endOfMonth = new Date(2023,month,2,0,0,0,0);
         return OrderModel._model.find({sentPoint: id, sentDate: {
             $gte: startOfMonth,
             $lt: endOfMonth
@@ -200,8 +198,8 @@ export class OrderModel {
     
     //thống kê đơn hàng nhận tại điểm giao dịch theo tháng
     public static async statisticOrderReceivAtTP(id: String, month: number) {
-        const startOfMonth = new Date(`2023-${month}-01`);
-        const endOfMonth = new Date(`2023-${month + 1}-01`);
+        const startOfMonth = new Date(2023,month-1,2,0,0,0,0);
+        const endOfMonth = new Date(2023,month,2,0,0,0,0);
         return OrderModel._model.find({receivePoint: id, sentDate: {
             $gte: startOfMonth,
             $lt: endOfMonth

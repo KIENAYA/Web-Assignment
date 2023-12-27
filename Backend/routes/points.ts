@@ -16,7 +16,7 @@ pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
 })
 
 //Trả lại đơn hàng lỗi về điểm giao dịch
-pointsRouter.get('/:id/return', async(req: Request, res: Response) => {
+pointsRouter.patch('/:id/return', async(req: Request, res: Response) => {
     const id = req.params.id
     try {
         const order = await OrderModel.ReturnOrder(id);
