@@ -43,10 +43,11 @@ employeeRouter.delete('/:id', async(req: Request, res: Response) =>{
 employeeRouter.get('/:id/point', async (req:Request, res:Response) => {
     const id = req.params.id;
     try {
-        const point = CargoHandlePointModel.getPointIdFromAdmin(id);
+        const point = await CargoHandlePointModel.getPointIdFromAdmin(id);
         res.json(point);
     } catch(err) {
         res.status(404);
+        console.log(err)
     }
 })
 export default employeeRouter;

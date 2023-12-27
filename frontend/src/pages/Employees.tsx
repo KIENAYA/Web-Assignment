@@ -4,13 +4,13 @@ import ModalEditEmp from '../components/ModalEditEmp';
 import TableOne from '../components/TableOne';
 import TableThree from '../components/TableThree';
 import TableTwo from '../components/TableTwo';
-import { EmployeeLogIn } from '../Employee.type';
+import TableEmployee from '../components/TableEmployee';
 
 
 
 function handleSubmit(){}
 const Employees = () => {
-  const [testEmp,setTestEmp]=useState({}as EmployeeLogIn)
+  // const [testEmp,setTestEmp]=useState({}as EmployeeLogIn)
   const [openModalEmp, setModalEmpOpen] = useState(false);
   
   
@@ -19,9 +19,12 @@ const Employees = () => {
       <Breadcrumb pageName="Employees" />
 
       <div className="flex flex-col gap-10">
-        <ModalEditEmp data={testEmp}
-        onSubmit={handleSubmit}
-        closeModalEditEmp={()=>setModalEmpOpen(false)}/>
+        <TableEmployee
+        list={[]}
+        />
+        {/* <ModalEditEmp data={testEmp} */}
+        {/* // onSubmit={handleSubmit} */}
+        {/* // closeModalEditEmp={()=>setModalEmpOpen(false)}/> */}
       </div>
     </>
   );
