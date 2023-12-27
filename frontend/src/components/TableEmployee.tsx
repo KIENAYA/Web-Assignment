@@ -1,93 +1,88 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from '../constant';
-// import EmployeeLogin from '../O'
 import {
   createColumnHelper,
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { useCallback } from "react";
+} from '@tanstack/react-table';
 import { Account } from '../models/Account';
+import { TableBody, TableHead } from './Table';
 
-// function DeleteAccountButton({ username }: { username: string }) {
-  // const auth = useAuth()
+function DeleteAccountButton({ username }: { username: string }) {
+  // const auth = useAuth();
   // const onClick = useCallback(
-      // function () {
-          // deleteAccount(auth.session.token, username)
-      // },
-      // [auth.session.token, username]
-  // )
-// 
-  // return <button onClick={onClick}>Delete</button>
-// }
-// 
-// const columnHelper = createColumnHelper<Account>()
-// 
-// const columns = [
-  // columnHelper.accessor((row) => row.username, {
-      // id: "username",
-  // }),
-  // columnHelper.accessor((row) => row.email, {
-      // id: "email",
-  // }),
-  // columnHelper.accessor((row) => row.name, {
-      // id: "name",
-  // }),
-  // columnHelper.accessor((row) => row.role, {
-      // id: "role",
-  // }),
-  // columnHelper.display({
-      // header: () => null,
-      // id: "actions",
-      // cell: (info) => {
-          // return (
-              // <DeleteAccountButton
-                  // username={info.row.getValue("username") as string}
-              // />
-          // )
-      // },
-  // }),
-// ]
-// function AccountsTable() {
-  // const auth = useAuth()
-  // const [accounts, setAccounts] = useState<Account[]>([])
-// 
-  // useEffect(() => {
-      // getUsers(auth.session.token)
-          // .then((data) => {
-              // setAccounts(data)
-          // })
-          // .catch((err) => {
-              // console.log(err)
-          // })
-  // }, [auth.session.token])
-// 
-  // const table = useReactTable({
-      // data: accounts,
-      // columns,
-      // getCoreRowModel: getCoreRowModel(),
-      // getFilteredRowModel: getFilteredRowModel(),
-      // getPaginationRowModel: getPaginationRowModel(),
-      // debugTable: true,
-  // })
-// 
-  // return (
-      // <div>
-          {/* <table> */}
-              {/* <TableHead table={table} /> */}
-              {/* <TableBody table={table} /> */}
-          {/* </table> */}
-      {/* </div> */}
-  // )
-// }
-// 
+  //   function () {
+  //     deleteAccount(auth.session.token, username);
+  //   },
+  //   [auth.session.token, username],
+  // );
+
+  // return <button onClick={onClick}>Delete</button>;
+  return <button>Delete</button>;
+}
+
+const columnHelper = createColumnHelper<Account>();
+
+const columns = [
+  columnHelper.accessor((row) => row.username, {
+    id: 'username',
+  }),
+  columnHelper.accessor((row) => row.profile.firstname, {
+    id: 'firstname',
+  }),
+  columnHelper.accessor((row) => row.profile.lastname, {
+    id: 'lastname',
+  }),
+  columnHelper.accessor((row) => row.profile.ssn, {
+    id: 'ssn',
+  }),
+  columnHelper.accessor((row) => row.profile.sex, {
+    id: 'sex',
+  }),
+  columnHelper.accessor((row) => row.role, {
+    id: 'role',
+  }),
+  columnHelper.display({
+    header: () => null,
+    id: 'actions',
+    cell: (info) => {
+      return (
+        <DeleteAccountButton
+          username={info.row.getValue('username') as string}
+        />
+      );
+    },
+  }),
+];
+
+function AccountsTable({ accounts }: { accounts: Account[] }) {
+  const table = useReactTable({
+    data: accounts,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    debugTable: true,
+  });
+
+  return (
+    <table>
+      <TableHead table={table} />
+      <TableBody table={table} />
+    </table>
+  );
+}
+
 type Props = {
   list: Account[];
 };
 
-async function fetchEmployeeData(token: string, id: string): Promise<string[]> {
+async function fetchEmployeeData(
+  token: string,
+  id: string,
+): Promise<Account[]> {
   const response = await fetch(`${API_URL}/${id}/employees`, {
     method: 'GET',
     headers: {
@@ -109,42 +104,22 @@ async function fetchPointData(token: string, id: string): Promise<string> {
   const data = await response.json();
   return data;
 }
-async function fetchEmployeeProfile(token: string, id: string): Promise<string> {
-  const response = await fetch(`${API_URL}/${id}/profile`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const data = await response.json();
-  return data;
-}
+
 const TableEmployee = (props: Props) => {
   const token = localStorage.getItem('user');
-  const [empProfile,setEmpProfile]=useState({} as Account)
-  let tokenObject = JSON.parse(token ? token : '');
+  const [empProfile, setEmpProfile] = useState<Account[]>([]);
+  const tokenObject = JSON.parse(token ? token : '');
   useEffect(() => {
-    fetchPointData(tokenObject.token, tokenObject.id).then(pointId=> {
-      fetchEmployeeData(tokenObject.token, pointId).then(employees=> {
-        employees.forEach(element => {
-          fetchEmployeeProfile(tokenObject.token,element).then(data=>{
-            
-          console.log(data)
-          })
-        });
-      })
-  })
-    console.log(tokenObject.token);
-    // const profile=fetchEmployeeProfile(tokenObject.token, tokenObject.id).then(
-      // (data) => {
-        // 
-      // },
-    // );
+    fetchPointData(tokenObject.token, tokenObject.id).then((pointId) => {
+      fetchEmployeeData(tokenObject.token, pointId).then((employees) => {
+        console.log(employees);
+        setEmpProfile(employees);
+      });
+    });
   }, []);
-  return <div>
-    {/* <AccountsTable/> */}
-  </div>;
+
+  return <AccountsTable accounts={empProfile} />;
+  // return <Account;
   // const [editEmployee, setEmployeeToEdit] = useState({} as EmployeeLogIn);
   // const [openModalEmp, setModalEmpOpen] = useState(false);
   // const { list } = props;
