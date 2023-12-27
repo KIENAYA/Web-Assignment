@@ -46,6 +46,10 @@ export class AccountModel {
     public static async getProfileById(id: String) {
         return (await AccountModel._model.findOne({_id: id})).profile;
     }
+
+    public static async getAccountEmployee(id: String) {
+        return AccountModel._model.findOne({_id: id}).select("profile username");
+    }
 }
 export type AccountIdType = Account["_id"];
 

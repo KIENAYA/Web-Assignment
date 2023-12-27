@@ -35,5 +35,4 @@ async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
     );
-   
 }

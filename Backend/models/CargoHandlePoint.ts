@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Account, AccountIdType, createRandomAccount } from "./Account";
+import { Account, AccountIdType, AccountModel, createRandomAccount } from "./Account";
 import { Role } from "./Role";
 import { Schema, model } from "mongoose";
 export class CargoHandlePointModel {
@@ -22,7 +22,13 @@ export class CargoHandlePointModel {
         return CargoHandlePointModel._model.find({associatedAssemblyPoint: id},{_id: 1});
     }
     public static async getPointEmployees(id: String) {
-        return (await CargoHandlePointModel._model.findOne({_id: id})).pointEmployees;
+        const employees = (await CargoHandlePointModel._model.findOne({_id: id})).pointEmployees;
+        const employeeArray = new Array();
+        for(id of employees) {
+            var employee = await AccountModel.getAccountEmployee(id);
+            employeeArray.push(employee);
+        }
+        return employeeArray;
     }
     public static async getPointEmployeeById(id: String) {
         return CargoHandlePointModel._model.find({pointEmployees: id})
@@ -40,8 +46,8 @@ export class CargoHandlePointModel {
         return CargoHandlePointModel._model.findByIdAndUpdate(id, {$push: {pointEmployees: employeeId}});
     }
 
-    public static async getPointIdFromAdmin(id: String) {
-        return (await CargoHandlePointModel._model.findOne({pointAdmin: id})).id;
+    public static async getPointIdFromAdmin(Idadmin: String) {
+        return (await CargoHandlePointModel._model.findOne({pointAdmin: Idadmin})).id;
     }
 }
 export enum TypeOfCargoHandlePoint {

@@ -4,7 +4,7 @@ import { CargoHandlePointModel } from '../models/CargoHandlePoint';
 
 const employeeRouter = express.Router();
 
-//Lấy ra danh sách nhân viên tại điểm có id:..
+//Lấy ra danh sách nhân viên(tài khoản và profile) tại điểm có id:..
 employeeRouter.get('/:id/employees', async(req: Request, res: Response) => {
     const id = req.params.id;
     try {
@@ -43,7 +43,7 @@ employeeRouter.delete('/:id', async(req: Request, res: Response) =>{
 employeeRouter.get('/:id/point', async (req:Request, res:Response) => {
     const id = req.params.id;
     try {
-        const point = CargoHandlePointModel.getPointIdFromAdmin(id);
+        const point = await CargoHandlePointModel.getPointIdFromAdmin(id);
         res.json(point);
     } catch(err) {
         res.status(404);

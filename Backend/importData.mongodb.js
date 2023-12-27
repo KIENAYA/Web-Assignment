@@ -11,7 +11,7 @@ function getCollection(name) {
     }
     coll = db.getCollection(name);
     coll.deleteMany({});
-    coll.dropIndexes();
+   coll.dropIndexes();
     return db.getCollection(name);
 }
 const customers_coll = getCollection("customers");
