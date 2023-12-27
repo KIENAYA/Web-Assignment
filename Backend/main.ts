@@ -35,5 +35,5 @@ async function main() {
     await mongoose.connect(
         "mongodb+srv://Kienaya:kienki7up@cluster0.nsaauqc.mongodb.net/DeliveryData"
     );
-   
+  console.log(await CargoHandlePointModel.getPointIdFromAdmin("a7ab48ff-3fbd-4ad2-ac94-cc767948174e")) 
 }
