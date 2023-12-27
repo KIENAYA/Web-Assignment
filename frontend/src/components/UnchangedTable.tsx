@@ -2,7 +2,7 @@ import { IOrder } from '../Order.type';
 
 import { useState } from 'react';
 type TableProps = {
-  listOfOrder: IOrder[];
+  listOfOrders: IOrder[];
 };
 
 const UnchangedTable = (props:TableProps) => {

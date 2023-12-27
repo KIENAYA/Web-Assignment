@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import CardFour from '../../components/CardFour.tsx';
 import CardOne from '../../components/CardOne.tsx';
 import CardThree from '../../components/CardThree.tsx';
@@ -8,8 +9,15 @@ import ChartTwo from '../../components/ChartTwo.tsx';
 import ChatCard from '../../components/ChatCard.tsx';
 import MapOne from '../../components/MapOne.tsx';
 import TableOne from '../../components/TableOne.tsx';
+import { Token } from '../../Auth.type.ts';
+import { getID } from '../../services/orderServices.ts';
+
 
 const ECommerce = () => {
+  const token=localStorage.getItem("user")
+  const tokenObject = JSON.parse(token?token:"")
+  const id=tokenObject.id
+  getID();
   return (
     <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">

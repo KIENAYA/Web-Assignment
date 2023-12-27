@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import UserOne from '../images/user/user-01.png';
 
 const DropdownUser = () => {
+  const handleLogOut=()=>{
+
+  }
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef<any>(null);

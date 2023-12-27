@@ -37,10 +37,10 @@ const ModalOne = (props: ModalOneProps) => {
       <div className='flex flex-col'>
         <h3 className="align-top ">Add Cargo</h3>
       </div>
-
+  
         <div className='flex flex-row'>
       <form className="rounded-md p-8 w-100">
-
+  
         <div className="flex flex-row mb-4 space-x-5">
           <label className="mb-1" htmlFor="description">
             Description
@@ -82,7 +82,7 @@ const ModalOne = (props: ModalOneProps) => {
           Submit
         </button>
       </form>
-
+  
         </div>
     </div>
   );

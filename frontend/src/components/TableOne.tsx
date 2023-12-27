@@ -3,17 +3,17 @@ import { useState } from 'react';
 import { BsPencilFill, BsTrashFill } from 'react-icons/bs';
 import { faker } from '@faker-js/faker';
 import ModalTwo from './ModalTwo';
-import { ICargo, PageEnum} from '../Items.type';
+import { ICargo, PageEnum } from '../Items.type';
 import ModalOne from './ModalOne';
 type TableProps = {
   list: ICargo[];
 };
 const TableOne = (prop: TableProps) => {
   const [deleteItem, onDeleteHand] = useState('');
-  const [shownPage,setShownPage]=useState(PageEnum.list);
+  const [shownPage, setShownPage] = useState(PageEnum.list);
   const [modalTwoOpen, setModalTwoOpen] = useState(false);
   const [modalOneOpen, setModalOneOpen] = useState(false);
-  const [editItem,setItemToEdit]=useState({} as ICargo);
+  const [editItem, setItemToEdit] = useState({} as ICargo);
   const { list } = prop;
   const [itemList, setItemList] = useState(list as ICargo[]);
   const handleDeleteRow = (data: ICargo) => {
@@ -22,20 +22,18 @@ const TableOne = (prop: TableProps) => {
     tempList.splice(indexToDel, 1);
     setItemList(tempList);
   };
-  const handleEditRow=(data:ICargo)=>{
-  setShownPage(PageEnum.edit)
-  setItemToEdit(data)
-  }
-  const updateEditRow=(data: ICargo)=>{
-  
-  }
-  const UpdateItem=(data:ICargo)=>{
-    const filteredData=itemList.filter(x=>x.id===data.id)[0];
-    const indexOfEdit=itemList.indexOf(filteredData);
-    const tempData=[...itemList]
-    tempData[indexOfEdit]=data;
-    setItemList(tempData)
-  }
+  const handleEditRow = (data: ICargo) => {
+    setShownPage(PageEnum.edit);
+    setItemToEdit(data);
+  };
+
+  const UpdateItem = (data: ICargo) => {
+    const filteredData = itemList.filter((x) => x.id === data.id)[0];
+    const indexOfEdit = itemList.indexOf(filteredData);
+    const tempData = [...itemList];
+    tempData[indexOfEdit] = data;
+    setItemList(tempData);
+  };
   const AddItem = (data: ICargo) => {
     setItemList([...itemList, data]);
     console.log('new 1');
@@ -75,7 +73,7 @@ const TableOne = (prop: TableProps) => {
                 <td className="px-8 py-4 border">{cargo.weight}</td>
                 <td className="px-8 py-4 border">
                   <div className="flex flex-row gap-3 justify-center">
-                   <BsPencilFill onClick={()=>handleEditRow(cargo)} />
+                    <BsPencilFill onClick={() => handleEditRow(cargo)} />
                     <BsTrashFill onClick={() => handleDeleteRow(cargo)} />
                   </div>
                 </td>
@@ -93,27 +91,25 @@ const TableOne = (prop: TableProps) => {
       >
         Add
       </button>
-      {shownPage===PageEnum.add && (
+      {shownPage === PageEnum.add && (
         <ModalTwo
           closeModalTwo={() => {
             setModalTwoOpen(false);
-            setShownPage(PageEnum.list)
+            setShownPage(PageEnum.list);
           }}
           onSubmit={AddItem}
         />
       )}
-      {
-        shownPage===PageEnum.edit&&(
-          <ModalOne
+      {shownPage === PageEnum.edit && (
+        <ModalOne
           data={editItem}
           onSubmit={UpdateItem}
-          closeModalOne={()=>{
+          closeModalOne={() => {
             setModalOneOpen(false);
-            setShownPage(PageEnum.list)
+            setShownPage(PageEnum.list);
           }}
-          />
-        )
-      }
+        />
+      )}
     </div>
   );
 };
