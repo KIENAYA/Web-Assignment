@@ -4,6 +4,7 @@ import { BsTrashFill } from 'react-icons/bs';
 import { API_URL } from '../constant';
 import { Order } from '../models/Order';
 import { CommonTable } from './Table';
+import GenericDataTable from './shad-table/app/people/data-table';
 const token = localStorage.getItem('user');
 let tokenObject = JSON.parse(token ? token : '');
 async function deleteOrder(token: string, id: string): Promise<unknown> {
@@ -67,5 +68,9 @@ const columns = [
   }),
 ];
 export function OrdersTable({ orders }: { orders: Order[] }) {
-  return <CommonTable data={orders} columns={columns} />;
+  return <GenericDataTable
+  data={orders}
+  columns={columns}
+  />
+  ;
 }

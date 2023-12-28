@@ -4,6 +4,8 @@ import { OrdersTable } from '../components/TableOrder';
 import { API_URL } from '../constant';
 import { Order } from '../models/Order';
 import { GetWithAuthentication } from '../shared/action';
+import SelectOne from '../components/SelectOne';
+
 const token = localStorage.getItem('user');
 
 async function fetchPointData(token: string, id: string): Promise<string> {
@@ -66,6 +68,7 @@ async function getOrderDatabyType(
   id: string,
   type: string,
 ): Promise<Order[]> {
+  let orderList: Order[] = [];
   const pointId = await GetWithAuthentication<string>(
     `${API_URL}/${id}/point`,
     token,
@@ -81,29 +84,44 @@ async function getOrderDatabyType(
       fetchCurrentLocation(token, element._id).then((location) => {
         element.currentLocation = location;
       });
+      orderList = [...orders];
     });
-    return orders;
+    return orderList;
   });
 }
 
-export default function Orders() {
-  const [ordersFail, setordersFail] = useState<Order[]>([]);
+export default function Orders ()  {
+  const [ordersList, setordersList] = useState<Order[]>([]);
+  const [orderType, setOrderType] = useState('complete');
   useEffect(() => {
     let tokenObject = JSON.parse(token ? token : '');
-    getOrderDatabyType(tokenObject.token, tokenObject.id, 'fail').then(
+    getOrderDatabyType(tokenObject.token, tokenObject.id, orderType).then(
       (ordersFail) => {
-        setordersFail(ordersFail);
+        setordersList(ordersFail);
       },
     );
   }, []);
 
   return (
-    <>
+    <div>
       <Breadcrumb pageName="Orders" />
-
-      <div className="flex flex-col gap-10">
-        <OrdersTable orders={ordersFail} />
-      </div>
-    </>
+      <div >
+   <select
+   onChange={
+    (choice)=>{setOrderType(choice.target.value)
+    console.log(choice.target.value)
+    }
+   }
+   className="  appearance-none rounded border border-stroke bg-transparent py-3 px-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
+     <option value="complete">Complete</option>
+     <option value="fail">Fail</option>
+     <option value="receive_ucf">Receive(Unconfirmed)</option>
+     <option value="receive_cf">Receive(Confimed)</option>
+     <option value="return">Return</option>
+   </select>
+    </div>
+      <OrdersTable orders={ordersList} />
+    </div>
   );
-}
+};
+
