@@ -31,45 +31,35 @@ function DeleteOrderButton({ username }: { username: string }) {
 
 const columnHelper = createColumnHelper<Order>();
 const columns = [
-  columnHelper.accessor('cargoList', {
-    header: 'List of cargos',
-    cell: (info) =>
-      info.getValue().map((cargo) => (
-        <>
-          <span>{`${cargo.slice(0, 10)}...`}</span>
-          <br />
-        </>
-      )),
+  columnHelper.accessor((row) => row.cargoList, {
+    id: 'List of cargos',
   }),
-  columnHelper.accessor('sentCustomer', {
-    header: 'Sender',
+  columnHelper.accessor((row) => row.sentCustomer, {
+    id: 'Sender',
   }),
-  columnHelper.accessor('sentDate', {
-    header: 'Sent date',
+  columnHelper.accessor((row) => row.sentDate, {
+    id: 'Send date',
   }),
-  columnHelper.accessor('sentPoint', {
-    header: 'Sent point',
+  columnHelper.accessor((row) => row.sentPoint, {
+    id: 'Send point',
   }),
-  columnHelper.accessor('receiveCustomer', {
-    header: 'Receiver',
+  columnHelper.accessor((row) => row.receiveCustomer, {
+    id: 'Receiver',
   }),
-  columnHelper.accessor('receivedDate', {
-    header: 'Received date',
+  columnHelper.accessor((row) => row.receivedDate, {
+    id: 'Received date',
   }),
-  columnHelper.accessor('receivePoint', {
-    header: 'Receive point',
-    cell: (info) => info.getValue(),
+  columnHelper.accessor((row) => row.receivePoint, {
+    id: 'Receive point',
   }),
-  columnHelper.accessor('currentLocation', {
-    header: 'Current location',
-    cell: (info) => info.getValue() as string,
+  columnHelper.accessor((row) => row.currentLocation, {
+    id: 'Current location',
   }),
-  columnHelper.accessor('cost', {
-    header: 'Cost',
-    cell: (info) => String(info.getValue()),
+  columnHelper.accessor((row) => row.cost, {
+    id: 'cost',
   }),
   columnHelper.display({
-    header: 'Actions',
+    header: () => null,
     id: 'actions',
     cell: (info) => {
       return <BsTrashFill />;

@@ -1,11 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import LogoDark from '../../images/logo/logo-dark.svg';
-import Logo from '../../images/logo/logo.svg';
 import React from 'react';
-import axios from 'axios';
-import { AuthContext } from '../../context/AuthContext';
-import { jwtDecode } from 'jwt-decode';
 import { login } from '../../services/authServices';
 import MagicLogo from '../../images/logo/MagicPost-logos.jpeg'
 let navigateFlag = false;
@@ -34,9 +29,7 @@ const SignIn: React.FC = () => {
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
-              <Link className="mb-6.5 inline-block" to="/">
-                <img className="hidden dark:block" src={MagicLogo} alt="Logo" />
-                <img className="dark:hidden" src={MagicLogo} alt="Logo" />
+              <Link className="mb-5.5 inline-block" to="/">
               </Link>
             </div>
           </div>
