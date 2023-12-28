@@ -1,17 +1,126 @@
 import Breadcrumb from '../components/Breadcrumb';
-import TableOne from '../components/TableOne';
+import { useEffect, useState } from 'react';
+import { API_URL } from '../constant';
 import TableThree from '../components/TableThree';
 import TableTwo from '../components/TableTwo';
-import { API_URL } from '../constant';
+import { Account } from '../models/Account';
+import TableOrder from '../components/TableOrder';
+import { Order } from '../models/Order';
+const token = localStorage.getItem('user');
+async function fetchEmployeeData(token: string, id: string): Promise<string[]> {
+  const response = await fetch(`${API_URL}/${id}/orders`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+async function fetchPointData(token: string, id: string): Promise<string> {
+  const response = await fetch(`${API_URL}/${id}/point`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+async function fetchEmployeeProfile(
+  token: string,
+  id: string,
+): Promise<string> {
+  const response = await fetch(`${API_URL}/${id}/profile`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+async function fetchOrderType(
+  token: string,
+  id: string,
+  type: string,
+): Promise<Order[]> {
+  const response = await fetch(`${API_URL}/${id}/${type}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+async function fetchCurrentLocation(
+  token: string,
+  id: string,
+): Promise<string> {
+  const response = await fetch(`${API_URL}/stage/${id}`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+async function fetchPointName(token: string, id: string): Promise<string> {
+  const response = await fetch(`${API_URL}/${id}/name`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+
+function convertISODate(date: string): string {
+  return new Date(date).toString();
+}
+function getOrderDatabyType(token: string, id: string, type: string): Order[] {
+  let orderList: Order[] = [];
+  fetchPointData(token, id).then((pointId) => {
+    fetchOrderType(token, pointId, 'fail').then((orders) => {
+      orders.forEach((element) => {
+        fetchPointName(token, element.sentPoint).then((sPoint) => {
+          element.sentPoint = sPoint;
+          fetchPointName(token, element.receivePoint).then((rPoint) => {
+            element.receivePoint = rPoint;
+            fetchCurrentLocation(token, element._id).then((location) => {
+              element.currentLocation = location;
+            });
+          });
+        });
+      });
+      orderList.push(...orders)
+    });
+  });
+  return orderList;
+
+}
 
 const Orders = () => {
+  const [ordersFail, setordersFail] = useState({} as Order[]);
+  useEffect(() => {
+  let tokenObject = JSON.parse(token ? token : '');
+    setordersFail(getOrderDatabyType(tokenObject.token,tokenObject.id,"fail"));
+  }, []);
   return (
     <>
       <Breadcrumb pageName="Orders" />
 
       <div className="flex flex-col gap-10">
-        <TableTwo />
-        <TableThree />
+        <TableOrder list={ordersFail} />
       </div>
     </>
   );

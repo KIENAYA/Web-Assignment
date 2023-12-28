@@ -1,5 +1,6 @@
 import { lazy } from 'react';
-import Employees from '../pages/Employees';
+const Employees=lazy(()=>import('../pages/Employees'))
+const Orders=lazy(()=>import('../pages/Orders'))
 const ECommerce = lazy(() => import('../pages/Dashboard/ECommerce'));
 const Chart = lazy(() => import('../pages/Chart'));
 const AddEmployees = lazy(() => import('../pages/Append/AddEmployees'));
