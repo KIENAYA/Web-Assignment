@@ -4,7 +4,7 @@ import { API_URL } from '../constant';
 import TableThree from '../components/TableThree';
 import TableTwo from '../components/TableTwo';
 import { Account } from '../models/Account';
-import TableOrder from '../components/TableOrder';
+import {OrdersTable} from '../components/TableOrder';
 import { Order } from '../models/Order';
 const token = localStorage.getItem('user');
 async function fetchEmployeeData(token: string, id: string): Promise<string[]> {
@@ -110,7 +110,7 @@ function getOrderDatabyType(token: string, id: string, type: string): Order[] {
 }
 
 const Orders = () => {
-  const [ordersFail, setordersFail] = useState({} as Order[]);
+  const [ordersFail, setordersFail] = useState<Order[]>([]);
   useEffect(() => {
   let tokenObject = JSON.parse(token ? token : '');
     setordersFail(getOrderDatabyType(tokenObject.token,tokenObject.id,"fail"));
@@ -120,7 +120,7 @@ const Orders = () => {
       <Breadcrumb pageName="Orders" />
 
       <div className="flex flex-col gap-10">
-        <TableOrder list={ordersFail} />
+        <OrdersTable orders={ordersFail} />
       </div>
     </>
   );

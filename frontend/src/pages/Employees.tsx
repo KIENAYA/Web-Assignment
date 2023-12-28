@@ -38,14 +38,12 @@ function handleSubmit(){}
 const Employees = () => {
   // const [testEmp,setTestEmp]=useState({}as EmployeeLogIn)
   
-  const token = localStorage.getItem('user');
   const [empProfile, setEmpProfile] = useState<Account[]>([]);
-  const tokenObject = JSON.parse(token ? token : '');
   useEffect(() => {
-    fetchPointData(tokenObject.token, tokenObject.id).then((pointId) => {
-      fetchEmployeeData(tokenObject.token, pointId).then((employees) => {
+  const token = localStorage.getItem('user');
+  const tokenObject = JSON.parse(token ? token : '');
+      fetchEmployeeData(tokenObject.token, tokenObject.id).then((employees) => {
         setEmpProfile(employees);
-      });
     });
   }, []);
  

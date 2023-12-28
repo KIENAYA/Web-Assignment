@@ -41,46 +41,42 @@ function DeleteOrderButton({ username }: { username: string }) {
 
 const columnHelper = createColumnHelper<Order>();
 const columns = [
-  columnHelper.accessor((row) => row.cargoList, {
-    id: 'List of cargos',
-  }),
-  columnHelper.accessor((row) => row.sentCustomer, {
-    id: 'Sender',
-  }),
-  columnHelper.accessor((row) => row.sentDate, {
-    id: 'Send date',
-  }),
-  columnHelper.accessor((row) => row.sentPoint, {
-    id: 'Send point',
-  }),
-  columnHelper.accessor((row) => row.receiveCustomer, {
-    id: 'Receiver',
-  }),
-  columnHelper.accessor((row) => row.receivedDate, {
-    id: 'Received date',
-  }),
-  columnHelper.accessor((row) => row.receivePoint, {
-    id: 'Receive point',
-  }),
-  columnHelper.accessor((row) => row.currentLocation, {
-    id: 'Current location',
-  }),
+//   columnHelper.accessor((row) => row.cargoList, {
+    // id: 'List of cargos',
+//   }),
+//   columnHelper.accessor((row) => row.sentCustomer, {
+    // id: 'Sender',
+//   }),
+//   columnHelper.accessor((row) => row.sentDate, {
+    // id: 'Send date',
+//   }),
+//   columnHelper.accessor((row) => row.sentPoint, {
+    // id: 'Send point',
+//   }),
+//   columnHelper.accessor((row) => row.receiveCustomer, {
+    // id: 'Receiver',
+//   }),
+//   columnHelper.accessor((row) => row.receivedDate, {
+    // id: 'Received date',
+//   }),
+//   columnHelper.accessor((row) => row.receivePoint, {
+    // id: 'Receive point',
+//   }),
+//   columnHelper.accessor((row) => row.currentLocation, {
+    // id: 'Current location',
+//   }),
   columnHelper.accessor((row) => row.cost, {
     id: 'cost',
   }),
-  columnHelper.display({
-    header: () => null,
-    id: 'actions',
-    cell: (info) => {
-      return <BsTrashFill />;
-    },
-  }),
+//   columnHelper.display({
+    // header: () => null,
+    // id: 'actions',
+    // cell: (info) => {
+    //   return <BsTrashFill />;
+    // },
+//   }),
 ];
-function OrdersTable({
-  orders,
-}: {
-  orders: Order[];
-}) {
+export function OrdersTable({ orders }: { orders: Order[] }) {
   const table = useReactTable({
     data: orders,
     columns,
@@ -97,14 +93,3 @@ function OrdersTable({
     </table>
   );
 }
-
-type Props = {
-  list: Order[];
-};
-
-const TableOrder = (props: Props) => {
-
-  return <OrdersTable orders={props.list}  />;
-};
-
-export default TableOrder;
