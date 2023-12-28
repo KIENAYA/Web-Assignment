@@ -25,7 +25,7 @@ export class CargoHandlePointModel {
         const employees = (await CargoHandlePointModel._model.findOne({pointAdmin: id})).pointEmployees;
         const employeeArray = new Array();
         for(id of employees) {
-            var employee = await AccountModel.getProfileById(id);
+            var employee = await AccountModel.getAccountEmployee(id);
             employeeArray.push(employee);
         }
         return employeeArray;
