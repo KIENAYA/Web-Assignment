@@ -38,6 +38,10 @@ export class OrderModel {
         return OrderModel._model.findOne({_id: id});
     }
 
+    public static async ConvertOrder() {
+        
+    }
+
    
 
     //lấy đơn hàng cần gửi tại điểm giao dịch
