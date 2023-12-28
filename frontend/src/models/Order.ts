@@ -36,6 +36,23 @@ export enum PossibleCurrentLocation {
   AtReceivedUser,
 }
 
+export function ConvertPossibleCurrentLocationToString(
+  loc: PossibleCurrentLocation,
+): string {
+  switch (loc) {
+    case PossibleCurrentLocation.AtSentPoint:
+      return 'AtSentPoint';
+    case PossibleCurrentLocation.AtSentAssemblyPoint:
+      return 'AtSentAssemblyPoint';
+    case PossibleCurrentLocation.AtReceivePoint:
+      return 'AtReceivePoint';
+    case PossibleCurrentLocation.AtReceiveAssemblyPoint:
+      return 'AtReceiveAssemblyPoint';
+    case PossibleCurrentLocation.AtReceivedUser:
+      return 'AtReceivedUser';
+  }
+}
+
 const PossibleCurrentLocationWithWeight: Array<{
   value: PossibleCurrentLocation;
   weight: number;

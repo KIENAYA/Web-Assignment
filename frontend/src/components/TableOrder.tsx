@@ -1,19 +1,9 @@
-import { useEffect, useState, useCallback } from 'react';
-import { API_URL } from '../constant';
-import {
-  Column,
-  ColumnDef,
-  ColumnHelper,
-  createColumnHelper,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
-import { Order } from '../models/Order';
-import { TableBody, TableHead } from './Table';
+import { createColumnHelper } from '@tanstack/react-table';
+import { useCallback } from 'react';
 import { BsTrashFill } from 'react-icons/bs';
-import { Table } from './TableSettings';
+import { API_URL } from '../constant';
+import { Order } from '../models/Order';
+import { CommonTable } from './Table';
 const token = localStorage.getItem('user');
 let tokenObject = JSON.parse(token ? token : '');
 async function deleteOrder(token: string, id: string): Promise<unknown> {
@@ -35,76 +25,57 @@ function DeleteOrderButton({ username }: { username: string }) {
     },
     [tokenObject.token, tokenObject.id],
   );
-  //
+
   return <button onClick={onClick}>Delete</button>;
 }
 
 const columnHelper = createColumnHelper<Order>();
 const columns = [
-  columnHelper.accessor((row) => row.cargoList, {
-    id: 'List of cargos',
+  columnHelper.accessor('cargoList', {
+    header: 'List of cargos',
+    cell: (info) =>
+      info.getValue().map((cargo) => (
+        <>
+          <span>{`${cargo.slice(0, 10)}...`}</span>
+          <br />
+        </>
+      )),
   }),
-  columnHelper.accessor((row) => row.sentCustomer, {
-    id: 'Sender',
+  columnHelper.accessor('sentCustomer', {
+    header: 'Sender',
   }),
-  columnHelper.accessor((row) => row.sentDate, {
-    id: 'Send date',
+  columnHelper.accessor('sentDate', {
+    header: 'Sent date',
   }),
-  columnHelper.accessor((row) => row.sentPoint, {
-    id: 'Send point',
+  columnHelper.accessor('sentPoint', {
+    header: 'Sent point',
   }),
-  columnHelper.accessor((row) => row.receiveCustomer, {
-    id: 'Receiver',
+  columnHelper.accessor('receiveCustomer', {
+    header: 'Receiver',
   }),
-  columnHelper.accessor((row) => row.receivedDate, {
-    id: 'Received date',
+  columnHelper.accessor('receivedDate', {
+    header: 'Received date',
   }),
-  columnHelper.accessor((row) => row.receivePoint, {
-    id: 'Receive point',
+  columnHelper.accessor('receivePoint', {
+    header: 'Receive point',
+    cell: (info) => info.getValue(),
   }),
-  columnHelper.accessor((row) => row.currentLocation, {
-    id: 'Current location',
+  columnHelper.accessor('currentLocation', {
+    header: 'Current location',
+    cell: (info) => info.getValue() as string,
   }),
-  columnHelper.accessor((row) => row.cost, {
-    id: 'cost',
+  columnHelper.accessor('cost', {
+    header: 'Cost',
+    cell: (info) => String(info.getValue()),
   }),
   columnHelper.display({
-    header: () => null,
+    header: 'Actions',
     id: 'actions',
     cell: (info) => {
       return <BsTrashFill />;
     },
   }),
 ];
-function OrdersTable({
-  orders,
-}: {
-  orders: Order[];
-}) {
-  const table = useReactTable({
-    data: orders,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    debugTable: true,
-  });
-
-  return (
-    <table>
-      <TableHead table={table} />
-      <TableBody table={table} />
-    </table>
-  );
+export function OrdersTable({ orders }: { orders: Order[] }) {
+  return <CommonTable data={orders} columns={columns} />;
 }
-
-type Props = {
-  list: Order[];
-};
-
-const TableOrder = (props: Props) => {
-
-  return <OrdersTable orders={props.list}  />;
-};
-
-export default TableOrder;
