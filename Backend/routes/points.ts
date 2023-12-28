@@ -14,7 +14,16 @@ pointsRouter.get('/:id/complete', async(req: Request, res: Response) => {
         res.status(500);
     }
 })
-
+// get point name
+pointsRouter.get('/:id/name', async(req: Request, res: Response) => {
+    const id = req.params.id
+    try {
+        const point=await CargoHandlePointModel.getPointName(id);
+        res.json(point);
+    } catch(err) {
+        res.status(500);
+    }
+})
 //Trả lại đơn hàng lỗi về điểm giao dịch
 pointsRouter.patch('/:id/return', async(req: Request, res: Response) => {
     const id = req.params.id
