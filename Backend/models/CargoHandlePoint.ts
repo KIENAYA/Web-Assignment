@@ -22,10 +22,10 @@ export class CargoHandlePointModel {
         return CargoHandlePointModel._model.find({associatedAssemblyPoint: id},{_id: 1});
     }
     public static async getPointEmployees(id: String) {
-        const employees = (await CargoHandlePointModel._model.findOne({_id: id})).pointEmployees;
+        const employees = (await CargoHandlePointModel._model.findOne({pointAdmin: id})).pointEmployees;
         const employeeArray = new Array();
         for(id of employees) {
-            var employee = await AccountModel.getAccountEmployee(id);
+            var employee = await AccountModel.getProfileById(id);
             employeeArray.push(employee);
         }
         return employeeArray;
