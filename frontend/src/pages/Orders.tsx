@@ -134,9 +134,6 @@ async function fetchOrderFail(token: string, id: string): Promise<string[]> {
     const data = await response.json();
     return data;
   }
-
-
-
 };
 
 export default Orders;

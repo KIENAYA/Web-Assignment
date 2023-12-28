@@ -122,6 +122,8 @@ const TableEmployee = (props: Props) => {
   }, []);
 
   return <AccountsTable accounts={empProfile} />;
+
+  
   // return <Account;
   // const [editEmployee, setEmployeeToEdit] = useState({} as EmployeeLogIn);
   // const [openModalEmp, setModalEmpOpen] = useState(false);
