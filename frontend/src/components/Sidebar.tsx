@@ -381,8 +381,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Tables --> */}
 
               {/* <!-- Menu Item Settings --> */}
-              <li>
-              </li>
+
               {/* <!-- Menu Item Settings --> */}
             </ul>
           </div>
