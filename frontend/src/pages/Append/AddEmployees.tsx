@@ -53,9 +53,9 @@ register(username,role,password,user).then(
                         firstname: e.target.value,
                         lastname: user.lastname,
                         sex: user.sex,
-                        birthDate: user.birthDate,
+                        ssn: user.birthDate,
                         birthPlace: user.birthPlace,
-                        ssn: user.ssn,
+                        birthDate: user.ssn,
                       })
                     }
                   />
@@ -263,7 +263,7 @@ register(username,role,password,user).then(
               </div>
               <div className="flex flex-col gap-9">
    <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray"
-   type='submit'
+   type='submit' onClick={handleSubmit}
    >
     Add Employee
    </button>
