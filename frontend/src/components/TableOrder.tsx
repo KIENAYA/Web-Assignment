@@ -1,9 +1,10 @@
 import { createColumnHelper } from '@tanstack/react-table';
-import { useCallback } from 'react';
-import { BsCheck, BsTicket, BsTrashFill } from 'react-icons/bs';
+import { useCallback, useEffect, useState } from 'react';
+import { BsCheck} from 'react-icons/bs';
 import { API_URL } from '../constant';
 import { Order } from '../models/Order';
 import GenericDataTable from './shad-table/app/people/data-table';
+import { fetchCurrentLocation, fetchPointName } from '../pages/Orders';
 const token = localStorage.getItem('user');
 let tokenObject = JSON.parse(token ? token : '');
 async function deleteOrder(token: string, id: string): Promise<unknown> {
@@ -41,6 +42,15 @@ const columns = [
   }),
   columnHelper.accessor((row) => row.sentPoint, {
     id: 'Send point',
+    cell: (info) => {
+      const [loc,setLoc]=useState("")
+      useEffect(()=>{
+        fetchPointName(info.getValue()).then((location) => {
+          setLoc(location)
+          });
+      },[])
+      return loc
+    },
   }),
   columnHelper.accessor((row) => row.receiveCustomer, {
     id: 'Receiver',
@@ -50,9 +60,27 @@ const columns = [
   }),
   columnHelper.accessor((row) => row.receivePoint, {
     id: 'Receive point',
+    cell: (info) => {
+      const [loc,setLoc]=useState("")
+      useEffect(()=>{
+        fetchPointName(info.getValue()).then((location) => {
+          setLoc(location)
+          });
+      },[])
+      return loc
+    },
   }),
   columnHelper.accessor((row) => row.currentLocation, {
     id: 'Current location',
+    cell: (info) => {
+      const [loc,setLoc]=useState("")
+      useEffect(()=>{
+        fetchCurrentLocation(info.row.getValue("_id")).then((location) => {
+          setLoc(location)
+          });
+      },[])
+      return loc
+    },
   }),
   columnHelper.accessor((row) => row.cost, {
     id: 'cost',

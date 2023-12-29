@@ -8,7 +8,7 @@ import SelectOne from '../components/SelectOne';
 
 const token = localStorage.getItem('user');
 
-async function fetchPointData(token: string, id: string): Promise<string> {
+export async function fetchPointData(token: string, id: string): Promise<string> {
   const response = await fetch(`${API_URL}/${id}/point`, {
     method: 'GET',
     headers: {
@@ -36,26 +36,22 @@ async function fetchOrderType(
   return data;
 }
 
-async function fetchCurrentLocation(
-  token: string,
+export async function fetchCurrentLocation(
   id: string,
 ): Promise<string> {
   const response = await fetch(`${API_URL}/stage/${id}`, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
   });
   const data = await response.json();
   return data;
 }
-
-async function fetchPointName(token: string, id: string): Promise<string> {
+ export async function fetchPointName( id: string): Promise<string> {
   const response = await fetch(`${API_URL}/${id}/name`, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
   });
@@ -68,28 +64,14 @@ async function getOrderDatabyType(
   id: string,
   type: string,
 ): Promise<Order[]> {
-  let orderList: Order[] = [];
   const pointId = await GetWithAuthentication<string>(
     `${API_URL}/${id}/point`,
     token,
   );
   return fetchOrderType(token, pointId, type).then((orders) => {
-    orders.forEach((element) => {
-      fetchPointName(token, element.sentPoint).then((sPoint) => {
-        element.sentPoint = sPoint;
-      });
-      fetchPointName(token, element.receivePoint).then((rPoint) => {
-        element.receivePoint = rPoint;
-      });
-      fetchCurrentLocation(token, element._id).then((location) => {
-        element.currentLocation = location;
-      });
-      orderList = [...orders];
-    });
-    return orderList;
+    return orders;
   });
 }
-
 export default function Orders ()  {
   const [ordersList, setordersList] = useState<Order[]>([]);
   const [orderType, setOrderType] = useState('complete');

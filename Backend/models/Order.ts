@@ -197,7 +197,7 @@ export class OrderModel {
         return OrderModel._model.find({sentPoint: id, sentDate: {
             $gte: startOfMonth,
             $lt: endOfMonth
-        }});
+        }}, {currentLocation: 0});
     }
     
     //thống kê đơn hàng nhận tại điểm giao dịch theo tháng
@@ -207,7 +207,7 @@ export class OrderModel {
         return OrderModel._model.find({receivePoint: id, sentDate: {
             $gte: startOfMonth,
             $lt: endOfMonth
-        }});
+        }}, {currentLocation: 3});
     }
 
     //thống kê hàng đến tại điểm tập kết theo tháng
