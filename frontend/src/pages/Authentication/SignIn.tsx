@@ -29,7 +29,9 @@ const SignIn: React.FC = () => {
         <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
-              <Link className="mb-5.5 inline-block" to="/">
+            <Link className="mb-6.5 inline-block" to="/">
+                <img className="hidden dark:block" src={MagicLogo} alt="Logo" />
+                <img className="dark:hidden" src={MagicLogo} alt="Logo" />
               </Link>
             </div>
           </div>
