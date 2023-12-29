@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { login } from '../../services/authServices';
+import Logo from '../../images/logo/MagicPost-logos.jpeg'
 import MagicLogo from '../../images/logo/MagicPost-logos.jpeg'
 let navigateFlag = false;
 
