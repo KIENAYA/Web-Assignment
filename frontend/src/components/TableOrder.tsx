@@ -112,10 +112,13 @@ async function fetchConfirm(
   const data = await response.json();
   return data;
 }
-export function OrdersTable({ orders }: { orders: Order[] }) {
-  return <GenericDataTable
+export function OrdersTable({ orders, tableName }: { orders: Order[], tableName:string }) {
+  return <div>
+    <h1>{tableName}</h1>
+  <GenericDataTable
   data={orders}
   columns={columns}
   />
+  </div>
   ;
 }

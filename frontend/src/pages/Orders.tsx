@@ -75,6 +75,10 @@ async function getOrderDatabyType(
 export default function Orders ()  {
   const [ordersList, setordersList] = useState<Order[]>([]);
   const [orderType, setOrderType] = useState('complete');
+  const [ordersFail, setordersFail] = useState<Order[]>([]);
+  const [ordersSend, setordersSend] = useState<Order[]>([]);
+  const [ordersReceive, setordersReceive] = useState<Order[]>([]);
+  
   useEffect(() => {
     let tokenObject = JSON.parse(token ? token : '');
     getOrderDatabyType(tokenObject.token, tokenObject.id, orderType).then(
@@ -82,27 +86,30 @@ export default function Orders ()  {
         setordersList(ordersFail);
       },
     );
+    getOrderDatabyType(tokenObject.token, tokenObject.id, 'fail').then(
+      (ordersFail) => {
+        setordersFail(ordersFail);
+      },
+    );
+    getOrderDatabyType(tokenObject.token, tokenObject.id, 'send').then(
+      (ordersFail) => {
+        setordersSend(ordersFail);
+      },
+    );
+    getOrderDatabyType(tokenObject.token, tokenObject.id, 'receive_cf').then(
+      (ordersFail) => {
+        setordersReceive(ordersFail);
+      },
+    );
   }, []);
 
-  return (
-    <div>
+  return (<div> 
       <Breadcrumb pageName="Orders" />
-      <div >
-   <select
-   onChange={
-    (choice)=>{setOrderType(choice.target.value)
-    console.log(choice.target.value)
-    }
-   }
-   className="  appearance-none rounded border border-stroke bg-transparent py-3 px-12 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input">
-     <option value="complete">Complete</option>
-     <option value="fail">Fail</option>
-     <option value="receive_ucf">Receive(Unconfirmed)</option>
-     <option value="receive_cf">Receive(Confimed)</option>
-     <option value="return">Return</option>
-   </select>
-    </div>
-      <OrdersTable orders={ordersList} />
+
+      <OrdersTable tableName='Order Complete' orders={ordersList} />
+      <OrdersTable tableName='Order Fail' orders={ordersFail} />
+      <OrdersTable tableName='Order Send' orders={ordersSend} />
+      <OrdersTable tableName='Order Received' orders={ordersReceive} />
     </div>
   );
 };
