@@ -41,7 +41,7 @@ ordersRouter.get('/ordersReceivetp', async(req: Request, res: Response) => {
 })
 
 //lấy ra đơn hàng đi theo tháng tại điểm giao dịch
-ordersRouter.get('/ordersReceivetp', async(req: Request, res: Response) => {
+ordersRouter.get('/ordersReceiveap1', async(req: Request, res: Response) => {
     const id = req.query.id as String;
     const month = req.query.month as unknown as number;
     try {
@@ -53,7 +53,7 @@ ordersRouter.get('/ordersReceivetp', async(req: Request, res: Response) => {
 })
 
 //lấy ra đơn hàng đến theo tháng tại điểm giao dịch
-ordersRouter.get('/ordersReceivetp', async(req: Request, res: Response) => {
+ordersRouter.get('/ordersReceiveap2', async(req: Request, res: Response) => {
     const id = req.query.id as String;
     const month = req.query.month as unknown as number;
     try {

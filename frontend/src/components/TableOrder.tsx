@@ -1,9 +1,8 @@
 import { createColumnHelper } from '@tanstack/react-table';
 import { useCallback } from 'react';
-import { BsTrashFill } from 'react-icons/bs';
+import { BsCheck, BsTicket, BsTrashFill } from 'react-icons/bs';
 import { API_URL } from '../constant';
 import { Order } from '../models/Order';
-import { CommonTable } from './Table';
 import GenericDataTable from './shad-table/app/people/data-table';
 const token = localStorage.getItem('user');
 let tokenObject = JSON.parse(token ? token : '');
@@ -29,16 +28,15 @@ function DeleteOrderButton({ username }: { username: string }) {
 
   return <button onClick={onClick}>Delete</button>;
 }
-
 const columnHelper = createColumnHelper<Order>();
 const columns = [
-  columnHelper.accessor((row) => row.cargoList, {
-    id: 'List of cargos',
+  columnHelper.accessor((row) => row._id, {
+    id: '_id',
   }),
   columnHelper.accessor((row) => row.sentCustomer, {
     id: 'Sender',
   }),
-  columnHelper.accessor((row) => row.sentDate, {
+  columnHelper.accessor((row) => row.sentDate.substring(0,10), {
     id: 'Send date',
   }),
   columnHelper.accessor((row) => row.sentPoint, {
@@ -47,7 +45,7 @@ const columns = [
   columnHelper.accessor((row) => row.receiveCustomer, {
     id: 'Receiver',
   }),
-  columnHelper.accessor((row) => row.receivedDate, {
+  columnHelper.accessor((row) => row.receivedDate.substring(0,10), {
     id: 'Received date',
   }),
   columnHelper.accessor((row) => row.receivePoint, {
@@ -60,13 +58,32 @@ const columns = [
     id: 'cost',
   }),
   columnHelper.display({
-    header: () => null,
-    id: 'actions',
+    header: "Actions",
+    id: "actions",
     cell: (info) => {
-      return <BsTrashFill />;
+      return (
+        <BsCheck onClick= {() => {
+          alert("Confirm Order:"+" "+(info.row.getValue("_id") as string))
+          fetchConfirm((info.row.getValue("_id") as string),"confirm")
+        }}     
+        />
+      );
     },
   }),
 ];
+async function fetchConfirm(
+  id: string,
+  type: string,
+): Promise<Order> {
+  const response = await fetch(`${API_URL}/${id}/${type}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+}
 export function OrdersTable({ orders }: { orders: Order[] }) {
   return <GenericDataTable
   data={orders}

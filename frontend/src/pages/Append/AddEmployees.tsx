@@ -14,8 +14,7 @@ const AddEmployees = () => {
 e.preventDefault()
 register(username,role,password,user).then(
   ()=>{
-    navigate("/")
-    window.location.reload
+    alert("Add Employee Complete!")
   },
   (error)=>{
     console.log(error)
@@ -74,9 +73,9 @@ register(username,role,password,user).then(
                         firstname: user.firstname,
                         lastname: e.target.value,
                         sex: user.sex,
-                        birthDate: user.birthDate,
+                        ssn: user.birthDate,
                         birthPlace: user.birthPlace,
-                        ssn: user.ssn,
+                        birthDate: user.ssn,
                       })
                     }
                   />
@@ -117,7 +116,7 @@ register(username,role,password,user).then(
                       sex: user.sex,
                       birthDate: e.target.value,
                       birthPlace: user.birthPlace,
-                      ssn: e.target.value,
+                      ssn: user.ssn,
                     })
                   }
                 />
